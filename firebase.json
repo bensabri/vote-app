@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "build/static",
+    "public": "build",
     "homepage": "https://unsa-fcs.fr",
     "ignore": [
       "firebase.json",
