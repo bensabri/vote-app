@@ -1,15 +1,12 @@
 import React, { useState, useRef } from 'react';
-import { useAuth } from '../contexts/AuthContext';
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { auth } from '../firebase';
 
 const ConfirmForm = () => {
 	const [error, setError] = useState('');
 	const emailRef = useRef();
-	const { signInwithLink } = useAuth();
 
 	const history = useHistory();
-	const location = useLocation();
 
 	const handleSignIn = async (e) => {
 		e.preventDefault();
@@ -30,11 +27,6 @@ const ConfirmForm = () => {
 				<div className="font-medium self-center text-xl sm:text-2xl uppercase text-gray-800">
 					Confirm Email
 				</div>
-				{/* <div className="mt-10">
-					{error && <p className="text-sm text-red mb-5">{error}</p>}
-					<strong>Email: </strong>
-					{currentUser.email}
-				</div> */}
 				<form onSubmit={handleSignIn}>
 					<div className="flex flex-col mb-6">
 						<label
