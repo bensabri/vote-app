@@ -13,7 +13,6 @@ const Login = () => {
 	const { isSubmitting } = formState;
 
 	const onSubmit = async () => {
-		console.log('click');
 		try {
 			setError('');
 			await login(emailRef.current.value, passwordRef.current.value);

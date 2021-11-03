@@ -69,33 +69,42 @@ const ShowResultControle = () => {
 	};
 
 	return (
-		<div>
-			<div className="mr-5 mt-5">
-				<h2 className="mb-3">
-					Commission de Contrôle Nombre de vote{' '}
-					{resultControle.length}
+		<div className="bg-white rounded-md shadow-md">
+			<div className="flex flex-col py-8">
+				<h2 className="pb-5 font-medium self-center text-lg sm:text-xl uppercase text-gray-500">
+					résultat 1er VOTE Commission de Contrôle
 				</h2>
-				<ResponsiveContainer width="100%" height={300}>
-					<BarChart data={dataControle}>
-						<XAxis dataKey="name" />
-						<YAxis domain={[0, 'dataMax + 100']} />
+				<div className="border-t-2 w-11/12 m-auto"></div>
+				<div className="mb-6 mt-6 flex justify-between text-gray-500 font-semibold">
+					<h3 className="ml-6 uppercase">Scores</h3>
+					<h3 className="mr-5 uppercase">
+						Nombre de vote {resultControle.length}
+					</h3>
+				</div>
 
-						<Bar
-							dataKey="value"
-							fill="#ee17bf"
-							label={{
-								position: 'top',
-								formatter: labelFormatter,
-								fill: '#ee17bf',
-							}}
-						>
-							<LabelList
-								dataKey="score"
-								style={{ position: 'top', fill: '#ffffff' }}
-							/>
-						</Bar>
-					</BarChart>
-				</ResponsiveContainer>
+				<div>
+					<ResponsiveContainer width="100%" height={300}>
+						<BarChart data={dataControle}>
+							<XAxis dataKey="name" />
+							<YAxis domain={[0, 'dataMax + 100']} />
+
+							<Bar
+								dataKey="value"
+								fill="#ee17bf"
+								label={{
+									position: 'top',
+									formatter: labelFormatter,
+									fill: '#ee17bf',
+								}}
+							>
+								<LabelList
+									dataKey="score"
+									style={{ position: 'top', fill: '#ffffff' }}
+								/>
+							</Bar>
+						</BarChart>
+					</ResponsiveContainer>
+				</div>
 			</div>
 		</div>
 	);

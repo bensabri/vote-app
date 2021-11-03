@@ -39,18 +39,6 @@ export const AuthProvider = ({ children }) => {
 		return auth.sendSignInLinkToEmail(email, actionCodeSettings);
 	};
 
-	// const signInwithLink = (email, location) => {
-	// 	return auth.signInWithEmailLink(email, location);
-	// };
-	//
-	// const updateEmail = (email) => {
-	// 	return currentUser.updateEmail(email);
-	// };
-
-	// const updatePassword = (password) => {
-	// 	return currentUser.updatePassword(password);
-	// };
-
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
 			setCurrentUser(user);
@@ -61,15 +49,11 @@ export const AuthProvider = ({ children }) => {
 
 	const value = {
 		currentUser,
-		// setCurrentUser,
 		login,
 		signup,
 		logout,
 		resetPassword,
 		sendSignInLink,
-		// signInwithLink,
-		// updateEmail,
-		// updatePassword,
 	};
 
 	return (

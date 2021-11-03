@@ -4,13 +4,12 @@ import { useAuth } from '../contexts/AuthContext';
 const SendEmail = () => {
 	const [error, setError] = useState('');
 	const emailRef = useRef();
-	const { currentUser, sendSignInLink } = useAuth();
+	const { sendSignInLink } = useAuth();
 
 	const handleSendEmail = async (e) => {
 		e.preventDefault();
 
 		try {
-			console.log(emailRef.current.value);
 			await sendSignInLink(emailRef.current.value);
 			alert('Email sent successfully');
 		} catch (error) {

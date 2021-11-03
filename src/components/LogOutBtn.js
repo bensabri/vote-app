@@ -4,7 +4,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useGlobalContext } from '../contexts/context';
 
 const LogOutBtn = () => {
-	const { currentUser, logout, sendSignInLink } = useAuth();
+	const { logout } = useAuth();
 	const { setQuery } = useGlobalContext();
 	const [error, setError] = useState('');
 	const history = useHistory();
@@ -24,9 +24,9 @@ const LogOutBtn = () => {
 			<button
 				onClick={handleLogout}
 				type="submit"
-				className="mt-5 flex items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-600 hover:bg-blue-700 rounded py-2 w-full transition duration-150 ease-in"
+				className="m-auto mt-5 flex items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-600 hover:bg-blue-700 rounded py-2 w-1/6 transition duration-150 ease-in"
 			>
-				<span className="mr-2 uppercase">Log Out</span>
+				<span className="uppercase">DECONNECTION</span>
 			</button>
 		</>
 	);
