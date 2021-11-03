@@ -3,7 +3,7 @@ import Signup from './components/Signup';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 import { AuthProvider } from './contexts/AuthContext';
-import { BrowserRouter as Router, Switch, Route, DefaultRoute } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import ConfirmForm from './components/ConfirmForm';
 
@@ -13,9 +13,9 @@ const App = () => {
 			<Router>
 				<AuthProvider>
 					<Switch>
-						<DefaultRoute exact path='/'>
+						<Route exact path='/'>
 							<Dashboard />
-						</DefaultRoute>
+						</Route>
 						{/* <Route path="/signup">
 							<Signup />
 						</Route> */}
