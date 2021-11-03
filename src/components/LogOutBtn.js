@@ -16,7 +16,7 @@ const LogOutBtn = () => {
 		} catch (error) {
 			setError(error);
 		}
-		history.push('/');
+		history.push('/login');
 	};
 
 	return (

@@ -13,13 +13,13 @@ const App = () => {
 			<Router>
 				<AuthProvider>
 					<Switch>
-						<PrivateRoute exact path="/dashboard">
+						<PrivateRoute exact path="/">
 							<Dashboard />
 						</PrivateRoute>
 						{/* <Route path="/signup">
 							<Signup />
 						</Route> */}
-						<Route path="/">
+						<Route path="/login">
 							<Login />
 						</Route>
 						<Route path="/confirm">

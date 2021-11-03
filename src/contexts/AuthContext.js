@@ -30,7 +30,7 @@ export const AuthProvider = ({ children }) => {
 	const actionCodeSettings = {
 		// URL you want to redirect back to. The domain (www.example.com) for this
 		// URL must be whitelisted in the Firebase Console.
-		url: 'http://unsa-fcs.fr/confirm',
+		url: 'http://localhost:3000/confirm',
 		// This must be true.
 		handleCodeInApp: true,
 	};
@@ -38,18 +38,6 @@ export const AuthProvider = ({ children }) => {
 	const sendSignInLink = (email) => {
 		return auth.sendSignInLinkToEmail(email, actionCodeSettings);
 	};
-
-	// const signInwithLink = (email, location) => {
-	// 	return auth.signInWithEmailLink(email, location);
-	// };
-	//
-	// const updateEmail = (email) => {
-	// 	return currentUser.updateEmail(email);
-	// };
-
-	// const updatePassword = (password) => {
-	// 	return currentUser.updatePassword(password);
-	// };
 
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
@@ -61,15 +49,11 @@ export const AuthProvider = ({ children }) => {
 
 	const value = {
 		currentUser,
-		// setCurrentUser,
 		login,
 		signup,
 		logout,
 		resetPassword,
 		sendSignInLink,
-		// signInwithLink,
-		// updateEmail,
-		// updatePassword,
 	};
 
 	return (

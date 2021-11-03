@@ -36,6 +36,7 @@ const Dashboard = () => {
 			currentUser.email === 'benasabri@gmail.com'
 		) {
 			setProcurationUsers(true);
+			setResultsAccess(false);
 		} else if (currentUser.email === 'ssabril.ben@gmail.com') {
 			// email qui a accees au resultat
 			setResultsAccess(true);
