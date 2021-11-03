@@ -3,7 +3,7 @@ import { useGlobalContext } from '../contexts/context';
 import { db } from '../firebase';
 
 const GetUsers = () => {
-	const { setUsers, setLoading, setIsFetching } = useGlobalContext();
+	const { setUsers, setLoading, setIsFetching, users } = useGlobalContext();
 
 	const getUsers = () => {
 		// GET USERS FROM DATABASE
@@ -23,7 +23,6 @@ const GetUsers = () => {
 	useEffect(() => {
 		getUsers();
 	}, []);
-	// console.log(users);
 
 	return <div></div>;
 };

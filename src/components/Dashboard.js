@@ -46,27 +46,25 @@ const Dashboard = () => {
 	}, []);
 
 	return (
-		<div>
-			<div className="min-h-screen flex flex-col items-center justify-center bg-gray-300">
-				<div className="mb-10 flex flex-col px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md h-4/5 w-full lg:max-w-6xl md:max-w-full">
-					<GetUsers />
-					<ResultControle />
-					<ResultAdministrative />
-					<ResultBureau />
-					{resultsAccess && <AllResults />}
-					{admin ? (
-						<div>
-							<SendEmail />
-							<CreateUser />
-							<ShowResultControle />
-							<ShowResultAdministrative />
-							<ShowResultBureau />
-						</div>
-					) : (
-						<VotePage />
-					)}
-					<LogOutBtn />
-				</div>
+		<div className="min-h-screen flex flex-col items-center justify-center bg-gray-300">
+			<div className="mb-10 flex flex-col sm:px-6 md:px-8 lg:px-10 py-8 rounded-md h-4/5 w-full lg:max-w-6xl md:max-w-full">
+				<GetUsers />
+				<ResultControle />
+				<ResultAdministrative />
+				<ResultBureau />
+				{resultsAccess && <AllResults />}
+				{admin ? (
+					<div>
+						<SendEmail />
+						<CreateUser />
+						<ShowResultControle />
+						<ShowResultAdministrative />
+						<ShowResultBureau />
+					</div>
+				) : (
+					<VotePage />
+				)}
+				<LogOutBtn />
 			</div>
 		</div>
 	);

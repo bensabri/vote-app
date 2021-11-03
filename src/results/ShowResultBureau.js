@@ -50,11 +50,18 @@ const ShowResultBureau = () => {
 		return value + '%';
 	};
 	return (
-		<div>
-			<div className="mr-5 mt-5">
-				<h2 className="mb-3">
-					Candidature au Bureau Nombre de vote {resultBureau.length}
+		<div className="bg-white rounded-md shadow-md mt-10">
+			<div className="flex flex-col py-8">
+				<h2 className="pb-5 font-medium self-center text-lg sm:text-xl uppercase text-gray-500">
+					résultat 3éme VOTE Candidature au Bureau
 				</h2>
+				<div className="border-t-2 w-11/12 m-auto"></div>
+				<div className="mb-6 mt-6 flex justify-between text-gray-500 font-semibold">
+					<h3 className="ml-6 uppercase">Scores</h3>
+					<h3 className="mr-5 uppercase">
+						Nombre de vote {resultBureau.length}
+					</h3>
+				</div>
 				<ResponsiveContainer width="100%" height={300}>
 					<BarChart data={dataBureau}>
 						<XAxis dataKey="name" />
