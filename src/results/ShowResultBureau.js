@@ -8,6 +8,7 @@ import {
 	Tooltip,
 	ResponsiveContainer,
 	LabelList,
+	CartesianGrid,
 } from 'recharts';
 
 const ShowResultBureau = () => {
@@ -49,6 +50,7 @@ const ShowResultBureau = () => {
 	const labelFormatter = (value) => {
 		return value + '%';
 	};
+
 	return (
 		<div className="bg-white rounded-md shadow-md mt-10">
 			<div className="flex flex-col py-8">
@@ -64,6 +66,7 @@ const ShowResultBureau = () => {
 				</div>
 				<ResponsiveContainer width="100%" height={300}>
 					<BarChart data={dataBureau}>
+						<CartesianGrid strokeDasharray="3 3" />
 						<XAxis dataKey="name" />
 						<YAxis domain={[0, 'dataMax + 100']} />
 						<Bar

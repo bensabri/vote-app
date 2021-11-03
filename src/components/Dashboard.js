@@ -32,7 +32,7 @@ const Dashboard = () => {
 	useEffect(() => {
 		if (
 			// accées au personne avec procuration
-			currentUser.email === 'ssabril@ymail.com' ||
+			// currentUser.email === 'ssabril@ymail.com' ||
 			currentUser.email === 'benasabri@gmail.com'
 		) {
 			setProcurationUsers(true);

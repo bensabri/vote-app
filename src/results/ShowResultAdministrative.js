@@ -8,6 +8,7 @@ import {
 	Tooltip,
 	ResponsiveContainer,
 	LabelList,
+	CartesianGrid,
 } from 'recharts';
 
 const ShowResultAdministrative = () => {
@@ -115,7 +116,7 @@ const ShowResultAdministrative = () => {
 		(a, b) => a + b.data.results_administrative.y,
 		0
 	);
-
+	console.log(AdministrativeB);
 	const totalValue =
 		AdministrativeA +
 		AdministrativeB +
@@ -151,7 +152,7 @@ const ShowResultAdministrative = () => {
 		},
 		{
 			name: 'b',
-			value: Math.round((AdministrativeA / totalValue) * 100),
+			value: Math.round((AdministrativeB / totalValue) * 100),
 			score: AdministrativeB,
 		},
 		{
@@ -289,6 +290,7 @@ const ShowResultAdministrative = () => {
 				</div>
 				<ResponsiveContainer width="100%" height={300}>
 					<BarChart data={dataAdministrative}>
+						<CartesianGrid strokeDasharray="3 3" />
 						<XAxis dataKey="name" />
 						<YAxis domain={[0, 'dataMax + 30']} />
 						<Tooltip />
