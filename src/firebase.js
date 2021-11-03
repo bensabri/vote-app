@@ -3,12 +3,12 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 
 const app = firebase.initializeApp({
-	apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
-	authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-	projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-	storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-	messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-	appId: process.env.REACT_APP_FIREBASE_APP_ID,
+	apiKey: 'AIzaSyBlKkfZaVJfFz3SfeTk13MXCibuD2SkPvs',
+	authDomain: 'voteapp-d3b5e.firebaseapp.com',
+	projectId: 'voteapp-d3b5e',
+	storageBucket: 'voteapp-d3b5e.appspot.com',
+	messagingSenderId: '674624623162',
+	appId: '1:674624623162:web:ddcb32fa3186e5c9ab5b03',
 });
 
 const db = app.firestore();
