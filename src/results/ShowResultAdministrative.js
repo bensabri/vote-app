@@ -116,7 +116,7 @@ const ShowResultAdministrative = () => {
 		(a, b) => a + b.data.results_administrative.y,
 		0
 	);
-	console.log(AdministrativeB);
+
 	const totalValue =
 		AdministrativeA +
 		AdministrativeB +

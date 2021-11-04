@@ -24,9 +24,9 @@ const LogOutBtn = () => {
 			<button
 				onClick={handleLogout}
 				type="submit"
-				className="m-auto mt-5 flex items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-600 hover:bg-blue-700 rounded py-2 w-1/6 transition duration-150 ease-in"
+				className="w-1/3 m-auto py-2 px-4 border border-transparent shadow-sm text-xs sm:text-sm  uppercase rounded-md text-white bg-blue-600 hover:bg-blue-700 transition duration-150 ease-in"
 			>
-				<span className="uppercase">DECONNECTION</span>
+				DECONNECTION
 			</button>
 		</>
 	);

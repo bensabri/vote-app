@@ -61,95 +61,102 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 	);
 
 	return (
-		<div className="mt-10 sm:mt-0">
+		<div>
 			{voted?.data.thirdVote ? (
 				<div>Merci pour votre Vote</div>
 			) : (
-				<div className="md:grid md:grid-cols-1 md:gap-6">
-					<div className="pl-10 mt-5 md:mt-0 md:col-span-2">
-						<form onSubmit={handleSubmit(onSubmit)}>
-							<div className="overflow-hidden sm:rounded-md">
-								<div className="px-4 py-5 bg-white space-y-6 sm:p-6">
-									<fieldset>
-										<legend className="text-base font-medium text-gray-900">
-											Candidature au Bureau
-										</legend>
-										<div className="mt-4 space-y-4">
-											<div className="flex items-start">
-												<input
-													name="a"
-													{...register('a')}
-													type="checkbox"
-													onClick={HandleA}
-													value={a}
-													className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-												/>{' '}
-												<span className="ml-3 text-sm font-medium text-gray-700">
-													Liste 1
-												</span>
-											</div>
-											<div className="flex items-start">
-												<div className="flex items-center h-5">
-													<input
-														name="b"
-														{...register('b')}
-														type="checkbox"
-														onClick={HandleB}
-														value={b}
-														className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-													/>{' '}
-													<span className="ml-3 text-sm font-medium text-gray-700">
-														Liste 2
-													</span>
-												</div>
-											</div>
-											<div className="flex items-start">
-												<div className="flex items-center h-5">
-													<input
-														name="c"
-														{...register('c')}
-														type="checkbox"
-														onClick={HandleC}
-														value={c}
-														className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-													/>{' '}
-													<span className="ml-3 text-sm font-medium text-gray-700">
-														Liste 3
-													</span>
-												</div>
-											</div>
-										</div>
-									</fieldset>
+				<form onSubmit={handleSubmit(onSubmit)}>
+					<div className="w-11/12 m-auto shadow-lg bg-white rounded-md">
+						<div className="flex flex-col py-8 px-5">
+							{!procurationUsers && (
+								<h2 className="pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
+									Page de Vote
+								</h2>
+							)}
+							<div className="flex justify-between text-base font-medium text-gray-900 uppercase sm:p-6 py-5 px-2">
+								<legend className="text-base font-medium text-gray-900">
+									Candidature au Bureau
+								</legend>
+								<p className="text-xs sm:text-sm lg:text-lg">{`Syndicat ${syndicat}`}</p>
+							</div>
+							<div className="border-t-2 w-11/12 m-auto"></div>
+							<div className="mt-4 ml-7 space-y-4">
+								<h3 className="text-xs sm:text-sm lg:text-lg mb-1 font-bold text-gray-700">
+									Parmi ces candidats, pour qui souhaiteriez
+									vous voter ?
+								</h3>
+								<div className="flex items-start">
+									<div className="flex items-center h-5">
+										<input
+											name="a"
+											{...register('a')}
+											type="checkbox"
+											onClick={HandleA}
+											value={a}
+											className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+										/>{' '}
+										<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
+											LISTE 1
+										</span>
+									</div>
 								</div>
-								<div className="px-4 py-3 bg-gray-50 text-right sm:px-6">
-									{error && (
-										<div className="text-red-600 text-xs">
-											{`${
-												checkedCount < 2
-													? 'Vous ne pouvez pas choisir moins de 2 candidats'
-													: checkedCount > 2
-													? 'Vous ne pouvez pas choisir plus de 2 candidats'
-													: ''
-											} `}
-										</div>
-									)}
-									<button
-										disabled={isSubmitting}
-										onClick={() => setHasVoted(true)}
-										type="submit"
-										className={`inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white  ${
-											isSubmitting
-												? 'bg-indigo-300'
-												: 'bg-indigo-600'
-										} hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
-									>
-										Vote
-									</button>
+								<div className="flex items-start">
+									<div className="flex items-center h-5">
+										<input
+											name="b"
+											{...register('b')}
+											type="checkbox"
+											onClick={HandleB}
+											value={b}
+											className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+										/>{' '}
+										<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
+											LISTE 2
+										</span>
+									</div>
+								</div>
+								<div className="flex items-start">
+									<div className="flex items-center h-5">
+										<input
+											name="c"
+											{...register('c')}
+											type="checkbox"
+											onClick={HandleC}
+											value={c}
+											className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+										/>{' '}
+										<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
+											LISTE 3
+										</span>
+									</div>
 								</div>
 							</div>
-						</form>
+						</div>
+						<div className="flex justify-around py-5 bg-gray-100 text-right sm:px-6 rounded-md">
+							{error && (
+								<div className="text-red-600 text-xs sm:text-sm  px-5 pt-2">
+									{`${
+										checkedCount < 2
+											? 'Vous ne pouvez pas choisir moins de 2 candidats'
+											: checkedCount > 2
+											? 'Vous ne pouvez pas choisir plus de 2 candidats'
+											: ''
+									} `}
+								</div>
+							)}
+							<button
+								disabled={isSubmitting}
+								onClick={() => setHasVoted(true)}
+								type="submit"
+								className={`mr-2 py-2 px-4 border border-transparent shadow-sm text-xs sm:text-sm  uppercase rounded-md text-white transition duration-150 ease-in  ${
+									isSubmitting ? 'bg-blue-300' : 'bg-blue-600'
+								} hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500`}
+							>
+								Vote
+							</button>
+						</div>
 					</div>
-				</div>
+				</form>
 			)}
 		</div>
 	);

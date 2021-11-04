@@ -177,7 +177,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 	return (
 		<div className="mt-10 sm:mt-0">
 			{voted?.data.secondVote ? (
-				<div className="m-10">
+				<div>
 					<CandidatureBureau
 						mandat={mandat}
 						syndicat={syndicat}

@@ -16,7 +16,7 @@ const VotePage = () => {
 	} = useGlobalContext();
 
 	useEffect(() => {
-		if (currentUser.email === 'benasabri@gmail.com') {
+		if (currentUser?.email === 'benasabri@gmail.com') {
 			setSyndicatList([
 				'AD GRAND OUEST',
 				'AUCHAN NICE',
@@ -25,6 +25,7 @@ const VotePage = () => {
 				'AQUABOULEVARD',
 				'GROUPE AUTODISTRIBUTION',
 				'AUCHAN LA DEFENSE',
+				'KIABI',
 			]);
 		}
 	}, [query]);
@@ -58,7 +59,8 @@ const VotePage = () => {
 			{users
 				.filter(
 					({ id, data: { email, syndicat } }) =>
-						email === `${!procurationUsers && currentUser.email}` || // filtrer les personnes par email pour les personnes qui n'ont pas de procuration
+						email ===
+							`${!procurationUsers && currentUser?.email}` || // filtrer les personnes par email pour les personnes qui n'ont pas de procuration
 						syndicat === `${procurationUsers && query}` // filtrer les procurations par syndicat pour les personnes qui one une procuration
 				)
 				.map(({ id, data: { user_name, syndicat, mandat, email } }) => (
