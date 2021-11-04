@@ -13,13 +13,13 @@ const App = () => {
 			<Router>
 				<AuthProvider>
 					<Switch>
-						<Route exact path='/'>
+						<Route exact path='/admin'>
 							<Dashboard />
 						</Route>
 						{/* <Route path="/signup">
 							<Signup />
 						</Route> */}
-						<Route path='/login'>
+						<Route path='/'>
 							<Login />
 						</Route>
 						<Route path='/confirm'>
