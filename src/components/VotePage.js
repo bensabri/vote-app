@@ -13,6 +13,7 @@ const VotePage = () => {
 		setSyndicatList,
 		query,
 		setQuery,
+		resultBureau,
 	} = useGlobalContext();
 
 	useEffect(() => {
@@ -31,7 +32,7 @@ const VotePage = () => {
 	}, [query]);
 
 	return (
-		<div className="flex flex-col py-8">
+		<div className="flex flex-col py-8 h-1/2">
 			{procurationUsers && (
 				<div className="bg-white flex flex-col justify-between pl-3 pr-3 w-11/12 m-auto shadow-lg rounded uppercase py-8 mb-8">
 					<h2 className="pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
@@ -55,10 +56,10 @@ const VotePage = () => {
 					</select>
 				</div>
 			)}
-			{voting
+			{!voting
 				? users
 						.filter(
-							({ id, data: { email, syndicat } }) =>
+							({ data: { email, syndicat } }) =>
 								email ===
 									`${
 										!procurationUsers && currentUser?.email
@@ -79,7 +80,8 @@ const VotePage = () => {
 								</div>
 							)
 						)
-				: !procurationUsers && (
+				: !procurationUsers &&
+				  !resultBureau && (
 						<div className="w-11/12 m-auto shadow-lg bg-white rounded-md">
 							<div className="flex flex-col py-8 px-5">
 								<h2 className="pb-10 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">

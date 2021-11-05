@@ -18,7 +18,7 @@ const ConfirmForm = () => {
 			);
 			history.push('/home');
 		} catch (error) {
-			setError(`Failled to sign in ${error.message}`);
+			setError(`l'email entrée est incorrect`);
 		}
 	};
 	return (
@@ -27,6 +27,7 @@ const ConfirmForm = () => {
 				<div className="font-medium self-center text-xl sm:text-2xl uppercase text-gray-800">
 					Confirm Email
 				</div>
+				{error && <p className="text-sm text-red mb-5">{error}</p>}
 				<form onSubmit={handleSignIn}>
 					<div className="flex flex-col mb-6">
 						<label

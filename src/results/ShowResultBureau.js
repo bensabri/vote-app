@@ -47,6 +47,7 @@ const ShowResultBureau = () => {
 			score: BureauC,
 		},
 	];
+
 	const labelFormatter = (value) => {
 		return value + '%';
 	};
