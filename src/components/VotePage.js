@@ -1,13 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useGlobalContext } from '../contexts/context';
 import { useAuth } from '../contexts/AuthContext';
 import CommissionControle from './CommissionContrôle';
 
 const VotePage = () => {
+	const [voting, setVoting] = useState(false);
 	const { currentUser } = useAuth();
 	const {
 		users,
-		isFetching,
 		procurationUsers,
 		syndicatList,
 		setSyndicatList,
@@ -55,25 +55,45 @@ const VotePage = () => {
 					</select>
 				</div>
 			)}
-
-			{users
-				.filter(
-					({ id, data: { email, syndicat } }) =>
-						email ===
-							`${!procurationUsers && currentUser?.email}` || // filtrer les personnes par email pour les personnes qui n'ont pas de procuration
-						syndicat === `${procurationUsers && query}` // filtrer les procurations par syndicat pour les personnes qui one une procuration
-				)
-				.map(({ id, data: { user_name, syndicat, mandat, email } }) => (
-					<div key={id}>
-						{isFetching && (
-							<CommissionControle
-								mandat={mandat}
-								syndicat={syndicat}
-								email={email}
-							/>
-						)}
-					</div>
-				))}
+			{voting
+				? users
+						.filter(
+							({ id, data: { email, syndicat } }) =>
+								email ===
+									`${
+										!procurationUsers && currentUser?.email
+									}` || // filtrer les personnes par email pour les personnes qui n'ont pas de procuration
+								syndicat === `${procurationUsers && query}` // filtrer les procurations par syndicat pour les personnes qui one une procuration
+						)
+						.map(
+							({
+								id,
+								data: { user_name, syndicat, mandat, email },
+							}) => (
+								<div key={id}>
+									<CommissionControle
+										mandat={mandat}
+										syndicat={syndicat}
+										email={email}
+									/>
+								</div>
+							)
+						)
+				: !procurationUsers && (
+						<div className="w-11/12 m-auto shadow-lg bg-white rounded-md">
+							<div className="flex flex-col py-8 px-5">
+								<h2 className="pb-10 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
+									Bienvenue sur la page de vote de L'unsa
+								</h2>
+								<button
+									onClick={() => setVoting(!voting)}
+									className="w-1/5 m-auto  py-2 px-4 border border-transparent shadow-sm text-xs sm:text-sm  uppercase rounded-md text-white transition duration-150 ease-in bg-blue-600 hover:bg-blue-700 focus:outline-none"
+								>
+									Débuté le vote
+								</button>
+							</div>
+						</div>
+				  )}
 		</div>
 	);
 };
