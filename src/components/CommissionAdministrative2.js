@@ -583,7 +583,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 							</div>
 						</div>
 						<div className="flex justify-around py-5 bg-gray-100 text-right sm:px-6 rounded-md">
-							{!error && (
+							{error && (
 								<div className="text-red-600 text-xs sm:text-sm  px-5 pt-2">
 									{`${
 										checkedCount < 15

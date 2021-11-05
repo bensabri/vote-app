@@ -56,7 +56,7 @@ const VotePage = () => {
 					</select>
 				</div>
 			)}
-			{!voting
+			{voting
 				? users
 						.filter(
 							({ data: { email, syndicat } }) =>

@@ -63,7 +63,11 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 	return (
 		<div>
 			{voted?.data.thirdVote ? (
-				<div>Merci pour votre Vote</div>
+				<div className="bg-white flex flex-col justify-between pl-3 pr-3 w-5/6 md:w-2/3 m-auto shadow-lg rounded uppercase py-8 mb-8">
+					<h2 className="pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
+						Merci pour votre Vote
+					</h2>
+				</div>
 			) : (
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className="w-11/12 m-auto shadow-lg bg-white rounded-md">
