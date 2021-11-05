@@ -19,7 +19,7 @@ const Login = () => {
 		} catch {
 			return setError('Impossible de se connecter');
 		}
-		history.push('/');
+		history.push('/home');
 	};
 
 	return (

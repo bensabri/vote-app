@@ -16,7 +16,7 @@ const ConfirmForm = () => {
 				emailRef.current.value,
 				window.location.href
 			);
-			history.push('/');
+			history.push('/home');
 		} catch (error) {
 			setError(`Failled to sign in ${error.message}`);
 		}
