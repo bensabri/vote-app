@@ -53,7 +53,10 @@ const VotePage = () => {
 					<select
 						className="text-sm placeholder-gray-500 py-2 px-1 rounded-lg focus:outline-none border-2 w-10/12 md:w-1/3 m-auto"
 						name="emaillist"
-						onChange={(e) => setQuery(e.target.value)}
+						onChange={(e) => {
+							setQuery(e.target.value);
+							setVoting(true);
+						}}
 					>
 						<option></option>
 						{syndicatList.map((syndicat, index) => (
@@ -71,7 +74,7 @@ const VotePage = () => {
 							`${!procurationUsers && currentUser?.email}` || // filtrer les personnes par email pour les personnes qui n'ont pas de procuration
 						syndicat === `${procurationUsers && query}` // filtrer les procurations par syndicat pour les personnes qui one une procuration
 				)
-				.map(({ id, data: { user_name, syndicat, mandat, email } }) => (
+				.map(({ id, data: { syndicat, mandat, email } }) => (
 					<div className={`${!voting && 'hidden'}`} key={id}>
 						<CommissionControle
 							mandat={mandat}
