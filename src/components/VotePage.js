@@ -64,43 +64,45 @@ const VotePage = () => {
 					</select>
 				</div>
 			)}
-			{voting ? (
-				users
-					.filter(
-						({ data: { email, syndicat } }) =>
-							email ===
-								`${!procurationUsers && currentUser?.email}` || // filtrer les personnes par email pour les personnes qui n'ont pas de procuration
-							syndicat === `${procurationUsers && query}` // filtrer les procurations par syndicat pour les personnes qui one une procuration
-					)
-					.map(
-						({
-							id,
-							data: { user_name, syndicat, mandat, email },
-						}) => (
-							<div key={id}>
-								<CommissionControle
-									mandat={mandat}
-									syndicat={syndicat}
-									email={email}
-								/>
-							</div>
-						)
-					)
-			) : (
-				<div className="w-11/12 m-auto shadow-lg bg-white rounded-md">
-					<div className="flex flex-col py-8 px-5">
-						<h2 className="pb-10 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
-							Bienvenue sur la page de vote de L'unsa
-						</h2>
-						<button
-							onClick={() => setVoting(!voting)}
-							className="w-1/5 m-auto  py-2 px-4 border border-transparent shadow-sm text-xs sm:text-sm  uppercase rounded-md text-white transition duration-150 ease-in bg-blue-600 hover:bg-blue-700 focus:outline-none"
-						>
-							Commencé
-						</button>
+			{users
+				.filter(
+					({ data: { email, syndicat } }) =>
+						email ===
+							`${!procurationUsers && currentUser?.email}` || // filtrer les personnes par email pour les personnes qui n'ont pas de procuration
+						syndicat === `${procurationUsers && query}` // filtrer les procurations par syndicat pour les personnes qui one une procuration
+				)
+				.map(({ id, data: { user_name, syndicat, mandat, email } }) => (
+					<div className={`${!voting && 'hidden'}`} key={id}>
+						<CommissionControle
+							mandat={mandat}
+							syndicat={syndicat}
+							email={email}
+						/>
 					</div>
+				))}
+			<div
+				className={`${
+					procurationUsers
+						? 'hidden'
+						: 'w-11/12 m-auto shadow-lg bg-white rounded-md'
+				}`}
+			>
+				<div
+					className={`${
+						voting ? 'hidden' : 'flex flex-col py-8 px-5'
+					}`}
+				>
+					<h2 className="pb-10 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
+						Bienvenue sur la page de vote de L'unsa
+					</h2>
+					<button
+						onClick={() => setVoting(!voting)}
+						className="w-1/5 m-auto  py-2 px-4 border border-transparent shadow-sm text-xs sm:text-sm  uppercase rounded-md text-white transition duration-150 ease-in bg-blue-600 hover:bg-blue-700 focus:outline-none"
+					>
+						Commencé
+					</button>
 				</div>
-			)}
+			</div>
 		</div>
 	);
 };
