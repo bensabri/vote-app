@@ -20,22 +20,22 @@ const ConfirmForm = () => {
 			);
 			history.push('/home');
 		} catch (error) {
-			setError(`l'email entrée est incorrect`);
+			setError(`Cette adresse email a déja étais utilisé`);
 		}
 		emailRef.current.value = '';
 	};
 	return (
 		<div className="min-h-screen flex flex-col items-center justify-center bg-gray-300">
 			<div className="flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md">
-				<h2 className="pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
+				<h2 className="pb-5 font-medium self-center sm:text-lg uppercase text-gray-500">
 					Confirmez votre address e-mail
 				</h2>
 				<div className="border-t-2 w-11/12 m-auto"></div>
-				{error && (
-					<p className="text-red-600 text-xs sm:text-sm  px-5 pt-2">
-						{error}
-					</p>
-				)}
+
+				<div className="py-2 text-red-600 text-xs sm:text-sm">
+					{error && <p>{error}</p>}
+				</div>
+
 				<form onSubmit={handleSignIn}>
 					<div className="flex flex-col mb-6">
 						<label
