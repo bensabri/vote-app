@@ -1,11 +1,13 @@
 import React, { useState, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 import { auth } from '../firebase';
 
 const ConfirmForm = () => {
 	const [error, setError] = useState('');
 	const emailRef = useRef();
-
+	const { formState } = useForm();
+	const { isSubmitting } = formState;
 	const history = useHistory();
 
 	const handleSignIn = async (e) => {
@@ -69,6 +71,7 @@ const ConfirmForm = () => {
 						</div>
 					</div>
 					<button
+						disable={isSubmitting}
 						type="submit"
 						className="flex items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-600 hover:bg-blue-700 rounded py-2 w-full transition duration-150 ease-in"
 					>
