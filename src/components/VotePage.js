@@ -64,7 +64,7 @@ const VotePage = () => {
 					</select>
 				</div>
 			)}
-			{
+			{voting ? (
 				users
 					.filter(
 						({ data: { email, syndicat } }) =>
@@ -86,23 +86,21 @@ const VotePage = () => {
 							</div>
 						)
 					)
-				// : !procurationUsers &&
-				//   !resultBureau && (
-				// 		<div className="w-11/12 m-auto shadow-lg bg-white rounded-md">
-				// 			<div className="flex flex-col py-8 px-5">
-				// 				<h2 className="pb-10 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
-				// 					Bienvenue sur la page de vote de L'unsa
-				// 				</h2>
-				// 				<button
-				// 					onClick={() => setVoting(!voting)}
-				// 					className="w-1/5 m-auto  py-2 px-4 border border-transparent shadow-sm text-xs sm:text-sm  uppercase rounded-md text-white transition duration-150 ease-in bg-blue-600 hover:bg-blue-700 focus:outline-none"
-				// 				>
-				// 					Débuté le vote
-				// 				</button>
-				// 			</div>
-				// 		</div>
-				//   )
-			}
+			) : (
+				<div className="w-11/12 m-auto shadow-lg bg-white rounded-md">
+					<div className="flex flex-col py-8 px-5">
+						<h2 className="pb-10 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
+							Bienvenue sur la page de vote de L'unsa
+						</h2>
+						<button
+							onClick={() => setVoting(!voting)}
+							className="w-1/5 m-auto  py-2 px-4 border border-transparent shadow-sm text-xs sm:text-sm  uppercase rounded-md text-white transition duration-150 ease-in bg-blue-600 hover:bg-blue-700 focus:outline-none"
+						>
+							Commencé
+						</button>
+					</div>
+				</div>
+			)}
 		</div>
 	);
 };
