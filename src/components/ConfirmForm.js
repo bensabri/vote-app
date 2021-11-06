@@ -25,10 +25,15 @@ const ConfirmForm = () => {
 	return (
 		<div className="min-h-screen flex flex-col items-center justify-center bg-gray-300">
 			<div className="flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md">
-				<div className="font-medium self-center text-xl sm:text-2xl uppercase text-gray-800">
-					Confirm Email
-				</div>
-				{error && <p className="text-sm text-red mb-5">{error}</p>}
+				<h2 className="pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
+					Confirmez votre address e-mail
+				</h2>
+				<div className="border-t-2 w-11/12 m-auto"></div>
+				{error && (
+					<p className="text-red-600 text-xs sm:text-sm  px-5 pt-2">
+						{error}
+					</p>
+				)}
 				<form onSubmit={handleSignIn}>
 					<div className="flex flex-col mb-6">
 						<label
@@ -67,7 +72,7 @@ const ConfirmForm = () => {
 						type="submit"
 						className="flex items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-600 hover:bg-blue-700 rounded py-2 w-full transition duration-150 ease-in"
 					>
-						<span className="mr-2 uppercase">Confirm</span>
+						<span className="mr-2 uppercase">Confirmez</span>
 					</button>
 				</form>
 			</div>
