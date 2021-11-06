@@ -20,6 +20,7 @@ const ConfirmForm = () => {
 		} catch (error) {
 			setError(`l'email entrée est incorrect`);
 		}
+		emailRef.current.value = '';
 	};
 	return (
 		<div className="min-h-screen flex flex-col items-center justify-center bg-gray-300">
