@@ -28,7 +28,7 @@ const ConfirmForm = () => {
 		<div className="min-h-screen flex flex-col items-center justify-center bg-gray-300">
 			<div className="flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md">
 				<h2 className="pb-5 font-medium self-center sm:text-lg uppercase text-gray-500">
-					Confirmez votre address e-mail
+					Confirmez votre adresse e-mail
 				</h2>
 				<div className="border-t-2 w-11/12 m-auto"></div>
 
@@ -42,7 +42,7 @@ const ConfirmForm = () => {
 							htmlFor="email"
 							className="mb-1 text-xs sm:text-sm tracking-wide text-gray-600"
 						>
-							E-Mail Address:
+							Adresse e-mail :
 						</label>
 						<div className="relative">
 							<div className="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400">

@@ -41,10 +41,12 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 				created_date: date,
 			})
 				.then(() => {
-					alert('Votre vote a ete prise en compte');
+					alert(
+						'Votre vote pour la commission de contrôle a été prise en compte'
+					);
 				})
 				.catch((error) => {
-					alert(`Votre vote n'a pas pu être prit en compte ${error}`);
+					alert(`Votre vote n'a pas pu être pris en compte ${error}`);
 				});
 		} else {
 			setError('Veuillez cocher trois cases');
@@ -100,7 +102,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 							</div>
 							<div className="border-t-2 w-11/12 m-auto"></div>
 							<div className="mt-5 ml-7 space-y-4">
-								<h3 className="text-sm lg:text-lg mb-1 font-bold text-gray-700">
+								<h3 className="text-xs sm:text-sm lg:text-lg mb-1 font-bold text-gray-700">
 									Parmi ces candidats, pour qui souhaiteriez
 									vous voter ?
 								</h3>
@@ -183,15 +185,13 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 						</div>
 						<div className="flex justify-around py-5 bg-gray-100 text-right sm:px-6 rounded-md">
 							{error && (
-								<div className="text-red-600 text-xs sm:text-sm  px-5 pt-2">
-									{`${
-										checkedCount < 3
-											? 'Vous ne pouvez pas choisir moins de 3 candidats'
-											: checkedCount > 3
-											? 'Vous ne pouvez pas choisir plus de 3 candidats'
-											: ''
-									} `}
-								</div>
+								<div className="text-red-600 text-xs sm:text-sm  px-5 pt-2">{`${
+									checkedCount < 3
+										? 'Vous ne pouvez pas choisir moins de 3 candidats'
+										: checkedCount > 3
+										? 'Vous ne pouvez pas choisir plus de 3 candidats'
+										: ''
+								} `}</div>
 							)}
 							<button
 								disabled={isSubmitting}
