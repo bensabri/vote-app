@@ -30,20 +30,24 @@ const ShowResultBureau = () => {
 	);
 	const totalValue = BureauA + BureauB + BureauC;
 
+	const valueA = (BureauA / totalValue).toFixed(4) * 100;
+	const valueB = (BureauB / totalValue).toFixed(4) * 100;
+	const valueC = (BureauC / totalValue).toFixed(4) * 100;
+
 	const dataBureau = [
 		{
 			name: 'a',
-			value: (BureauA / totalValue).toFixed(4) * 100,
+			value: valueA.toFixed(2),
 			score: BureauA,
 		},
 		{
 			name: 'b',
-			value: (BureauB / totalValue).toFixed(4) * 100,
+			value: valueB.toFixed(2),
 			score: BureauB,
 		},
 		{
 			name: 'c',
-			value: (BureauC / totalValue).toFixed(4) * 100,
+			value: valueC.toFixed(2),
 			score: BureauC,
 		},
 	];
@@ -60,7 +64,7 @@ const ShowResultBureau = () => {
 				</h2>
 				<div className="border-t-2 w-11/12 m-auto"></div>
 				<div className="mb-6 mt-6 flex justify-between text-gray-500 font-semibold">
-					<h3 className="ml-6 uppercase">Scores</h3>
+					<h3 className="ml-6 uppercase">Pourcent</h3>
 					<h3 className="mr-5 uppercase">
 						Nombre de vote {resultBureau.length}
 					</h3>

@@ -38,30 +38,36 @@ const ShowResultControle = () => {
 	const totalValue =
 		ControleA + ControleB + ControleC + ControleD + ControleE;
 
+	const valueA = (ControleA / totalValue).toFixed(4) * 100;
+	const valueB = (ControleB / totalValue).toFixed(4) * 100;
+	const valueC = (ControleC / totalValue).toFixed(4) * 100;
+	const valueD = (ControleD / totalValue).toFixed(4) * 100;
+	const valueE = (ControleE / totalValue).toFixed(4) * 100;
+
 	const dataControle = [
 		{
 			name: 'a',
-			value: (ControleA / totalValue).toFixed(4) * 100,
+			value: valueA.toFixed(2),
 			score: ControleA,
 		},
 		{
 			name: 'b',
-			value: (ControleB / totalValue).toFixed(4) * 100,
+			value: valueB.toFixed(2),
 			score: ControleB,
 		},
 		{
 			name: 'c',
-			value: (ControleC / totalValue).toFixed(4) * 100,
+			value: valueC.toFixed(2),
 			score: ControleC,
 		},
 		{
 			name: 'd',
-			value: (ControleD / totalValue).toFixed(4) * 100,
+			value: valueD.toFixed(2),
 			score: ControleD,
 		},
 		{
 			name: 'e',
-			value: (ControleE / totalValue).toFixed(4) * 100,
+			value: valueE.toFixed(2),
 			score: ControleE,
 		},
 	];
@@ -77,7 +83,7 @@ const ShowResultControle = () => {
 				</h2>
 				<div className="border-t-2 w-11/12 m-auto"></div>
 				<div className="mb-6 mt-6 flex justify-between text-gray-500 font-semibold">
-					<h3 className="ml-6 uppercase">Scores</h3>
+					<h3 className="ml-6 uppercase">pourcent</h3>
 					<h3 className="mr-5 uppercase">
 						Nombre de vote {resultControle.length}
 					</h3>

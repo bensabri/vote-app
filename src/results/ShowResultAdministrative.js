@@ -309,12 +309,12 @@ const ShowResultAdministrative = () => {
 				</h2>
 				<div className="border-t-2 w-11/12 m-auto"></div>
 				<div className="mb-6 mt-6 flex justify-between text-gray-500 font-semibold">
-					<h3 className="ml-6 uppercase">Scores</h3>
+					<h3 className="ml-6 uppercase">pourcent</h3>
 					<h3 className="mr-5 uppercase">
 						Nombre de vote {resultAdministrative.length}
 					</h3>
 				</div>
-				<div className="overflow-hidden overflow-x-scroll">
+				<div className="overflow-hidden overflow-x-scroll mr-5">
 					<ResponsiveContainer width={2000} height={300}>
 						<BarChart data={dataAdministrative}>
 							<CartesianGrid strokeDasharray="3 3" />
@@ -323,7 +323,7 @@ const ShowResultAdministrative = () => {
 							<Tooltip />
 							<Bar
 								layout="vertical"
-								barSize={80}
+								barSize={70}
 								dataKey="value"
 								fill="#ee17bf"
 								label={{
