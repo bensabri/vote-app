@@ -200,7 +200,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 								<p className="text-xs sm:text-sm lg:text-lg">{`Syndicat ${syndicat}`}</p>
 							</div>
 							<div className="border-t-2 w-11/12 m-auto"></div>
-							<h3 className="text-xs sm:text-sm lg:text-lg mb-1 mt-2 ml-7 font-bold text-gray-700">
+							<h3 className="text-sm lg:text-lg mb-1 mt-2 sm:ml-6 ml-2 font-bold text-gray-700">
 								Parmi ces candidats, pour qui souhaiteriez vous
 								voter ?
 							</h3>

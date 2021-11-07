@@ -1,5 +1,5 @@
-import React, { useState, useRef } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useGlobalContext } from '../contexts/context';
 
@@ -21,6 +21,7 @@ const LogOutBtn = () => {
 
 	return (
 		<>
+			{error && <div>{error}</div>}
 			<button
 				onClick={handleLogout}
 				type="submit"
@@ -33,11 +34,3 @@ const LogOutBtn = () => {
 };
 
 export default LogOutBtn;
-
-// Email link for test
-
-// https://voteapp-d3b5e.firebaseapp.com/__/auth/action?apiKey=AIzaSyBlKkfZaVJfFz3SfeTk13MXCibuD2SkPvs&mode=signIn&oobCode=EB-ztI0ZY0VrGo6DoOaV3rMYu0IfMxNUXcvZazlQjF0AAAF89DVM4w&continueUrl=https://unsa-fcs.fr/confirm&lang=fr
-// resajap636@epeva.com
-
-// https://voteapp-d3b5e.firebaseapp.com/__/auth/action?apiKey=AIzaSyBlKkfZaVJfFz3SfeTk13MXCibuD2SkPvs&mode=signIn&oobCode=AfF6T0DK1wZQLKJpR2NPK-W9jD5hVVvVOLJ4sgU0gp4AAAF89DcEdg&continueUrl=https://unsa-fcs.fr/confirm&lang=fr
-// gigov79152@ingfix.com

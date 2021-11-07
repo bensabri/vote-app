@@ -41,27 +41,27 @@ const ShowResultControle = () => {
 	const dataControle = [
 		{
 			name: 'a',
-			value: Math.round((ControleA / totalValue) * 100),
+			value: (ControleA / totalValue).toFixed(4) * 100,
 			score: ControleA,
 		},
 		{
 			name: 'b',
-			value: Math.round((ControleB / totalValue) * 100),
+			value: (ControleB / totalValue).toFixed(4) * 100,
 			score: ControleB,
 		},
 		{
 			name: 'c',
-			value: Math.round((ControleC / totalValue) * 100),
+			value: (ControleC / totalValue).toFixed(4) * 100,
 			score: ControleC,
 		},
 		{
 			name: 'd',
-			value: Math.round((ControleD / totalValue) * 100),
+			value: (ControleD / totalValue).toFixed(4) * 100,
 			score: ControleD,
 		},
 		{
 			name: 'e',
-			value: Math.round((ControleE / totalValue) * 100),
+			value: (ControleE / totalValue).toFixed(4) * 100,
 			score: ControleE,
 		},
 	];
@@ -87,8 +87,9 @@ const ShowResultControle = () => {
 					<ResponsiveContainer width="100%" height={300}>
 						<BarChart data={dataControle}>
 							<CartesianGrid strokeDasharray="3 3" />
+							{/* <Tooltip /> */}
 							<XAxis dataKey="name" />
-							<YAxis domain={[0, 'dataMax + 100']} />
+							<YAxis domain={[0, 100]} />
 							<Bar
 								dataKey="value"
 								fill="#ee17bf"

@@ -33,17 +33,17 @@ const ShowResultBureau = () => {
 	const dataBureau = [
 		{
 			name: 'a',
-			value: Math.round((BureauA / totalValue) * 100),
+			value: (BureauA / totalValue).toFixed(4) * 100,
 			score: BureauA,
 		},
 		{
 			name: 'b',
-			value: Math.round((BureauB / totalValue) * 100),
+			value: (BureauB / totalValue).toFixed(4) * 100,
 			score: BureauB,
 		},
 		{
 			name: 'c',
-			value: Math.round((BureauC / totalValue) * 100),
+			value: (BureauC / totalValue).toFixed(4) * 100,
 			score: BureauC,
 		},
 	];
@@ -69,7 +69,7 @@ const ShowResultBureau = () => {
 					<BarChart data={dataBureau}>
 						<CartesianGrid strokeDasharray="3 3" />
 						<XAxis dataKey="name" />
-						<YAxis domain={[0, 'dataMax + 100']} />
+						<YAxis domain={[0, 100]} />
 						<Bar
 							dataKey="value"
 							fill="#ee17bf"

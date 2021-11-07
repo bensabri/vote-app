@@ -100,7 +100,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 							</div>
 							<div className="border-t-2 w-11/12 m-auto"></div>
 							<div className="mt-5 ml-7 space-y-4">
-								<h3 className="text-xs sm:text-sm lg:text-lg mb-1 font-bold text-gray-700">
+								<h3 className="text-sm lg:text-lg mb-1 font-bold text-gray-700">
 									Parmi ces candidats, pour qui souhaiteriez
 									vous voter ?
 								</h3>

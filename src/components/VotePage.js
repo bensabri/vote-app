@@ -5,6 +5,7 @@ import CommissionControle from './CommissionContrôle';
 
 const VotePage = () => {
 	const [voting, setVoting] = useState(false);
+	const [adminResult, setAdminResult] = useState(false);
 	const { currentUser } = useAuth();
 	const {
 		users,
@@ -18,6 +19,7 @@ const VotePage = () => {
 
 	useEffect(() => {
 		if (currentUser?.email === 'benasabri@gmail.com') {
+			// utlilisateur avec une procuration
 			setSyndicatList([
 				// 'AD GRAND OUEST',
 				// 'AUCHAN NICE',
@@ -38,6 +40,12 @@ const VotePage = () => {
 			]);
 		}
 	}, [query]);
+
+	useEffect(() => {
+		if (currentUser.email === 'ssabril.ben@gmail.com') {
+			setAdminResult(true);
+		}
+	}, []);
 
 	return (
 		<div className="flex flex-col py-8 h-1/2">
@@ -85,7 +93,7 @@ const VotePage = () => {
 				))}
 			<div
 				className={`${
-					procurationUsers
+					adminResult
 						? 'hidden'
 						: 'w-11/12 m-auto shadow-lg bg-white rounded-md'
 				}`}

@@ -144,130 +144,156 @@ const ShowResultAdministrative = () => {
 		AdministrativeX +
 		AdministrativeY;
 
+	const valueA = (AdministrativeA / totalValue) * 100;
+	const valueB = (AdministrativeB / totalValue) * 100;
+	const valueC = (AdministrativeC / totalValue) * 100;
+	const valueD = (AdministrativeD / totalValue) * 100;
+	const valueE = (AdministrativeE / totalValue) * 100;
+	const valueF = (AdministrativeF / totalValue) * 100;
+	const valueG = (AdministrativeG / totalValue) * 100;
+	const valueH = (AdministrativeH / totalValue) * 100;
+	const valueI = (AdministrativeI / totalValue) * 100;
+	const valueJ = (AdministrativeJ / totalValue) * 100;
+	const valueK = (AdministrativeK / totalValue) * 100;
+	const valueL = (AdministrativeL / totalValue) * 100;
+	const valueM = (AdministrativeM / totalValue) * 100;
+	const valueN = (AdministrativeN / totalValue) * 100;
+	const valueO = (AdministrativeO / totalValue) * 100;
+	const valueP = (AdministrativeP / totalValue) * 100;
+	const valueQ = (AdministrativeQ / totalValue) * 100;
+	const valueR = (AdministrativeR / totalValue) * 100;
+	const valueS = (AdministrativeS / totalValue) * 100;
+	const valueT = (AdministrativeT / totalValue) * 100;
+	const valueU = (AdministrativeU / totalValue) * 100;
+	const valueV = (AdministrativeV / totalValue) * 100;
+	const valueW = (AdministrativeW / totalValue) * 100;
+	const valueX = (AdministrativeX / totalValue) * 100;
+	const valueY = (AdministrativeY / totalValue) * 100;
+
 	const dataAdministrative = [
 		{
 			name: 'a',
-			value: Math.round((AdministrativeA / totalValue) * 100),
+			value: valueA.toFixed(2),
 			score: AdministrativeA,
 		},
 		{
 			name: 'b',
-			value: Math.round((AdministrativeB / totalValue) * 100),
+			value: valueB.toFixed(2),
 			score: AdministrativeB,
 		},
 		{
 			name: 'c',
-			value: Math.round((AdministrativeC / totalValue) * 100),
+			value: valueC.toFixed(2),
 			score: AdministrativeC,
 		},
 		{
 			name: 'd',
-			value: Math.round((AdministrativeD / totalValue) * 100),
+			value: valueD.toFixed(2),
 			score: AdministrativeD,
 		},
 		{
 			name: 'e',
-			value: Math.round((AdministrativeE / totalValue) * 100),
+			value: valueE.toFixed(2),
 			score: AdministrativeE,
 		},
 		{
 			name: 'f',
-			value: Math.round((AdministrativeF / totalValue) * 100),
+			value: valueF.toFixed(2),
 			score: AdministrativeF,
 		},
 		{
 			name: 'g',
-			value: Math.round((AdministrativeG / totalValue) * 100),
+			value: valueG.toFixed(2),
 			score: AdministrativeG,
 		},
 		{
 			name: 'h',
-			value: Math.round((AdministrativeH / totalValue) * 100),
+			value: valueH.toFixed(2),
 			score: AdministrativeH,
 		},
 		{
 			name: 'i',
-			value: Math.round((AdministrativeI / totalValue) * 100),
+			value: valueI.toFixed(2),
 			score: AdministrativeI,
 		},
 		{
 			name: 'j',
-			value: Math.round((AdministrativeJ / totalValue) * 100),
+			value: valueJ.toFixed(2),
 			score: AdministrativeJ,
 		},
 		{
 			name: 'k',
-			value: Math.round((AdministrativeK / totalValue) * 100),
+			value: valueK.toFixed(2),
 			score: AdministrativeK,
 		},
 		{
 			name: 'l',
-			value: Math.round((AdministrativeL / totalValue) * 100),
+			value: valueL.toFixed(2),
 			score: AdministrativeL,
 		},
 		{
 			name: 'm',
-			value: Math.round((AdministrativeM / totalValue) * 100),
+			value: valueM.toFixed(2),
 			score: AdministrativeM,
 		},
 		{
 			name: 'n',
-			value: Math.round((AdministrativeN / totalValue) * 100),
+			value: valueN.toFixed(2),
 			score: AdministrativeN,
 		},
 		{
 			name: 'o',
-			value: Math.round((AdministrativeO / totalValue) * 100),
+			value: valueO.toFixed(2),
 			score: AdministrativeO,
 		},
 		{
 			name: 'p',
-			value: Math.round((AdministrativeP / totalValue) * 100),
+			value: valueP.toFixed(2),
 			score: AdministrativeP,
 		},
 		{
 			name: 'q',
-			value: Math.round((AdministrativeQ / totalValue) * 100),
+			value: valueQ.toFixed(2),
 			score: AdministrativeQ,
 		},
 		{
 			name: 'r',
-			value: Math.round((AdministrativeR / totalValue) * 100),
+			value: valueR.toFixed(2),
 			score: AdministrativeR,
 		},
 		{
 			name: 's',
-			value: Math.round((AdministrativeS / totalValue) * 100),
+			value: valueS.toFixed(2),
 			score: AdministrativeS,
 		},
 		{
 			name: 't',
-			value: Math.round((AdministrativeT / totalValue) * 100),
+			value: valueT.toFixed(2),
 			score: AdministrativeT,
 		},
 		{
 			name: 'u',
-			value: Math.round((AdministrativeU / totalValue) * 100),
+			value: valueU.toFixed(2),
 			score: AdministrativeU,
 		},
 		{
 			name: 'v',
-			value: Math.round((AdministrativeV / totalValue) * 100),
+			value: valueV.toFixed(2),
 			score: AdministrativeV,
 		},
 		{
 			name: 'w',
-			value: Math.round((AdministrativeW / totalValue) * 100),
+			value: valueW.toFixed(2),
 			score: AdministrativeW,
 		},
 		{
 			name: 'x',
-			value: Math.round((AdministrativeX / totalValue) * 100),
+			value: valueX.toFixed(2),
 			score: AdministrativeX,
 		},
 		{
 			name: 'y',
-			value: Math.round((AdministrativeY / totalValue) * 100),
+			value: valueY.toFixed(2),
 			score: AdministrativeY,
 		},
 	];
@@ -288,33 +314,37 @@ const ShowResultAdministrative = () => {
 						Nombre de vote {resultAdministrative.length}
 					</h3>
 				</div>
-				<ResponsiveContainer width="100%" height={300}>
-					<BarChart data={dataAdministrative}>
-						<CartesianGrid strokeDasharray="3 3" />
-						<XAxis dataKey="name" />
-						<YAxis domain={[0, 'dataMax + 30']} />
-						<Tooltip />
-						<Bar
-							dataKey="value"
-							fill="#ee17bf"
-							label={{
-								position: 'top',
-								formatter: labelFormatter,
-								fill: '#ee17bf',
-							}}
-						>
-							<LabelList
+				<div className="overflow-hidden overflow-x-scroll">
+					<ResponsiveContainer width={2000} height={300}>
+						<BarChart data={dataAdministrative}>
+							<CartesianGrid strokeDasharray="3 3" />
+							<XAxis dataKey="name" />
+							<YAxis domain={[0, 25]} />
+							<Tooltip />
+							<Bar
+								layout="vertical"
+								barSize={80}
+								dataKey="value"
+								fill="#ee17bf"
 								label={{
 									position: 'top',
 									formatter: labelFormatter,
 									fill: '#ee17bf',
 								}}
-								dataKey="score"
-								style={{ position: 'top', fill: '#ffffff' }}
-							/>
-						</Bar>
-					</BarChart>
-				</ResponsiveContainer>
+							>
+								<LabelList
+									label={{
+										position: 'top',
+										formatter: labelFormatter,
+										fill: '#ee17bf',
+									}}
+									dataKey="score"
+									style={{ position: 'top', fill: '#ffffff' }}
+								/>
+							</Bar>
+						</BarChart>
+					</ResponsiveContainer>
+				</div>
 			</div>
 		</div>
 	);

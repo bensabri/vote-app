@@ -20,7 +20,7 @@ const ConfirmForm = () => {
 			);
 			history.push('/home');
 		} catch (error) {
-			setError(`Cette adresse email a déja étais utilisé`);
+			setError(`Adresse email incorrect ou déja utilisé`);
 		}
 		emailRef.current.value = '';
 	};

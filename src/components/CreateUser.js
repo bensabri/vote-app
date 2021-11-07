@@ -38,8 +38,8 @@ const CreateUser = () => {
 				setResponsable('');
 				setEmail('');
 			})
-			.catch((error) => {
-				alert(`impossible de créé un utilisateur${error}`);
+			.catch(() => {
+				setError(`Impossible de créé un utilisateur`);
 			});
 	};
 	const selectedUsers = users.map((data) => data.data);
