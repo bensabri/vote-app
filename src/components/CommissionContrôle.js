@@ -4,13 +4,23 @@ import { useAuth } from '../contexts/AuthContext';
 import { collection, addDoc } from 'firebase/firestore';
 import { useForm } from 'react-hook-form';
 import { db } from '../firebase';
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
 import CommissionAdministrative2 from './CommissionAdministrative2';
 
 const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	const [hasVoted, setHasVoted] = useState(false);
 	const { register, watch, handleSubmit, formState } = useForm();
 	const { isSubmitting } = formState;
-	const { resultControle, query, procurationUsers } = useGlobalContext();
+	const {
+		resultControle,
+		resultBureau,
+		query,
+		procurationUsers,
+		step,
+		setStep,
+	} = useGlobalContext();
 	const { currentUser } = useAuth();
 
 	const [a, setA] = useState(0);
@@ -19,6 +29,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	const [d, setD] = useState(0);
 	const [e, setE] = useState(0);
 	const [error, setError] = useState('');
+
 	const date = new Date().toLocaleDateString();
 
 	const watchCheckBox = watch(['a', 'b', 'c', 'd', 'e']);
@@ -41,9 +52,10 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 				created_date: date,
 			})
 				.then(() => {
-					alert(
-						'Votre vote pour la commission de contrôle a été prise en compte'
-					);
+					// alert(
+					// 	'Votre vote pour la commission de contrôle a été prise en compte'
+					// );
+					setStep(step + 1);
 				})
 				.catch((error) => {
 					alert(`Votre vote n'a pas pu être pris en compte ${error}`);
@@ -75,8 +87,32 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 			syndicat === `${procurationUsers && query}`
 	);
 
+	const voted3 = resultBureau.find(
+		({ data: { email, syndicat } }) =>
+			email === `${!procurationUsers && currentUser.email}` ||
+			syndicat === `${procurationUsers && query}`
+	);
+
 	return (
 		<div className="mt-3 sm:mt-0">
+			{!voted3?.data.thirdVote && (
+				<div className="w-11/12 m-auto shadow-lg bg-white rounded-md mb-3 p-5">
+					<Stepper activeStep={step}>
+						<Step>
+							<StepLabel>Vote commission de contrôle</StepLabel>
+						</Step>
+						<Step>
+							<StepLabel>
+								Vote Commission Administrative
+							</StepLabel>
+						</Step>
+						<Step>
+							<StepLabel>Vote Candidature au Bureau</StepLabel>
+						</Step>
+					</Stepper>
+				</div>
+			)}
+
 			{voted?.data.firstVote ? (
 				<div>
 					<CommissionAdministrative2
@@ -107,13 +143,13 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 									vous voter ?
 								</h3>
 								<div className="flex items-start">
-									<div className="flex items-center h-5">
+									<div className="flex items-center h-5 cursor-pointer">
 										<input
 											name="a"
 											{...register('a')}
 											type="checkbox"
-											onClick={HandleA}
 											value={a}
+											onClick={HandleA}
 											className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
 										/>{' '}
 										<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
@@ -122,7 +158,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 									</div>
 								</div>
 								<div className="flex items-start">
-									<div className="flex items-center h-5">
+									<div className="flex items-center h-5 cursor-pointer">
 										<input
 											name="b"
 											{...register('b')}
@@ -137,7 +173,10 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 									</div>
 								</div>
 								<div className="flex items-start">
-									<div className="flex items-center h-5">
+									<div
+										onClick={HandleC}
+										className="flex items-center h-5 cursor-pointer"
+									>
 										<input
 											name="c"
 											{...register('c')}
@@ -152,12 +191,13 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 									</div>
 								</div>
 								<div className="flex items-start">
-									<div className="flex items-center h-5">
+									<div className="flex items-center h-5 cursor-pointer">
 										<input
 											name="d"
 											{...register('d')}
 											type="checkbox"
 											onClick={HandleD}
+											// checked={checkedD}
 											value={d}
 											className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
 										/>{' '}
@@ -167,12 +207,13 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 									</div>
 								</div>
 								<div className="flex items-start">
-									<div className="flex items-center h-5">
+									<div className="flex items-center h-5 cursor-pointer">
 										<input
 											name="e"
 											{...register('e')}
 											type="checkbox"
 											onClick={HandleE}
+											// checked={checkedE}
 											value={e}
 											className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
 										/>{' '}

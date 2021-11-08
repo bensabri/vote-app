@@ -10,7 +10,7 @@ import CandidatureBureau from './CandidatureBureau';
 const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 	const { register, watch, handleSubmit, formState } = useForm();
 	const { isSubmitting } = formState;
-	const { resultAdministrative, query, procurationUsers } =
+	const { resultAdministrative, query, procurationUsers, step, setStep } =
 		useGlobalContext();
 
 	const { currentUser } = useAuth();
@@ -82,7 +82,8 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 				created_date: date,
 			})
 				.then(() => {
-					alert('Votre vote a ete prise en compte');
+					setStep(step + 1);
+					// alert('Votre vote a ete prise en compte');
 				})
 				.catch((error) => {
 					alert(`Votre vote n'a pas pu être prit en compte ${error}`);

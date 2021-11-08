@@ -13,6 +13,8 @@ const AppProvider = ({ children }) => {
 	const [syndicatList, setSyndicatList] = useState([]); // Liste d'email mandaté pour la procuration
 	const [query, setQuery] = useState('');
 	const [resultsAccess, setResultsAccess] = useState(false); // autoriser l'accès au résultat pour un email pret definit
+	const [step, setStep] = useState(0);
+	const [voting, setVoting] = useState(false);
 
 	return (
 		<AppContext.Provider
@@ -37,6 +39,10 @@ const AppProvider = ({ children }) => {
 				setResultBureau,
 				resultsAccess,
 				setResultsAccess,
+				step,
+				setStep,
+				voting,
+				setVoting,
 			}}
 		>
 			{children}

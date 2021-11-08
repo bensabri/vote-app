@@ -15,6 +15,8 @@ const VotePage = () => {
 		query,
 		setQuery,
 		resultBureau,
+		step,
+		setStep,
 	} = useGlobalContext();
 
 	useEffect(() => {
@@ -64,6 +66,7 @@ const VotePage = () => {
 						onChange={(e) => {
 							setQuery(e.target.value);
 							setVoting(true);
+							setStep(0);
 						}}
 					>
 						<option></option>
@@ -98,20 +101,22 @@ const VotePage = () => {
 						: 'w-11/12 m-auto shadow-lg bg-white rounded-md'
 				}`}
 			>
-				<div
-					className={`${
-						voting ? 'hidden' : 'flex flex-col py-8 px-5'
-					}`}
-				>
-					<h2 className="pb-10 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
-						Bienvenue sur la page de vote de L'unsa
-					</h2>
-					<button
-						onClick={() => setVoting(!voting)}
-						className="w-1/5 m-auto  py-2 px-4 border border-transparent shadow-sm text-xs sm:text-sm  uppercase rounded-md text-white transition duration-150 ease-in bg-blue-600 hover:bg-blue-700 focus:outline-none"
+				<div className={`${procurationUsers && 'hidden'}`}>
+					<div
+						className={`${
+							voting ? 'hidden' : 'flex flex-col py-8 px-5'
+						}`}
 					>
-						Commencé
-					</button>
+						<h2 className="pb-10 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
+							Bienvenue sur la page de vote de L'unsa
+						</h2>
+						<button
+							onClick={() => setVoting(!voting)}
+							className="w-1/5 m-auto  py-2 px-4 border border-transparent shadow-sm text-xs sm:text-sm  uppercase rounded-md text-white transition duration-150 ease-in bg-blue-600 hover:bg-blue-700 focus:outline-none"
+						>
+							Commencé
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
