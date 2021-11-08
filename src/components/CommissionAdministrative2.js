@@ -203,7 +203,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 							<div className="border-t-2 w-11/12 m-auto"></div>
 							<h3 className="text-sm lg:text-lg mb-1 mt-2 sm:ml-6 ml-2 font-bold text-gray-700">
 								Parmi ces candidats, pour qui souhaiteriez vous
-								voter ?
+								voter ? {`${checkedCount}/15`}
 							</h3>
 							<div className="mt-4 sm:ml-7 grid gap-4 sm:gap-x-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
 								<div className="flex items-start m-auto sm:m-0">
