@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Unsa Vote",
+  "name": "Unsa FCS Vote App",
   "icons": [
     {
       "src": "favicon.ico",
