@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useGlobalContext } from '../contexts/context';
 import { useAuth } from '../contexts/AuthContext';
 import { collection, addDoc } from 'firebase/firestore';
@@ -20,6 +20,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 		procurationUsers,
 		step,
 		setStep,
+		resultAdministrative,
 	} = useGlobalContext();
 	const { currentUser } = useAuth();
 
@@ -55,7 +56,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 					// alert(
 					// 	'Votre vote pour la commission de contrôle a été prise en compte'
 					// );
-					setStep(step + 1);
+					// setStep(step + 1);
 				})
 				.catch((error) => {
 					alert(`Votre vote n'a pas pu être pris en compte ${error}`);
@@ -86,32 +87,52 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 			email === `${!procurationUsers && currentUser.email}` ||
 			syndicat === `${procurationUsers && query}`
 	);
+	const voted2 = resultAdministrative.find(
+		({ data: { email, syndicat } }) =>
+			email === `${!procurationUsers && currentUser.email}` ||
+			syndicat === `${procurationUsers && query}`
+	);
 
 	const voted3 = resultBureau.find(
 		({ data: { email, syndicat } }) =>
 			email === `${!procurationUsers && currentUser.email}` ||
 			syndicat === `${procurationUsers && query}`
 	);
+	useEffect(() => {
+		if (
+			voted?.data.firstVote === true &&
+			voted2?.data.secondVote === false
+		) {
+			setStep(1);
+		} else if (
+			voted2?.data.secondVote === true &&
+			voted3?.data.thirdVote === false
+		) {
+			setStep(2);
+		} else if (voted3?.data.thirdVote === true) {
+			setStep(3);
+		} else {
+			setStep(0);
+		}
+	}, [voted, voted2, voted3]);
 
 	return (
 		<div className="mt-3 sm:mt-0">
-			{!voted3?.data.thirdVote && (
-				<div className="w-11/12 m-auto shadow-lg bg-white rounded-md mb-3 p-5">
-					<Stepper activeStep={step}>
-						<Step>
-							<StepLabel>Vote commission de contrôle</StepLabel>
-						</Step>
-						<Step>
-							<StepLabel>
-								Vote Commission Administrative
-							</StepLabel>
-						</Step>
-						<Step>
-							<StepLabel>Vote Candidature au Bureau</StepLabel>
-						</Step>
-					</Stepper>
-				</div>
-			)}
+			{/* {!voted3?.data.thirdVote && ( */}
+			<div className="w-11/12 m-auto bg-white rounded-md mb-3 p-5">
+				<Stepper activeStep={step}>
+					<Step>
+						<StepLabel>Vote commission de contrôle</StepLabel>
+					</Step>
+					<Step>
+						<StepLabel>Vote Commission Administrative</StepLabel>
+					</Step>
+					<Step>
+						<StepLabel>Vote Candidature au Bureau</StepLabel>
+					</Step>
+				</Stepper>
+			</div>
+			{/* )} */}
 
 			{voted?.data.firstVote ? (
 				<div>
@@ -145,6 +166,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 								<div className="flex items-start">
 									<div className="flex items-center h-5 cursor-pointer">
 										<input
+											id="a"
 											name="a"
 											{...register('a')}
 											type="checkbox"
@@ -152,14 +174,20 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 											onClick={HandleA}
 											className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
 										/>{' '}
-										<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
-											OPTION 1
-										</span>
+										<label
+											className="cursor-pointer"
+											htmlFor="a"
+										>
+											<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
+												OPTION 1
+											</span>
+										</label>
 									</div>
 								</div>
 								<div className="flex items-start">
-									<div className="flex items-center h-5 cursor-pointer">
+									<div className="flex items-center h-5 ">
 										<input
+											id="b"
 											name="b"
 											{...register('b')}
 											type="checkbox"
@@ -167,9 +195,14 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 											value={b}
 											className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
 										/>{' '}
-										<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
-											OPTION 2
-										</span>
+										<label
+											className="cursor-pointer"
+											htmlFor="b"
+										>
+											<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
+												OPTION 2
+											</span>
+										</label>
 									</div>
 								</div>
 								<div className="flex items-start">
@@ -178,6 +211,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 										className="flex items-center h-5 cursor-pointer"
 									>
 										<input
+											id="c"
 											name="c"
 											{...register('c')}
 											type="checkbox"
@@ -185,41 +219,56 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 											value={c}
 											className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
 										/>{' '}
-										<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
-											OPTION 3
-										</span>
+										<label
+											className="cursor-pointer"
+											htmlFor="c"
+										>
+											<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
+												OPTION 3
+											</span>
+										</label>
 									</div>
 								</div>
 								<div className="flex items-start">
 									<div className="flex items-center h-5 cursor-pointer">
 										<input
+											id="d"
 											name="d"
 											{...register('d')}
 											type="checkbox"
 											onClick={HandleD}
-											// checked={checkedD}
 											value={d}
 											className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
 										/>{' '}
-										<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
-											OPTION 4
-										</span>
+										<label
+											className="cursor-pointer"
+											htmlFor="d"
+										>
+											<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
+												OPTION 4
+											</span>
+										</label>
 									</div>
 								</div>
 								<div className="flex items-start">
 									<div className="flex items-center h-5 cursor-pointer">
 										<input
+											id="e"
 											name="e"
 											{...register('e')}
 											type="checkbox"
 											onClick={HandleE}
-											// checked={checkedE}
 											value={e}
 											className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
 										/>{' '}
-										<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
-											OPTION 5
-										</span>
+										<label
+											className="cursor-pointer"
+											htmlFor="e"
+										>
+											<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
+												OPTION 5
+											</span>
+										</label>
 									</div>
 								</div>
 							</div>
