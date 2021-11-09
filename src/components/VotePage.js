@@ -59,32 +59,21 @@ const VotePage = () => {
 	}, []);
 
 	return (
-		<div className="flex flex-col py-8 h-1/2">
-			{procurationUsers && (
-				<div className="bg-white flex flex-col justify-between pl-3 pr-3 w-11/12 m-auto shadow-lg rounded uppercase py-8 mb-8">
-					<h2 className="pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
-						Page de Vote
-					</h2>
-					<div className="border-t-2 w-11/12 m-auto"></div>
-					<span className="text-sm font-medium self-center mb-3 mt-5">
-						Vous avez une procuration pour
-					</span>
-					{syndicatList.map((syndicat, index) => (
-						<h2 key={index}>{syndicat}</h2>
-					))}
-				</div>
-			)}
-			{users
-				.filter(
-					({ data: { email } }) => email === currentUser?.email // filtrer les personnes par email pour les personnes qui n'ont pas de procuration
-				)
-				.map(({ id, data: { syndicat, mandat, email } }) => (
-					<div className={`${!voting && 'hidden'}`} key={id}>
-						<CommissionControle
-							mandat={mandat}
-							syndicat={syndicat}
-							email={email}
-						/>
+		<>
+			<Header />
+			<video className='absolute w-screen h-screen object-cover z-0' autoPlay loop muted>
+				<source src='https://firebasestorage.googleapis.com/v0/b/voteapp-d3b5e.appspot.com/o/background_1.mp4?alt=media&token=18027da3-7a79-4a58-ae9f-703635c7b0c7' type='video/mp4' />
+				Your browser does not support the video tag.
+			</video>
+			<div className='flex flex-col py-8 h-1/2'>
+				{procurationUsers && (
+					<div className='bg-white flex flex-col justify-between pl-3 pr-3 w-11/12 m-auto shadow-lg rounded uppercase py-8 mb-8'>
+						<h2 className='pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500'>UNSA FCS 6ÈME CONGRÈS 2021</h2>
+						<div className='border-t-2 w-11/12 m-auto'></div>
+						<span className='text-sm font-medium self-center mb-3 mt-5'>Vous avez une procuration pour</span>
+						{syndicatList.map((syndicat, index) => (
+							<h2 key={index}>{syndicat}</h2>
+						))}
 					</div>
 				)}
 				{users
@@ -96,6 +85,7 @@ const VotePage = () => {
 							<CommissionControle mandat={mandat} syndicat={syndicat} email={email} />
 						</div>
 					))}
+
 				<div className={`${adminResult ? 'hidden' : 'w-11/12 m-auto shadow-lg bg-white rounded-md'}`}>
 					<div>
 						<div className={`${voting ? 'hidden' : 'flex flex-col py-8 px-5'}`}>
