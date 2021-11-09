@@ -124,16 +124,32 @@ const VotePage = () => {
 						</div>
 					))}
 
-				{/* 				<div className={`${adminResult ? 'hidden' : 'w-11/12 m-auto shadow-lg bg-white rounded-md'}`}>
+				<div
+					className={`${
+						adminResult
+							? 'hidden'
+							: 'w-11/12 m-auto shadow-lg bg-white rounded-md'
+					}`}
+				>
 					<div>
-						<div className={`${voting ? 'hidden' : 'flex flex-col py-8 px-5'}`}>
-							<h2 className='pb-10 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500'>Bienvenue sur la plateforme de vote de L'UNSA FCS</h2>
-							<button onClick={() => setVoting(!voting)} className='w-1/5 m-auto  py-2 px-4 border border-transparent shadow-sm text-xs sm:text-sm  uppercase rounded-md text-white transition duration-150 ease-in bg-blue-600 hover:bg-blue-700 focus:outline-none'>
+						<div
+							className={`${
+								voting ? 'hidden' : 'flex flex-col py-8 px-5'
+							}`}
+						>
+							<h2 className="pb-10 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
+								Bienvenue sur la plateforme de vote de L'UNSA
+								FCS
+							</h2>
+							<button
+								onClick={() => setVoting(!voting)}
+								className="w-1/5 m-auto  py-2 px-4 border border-transparent shadow-sm text-xs sm:text-sm  uppercase rounded-md text-white transition duration-150 ease-in bg-blue-600 hover:bg-blue-700 focus:outline-none"
+							>
 								Commencer
 							</button>
 						</div>
 					</div>
-				</div> */}
+				</div>
 			</div>
 		</>
 	);
