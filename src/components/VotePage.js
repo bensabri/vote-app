@@ -80,7 +80,7 @@ const VotePage = () => {
 			setAdminResult(true);
 		}
 	}, []);
-	console.log(procurationUsers);
+
 	return (
 		<div className="flex flex-col py-8 h-1/2">
 			{procurationUsers && (
@@ -95,22 +95,6 @@ const VotePage = () => {
 					{syndicatList.map((syndicat, index) => (
 						<h2 key={index}>{syndicat}</h2>
 					))}
-					{/* <select
-						className="text-sm placeholder-gray-500 py-2 px-1 rounded-lg focus:outline-none border-2 w-10/12 md:w-1/3 m-auto"
-						name="emaillist"
-						onChange={(e) => {
-							setQuery(e.target.value);
-							setVoting(true);
-							setStep(0);
-						}}
-					>
-						<option></option>
-						{syndicatList.map((syndicat, index) => (
-							<option key={index} value={syndicat}>
-								{syndicat}
-							</option>
-						))}
-					</select> */}
 				</div>
 			)}
 			{users

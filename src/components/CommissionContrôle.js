@@ -69,7 +69,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	const HandleA = () => {
 		setA(watchCheckBox[0] ? 0 : Number(mandat));
 	};
-	console.log(a, b, c, d, e);
+
 	const HandleB = () => {
 		setB(watchCheckBox[1] ? 0 : Number(mandat));
 	};
@@ -157,7 +157,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 							<div className="mt-5 ml-7 space-y-4">
 								<h3 className="text-xs sm:text-sm lg:text-lg mb-1 font-bold text-gray-700">
 									Parmi ces candidats, pour qui souhaiteriez
-									vous voter ?
+									vous voter ? {`${checkedCount}/3`}
 								</h3>
 								<div className="flex items-start">
 									<div className="flex items-center h-5 cursor-pointer">
