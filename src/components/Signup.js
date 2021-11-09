@@ -30,7 +30,7 @@ const Signup = () => {
 
 	return (
 		<div className='flex flex-col items-center bg-gray-300'>
-			<div className='flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md mt-vh'>
+			<div className='flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md mt-vh z-10'>
 				<div className='font-medium self-center text-xl sm:text-2xl uppercase text-gray-800'>Connectez-vous</div>
 
 				<div className='mt-10'>
