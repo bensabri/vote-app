@@ -44,6 +44,21 @@ const VotePage = () => {
 					'CARREFOUR VAUX EN VELIN',
 				]);
 				break;
+			case 'assalbrigitte92@gmail.com':
+				setSyndicatList([
+					'CLUB MED',
+					'DESMAZIERES-CHAUSSEXPO',
+					'CYRILLUS',
+					'AVIGNON TOURISME',
+					'MOVITEX',
+				]);
+				break;
+			case 'migan.unsa@yahoo.fr':
+				setSyndicatList(['SECURITE 3', 'SMCP', 'BON MARCHE', 'AKTO']);
+				break;
+			case 'unsa.proprete.nettoyage@gmail.com':
+				setSyndicatList(['NETTOYAGE 2', 'GALERIES LAFAYETTES']);
+				break;
 			case 'unsa.nettoyage@unsa.org':
 				setSyndicatList([
 					'NETTOYAGE 3',
