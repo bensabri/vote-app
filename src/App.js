@@ -6,6 +6,7 @@ import { AuthProvider } from './contexts/AuthContext';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PrivateRoute from './PrivateRoute';
 import ConfirmForm from './components/ConfirmForm';
+import AllResults from './results/AllResults';
 
 const App = () => {
 	return (
@@ -13,17 +14,20 @@ const App = () => {
 			<Router>
 				<AuthProvider>
 					<Switch>
-						<Route exact path="/">
+						<Route exact path='/'>
 							<Login />
 						</Route>
-						<PrivateRoute path="/home">
+						<PrivateRoute path='/home'>
 							<Dashboard />
 						</PrivateRoute>
 						{/* <Route path="/signup">
 							<Signup />
 						</Route> */}
-						<Route path="/confirm">
+						<Route path='/confirm'>
 							<ConfirmForm />
+						</Route>
+						<Route path='/resultats'>
+							<AllResults />
 						</Route>
 					</Switch>
 				</AuthProvider>
