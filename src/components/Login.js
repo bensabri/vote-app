@@ -26,10 +26,7 @@ const Login = () => {
 	return (
 		<>
 			<Header />
-			<video className='absolute w-screen h-screen object-cover z-0' autoPlay loop muted>
-				<source src='https://firebasestorage.googleapis.com/v0/b/voteapp-d3b5e.appspot.com/o/background_1.mp4?alt=media&token=18027da3-7a79-4a58-ae9f-703635c7b0c7' type='video/mp4' />
-				Your browser does not support the video tag.
-			</video>
+			<img className='absolute w-screen h-screen object-cover filter blur-md brightness-50' src='https://res.cloudinary.com/amircloud/image/upload/v1636490192/Service/background_rerc6d.jpg' alt='' />
 			<div className='flex flex-col items-center bg-white z-10 p-6'>
 				<div className='flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md z-10 mt-vh'>
 					<div className='font-medium self-center text-xl sm:text-2xl uppercase text-gray-800'>UNSA FCS 6ÈME CONGRÈS 2021</div>
