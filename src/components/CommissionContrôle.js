@@ -38,7 +38,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 
 				email: email,
 				firstVote: hasVoted,
-				created_date: date,
+				created: date,
 			})
 				.then(() => {
 					// alert(

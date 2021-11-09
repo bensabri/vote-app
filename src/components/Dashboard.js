@@ -60,6 +60,10 @@ const Dashboard = () => {
 			<div className='flex flex-col items-center bg-gray-300 z-10'>
 				<div className='mb-10 flex flex-col sm:px-6 md:px-8 lg:px-10 py-8 rounded-md h-4/5 w-full lg:max-w-6xl md:max-w-full z-10'>
 					<GetUsers />
+					<ResultControle />
+					<ResultAdministrative />
+					<ResultBureau />
+					<AllResults />
 					{admin ? (
 						<div>
 							<SendEmail />
