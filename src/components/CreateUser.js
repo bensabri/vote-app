@@ -31,7 +31,7 @@ const CreateUser = () => {
 			created_date: date,
 		})
 			.then(() => {
-				alert('Crée avec succès');
+				alert('Créé avec succès');
 				setNumber('');
 				setSyndicat('');
 				setMandat('');
@@ -39,7 +39,7 @@ const CreateUser = () => {
 				setEmail('');
 			})
 			.catch(() => {
-				setError(`Impossible de créé un utilisateur`);
+				setError(`Impossible de créer un utilisateur`);
 			});
 	};
 	const selectedUsers = users.map((data) => data.data);
@@ -91,7 +91,7 @@ const CreateUser = () => {
 						</div>
 					</div>
 					<button type='submit' disabled={isSubmitting} className='flex items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-600 hover:bg-blue-700 rounded py-2 w-full transition duration-150 ease-in'>
-						<span className='mr-2 uppercase'>Créé utilisateur</span>
+						<span className='mr-2 uppercase'>Créer utilisateur</span>
 					</button>
 				</form>
 			</div>
