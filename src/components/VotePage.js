@@ -2,24 +2,59 @@ import React, { useEffect, useState } from 'react';
 import { useGlobalContext } from '../contexts/context';
 import { useAuth } from '../contexts/AuthContext';
 import CommissionControle from './CommissionContrôle';
-import Header from './Header';
 
 const VotePage = () => {
-	const [voting, setVoting] = useState(true);
+	const [voting, setVoting] = useState(false);
 	const [adminResult, setAdminResult] = useState(false);
 	const { currentUser } = useAuth();
-	const { users, procurationUsers, syndicatList, setSyndicatList, query, setQuery, resultBureau, step, setStep } = useGlobalContext();
+	const {
+		users,
+		procurationUsers,
+		syndicatList,
+		setSyndicatList,
+		query,
+		setQuery,
+		resultBureau,
+		step,
+		setStep,
+	} = useGlobalContext();
 
 	useEffect(() => {
 		switch (currentUser?.email) {
 			case 'benasabri@gmail.com':
-				setSyndicatList(['AD GRAND OUEST', 'AUCHAN NICE', 'CARREFOUR LIVRE CHEZ VOUS', 'ADECCO', 'AQUABOULEVARD', 'GROUPE AUTODISTRIBUTION', 'AUCHAN LA DEFENSE']);
+				setSyndicatList([
+					'AD GRAND OUEST',
+					'AUCHAN NICE',
+					'CARREFOUR LIVRE CHEZ VOUS',
+					'ADECCO',
+					'AQUABOULEVARD',
+					'GROUPE AUTODISTRIBUTION',
+					'AUCHAN LA DEFENSE',
+				]);
 				break;
 			case 'lakram@hotmail.fr':
 				setSyndicatList(['JEANJEAN/JD SPORTS']);
 				break;
 			case 'alexandre.bonilla@yahoo.fr':
-				setSyndicatList(['CARREFOUR RAMBOUILLET', 'CARREFOUR MERIGNAC', 'CARREFOUR SUPPLY ERTECO', 'CARREFOUR DUPARC', 'CARREFOUR VAUX EN VELIN']);
+				setSyndicatList([
+					'CARREFOUR RAMBOUILLET',
+					'CARREFOUR MERIGNAC',
+					'CARREFOUR SUPPLY ERTECO',
+					'CARREFOUR DUPARC',
+					'CARREFOUR VAUX EN VELIN',
+				]);
+				break;
+			case 'unsa.nettoyage@unsa.org':
+				setSyndicatList([
+					'NETTOYAGE 3',
+					'KUONI-TRAVEL LAB',
+					'AMPLITEL',
+					'JEAN MOULIN/JETLY',
+					'HAPPY CHIC',
+				]);
+				break;
+			case 'hfati@hotmail.fr':
+				setSyndicatList(['SNSCS', 'CARREFOUR MARKET']);
 				break;
 		}
 		// switch(currentUser?.email) {
@@ -60,12 +95,16 @@ const VotePage = () => {
 
 	return (
 		<>
-			<div className='flex flex-col py-8 h-1/2'>
+			<div className="flex flex-col py-8 h-1/2">
 				{procurationUsers && (
-					<div className='bg-white flex flex-col justify-between pl-3 pr-3 w-11/12 m-auto shadow-lg rounded uppercase py-8 mb-8'>
-						<h2 className='pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500'>UNSA FCS 6ÈME CONGRÈS 2021</h2>
-						<div className='border-t-2 w-11/12 m-auto'></div>
-						<span className='text-sm font-medium self-center mb-3 mt-5'>Vous avez une procuration pour</span>
+					<div className="bg-white flex flex-col justify-between pl-3 pr-3 w-11/12 m-auto shadow-lg rounded uppercase py-8 mb-8">
+						<h2 className="pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
+							UNSA FCS 6ÈME CONGRÈS 2021
+						</h2>
+						<div className="border-t-2 w-11/12 m-auto"></div>
+						<span className="text-sm font-medium self-center mb-3 mt-5">
+							Vous avez une procuration pour
+						</span>
 						{syndicatList.map((syndicat, index) => (
 							<h2 key={index}>{syndicat}</h2>
 						))}
@@ -77,7 +116,11 @@ const VotePage = () => {
 					)
 					.map(({ id, data: { syndicat, mandat, email } }) => (
 						<div className={`${!voting && 'hidden'}`} key={id}>
-							<CommissionControle mandat={mandat} syndicat={syndicat} email={email} />
+							<CommissionControle
+								mandat={mandat}
+								syndicat={syndicat}
+								email={email}
+							/>
 						</div>
 					))}
 
