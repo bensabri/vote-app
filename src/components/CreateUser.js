@@ -176,7 +176,7 @@ const CreateUser = () => {
 							color="warning"
 						/>
 					)}
-					getOptionLabel={(option) => `${option?.user_name} `}
+					getOptionLabel={(option) => `${option?.syndicat} `}
 				/>
 			</div>
 		</div>
