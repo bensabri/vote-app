@@ -12,6 +12,8 @@ import kempf from '../img/kempf.png';
 import nadia from '../img/nadia.png';
 import sandrine from '../img/sandrine.png';
 import { Label } from 'recharts';
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
 
 const CandidatureBureau = ({ mandat, syndicat, email }) => {
 	const { register, watch, handleSubmit, formState } = useForm();
@@ -111,9 +113,17 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 	return (
 		<div>
 			{voted?.data.thirdVote ? (
-				<div className='w-11/12 m-auto bg-white flex flex-col justify-between pl-3 pr-3 shadow-lg rounded uppercase py-8 mb-8'>
-					<h2 className='text-center pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500'>Merci, votre vote a bien été pris en compte</h2>
-				</div>
+				<>
+					<div className='w-11/12 m-auto bg-white flex flex-col justify-between pl-3 pr-3 shadow-lg rounded uppercase py-8 mb-8'>
+						<h2 className='text-center pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500'>Merci, votre vote a bien été pris en compte</h2>
+					</div>
+					<div className='w-11/12 m-auto bg-white flex flex-col justify-between pl-3 pr-3 shadow-lg rounded uppercase py-8 mb-8'>
+						<h2 className='text-center pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500 mb-vh'>Vous allez être redirigé vers les résultats en direct</h2>
+						<Box sx={{ width: '100%' }}>
+							<LinearProgress />
+						</Box>
+					</div>
+				</>
 			) : (
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className='w-11/12 m-auto shadow-lg bg-white rounded-md'>
