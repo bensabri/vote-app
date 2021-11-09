@@ -12,7 +12,7 @@ const AppProvider = ({ children }) => {
 	const [procurationUsers, setProcurationUsers] = useState(false); // defini si la personne connecté a une procuration
 	const [syndicatList, setSyndicatList] = useState([]); // Liste d'email mandaté pour la procuration
 	const [query, setQuery] = useState('');
-	const [resultsAccess, setResultsAccess] = useState(false); // autoriser l'accès au résultat pour un email pret definit
+	/* const [resultsAccess, setResultsAccess] = useState(false);  */ // autoriser l'accès au résultat pour un email pret definit
 	const [step, setStep] = useState(0);
 	const [voting, setVoting] = useState(false);
 
@@ -37,14 +37,13 @@ const AppProvider = ({ children }) => {
 				setResultAdministrative,
 				resultBureau,
 				setResultBureau,
-				resultsAccess,
-				setResultsAccess,
+				/* resultsAccess,
+				setResultsAccess, */
 				step,
 				setStep,
 				voting,
 				setVoting,
-			}}
-		>
+			}}>
 			{children}
 		</AppContext.Provider>
 	);

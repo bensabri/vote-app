@@ -156,17 +156,17 @@ const ShowResultAdministrative = () => {
 								layout='vertical'
 								barSize={70}
 								dataKey='value'
-								fill='#8ce5f9'
+								fill='#81CFDF'
 								label={{
 									position: 'top',
 									formatter: labelFormatter,
-									fill: '#8ce5f9',
+									fill: '#81CFDF',
 								}}>
 								<LabelList
 									label={{
 										position: 'top',
 										formatter: labelFormatter,
-										fill: '#8ce5f9',
+										fill: '#81CFDF',
 									}}
 									dataKey='score'
 									style={{ position: 'top', fill: '#ffffff' }}

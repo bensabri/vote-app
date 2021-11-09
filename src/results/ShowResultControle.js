@@ -55,11 +55,11 @@ const ShowResultControle = () => {
 							<YAxis domain={[0, 100]} />
 							<Bar
 								dataKey='value'
-								fill='#8ce5f9'
+								fill='#81CFDF'
 								label={{
 									position: 'top',
 									formatter: labelFormatter,
-									fill: '#8ce5f9',
+									fill: '#81CFDF',
 								}}>
 								<LabelList dataKey='score' style={{ position: 'top', fill: '#ffffff' }} />
 							</Bar>

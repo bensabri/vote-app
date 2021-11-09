@@ -28,7 +28,7 @@ const CreateUser = () => {
 			mandat: mandat,
 			user_name: responsable,
 			email: email,
-			created_date: date,
+			created: date,
 		})
 			.then(() => {
 				alert('Créé avec succès');

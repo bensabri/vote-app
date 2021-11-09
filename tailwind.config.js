@@ -10,7 +10,7 @@ module.exports = {
 				circle: '50%',
 			},
 			backgroundColor: {
-				primary: '#8ce5f9',
+				primary: '#81CFDF',
 			},
 		},
 	},

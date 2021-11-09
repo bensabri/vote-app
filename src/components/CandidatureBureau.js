@@ -73,7 +73,7 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 
 				email: email,
 				thirdVote: hasVoted,
-				created_date: date,
+				created: date,
 			})
 				.then(() => {
 					// setStep(step + 1);

@@ -17,7 +17,7 @@ import Header from './Header';
 
 const Dashboard = () => {
 	const [admin, setAdmin] = useState(false);
-	const { setProcurationUsers, setResultsAccess, resultsAccess } = useGlobalContext();
+	const { setProcurationUsers /* setResultsAccess, resultsAccess */ } = useGlobalContext();
 	const { currentUser } = useAuth();
 
 	useEffect(() => {
@@ -33,7 +33,7 @@ const Dashboard = () => {
 		switch (currentUser.email) {
 			case 'benasabri@gmail.com':
 				setProcurationUsers(true);
-				setResultsAccess(false);
+				/* setResultsAccess(false); */
 				break;
 			case 'alexandre.bonilla@yahoo.fr':
 				setProcurationUsers(true);
@@ -66,7 +66,7 @@ const Dashboard = () => {
 					<ResultControle />
 					<ResultAdministrative />
 					<ResultBureau />
-					{resultsAccess && <AllResults />}
+					<AllResults />
 					{admin ? (
 						<div>
 							<SendEmail />
