@@ -60,7 +60,7 @@ const Dashboard = () => {
 				<source src='https://firebasestorage.googleapis.com/v0/b/voteapp-d3b5e.appspot.com/o/background_1.mp4?alt=media&token=18027da3-7a79-4a58-ae9f-703635c7b0c7' type='video/mp4' />
 				Your browser does not support the video tag.
 			</video>
-			<div className='min-h-screen flex flex-col items-center justify-center bg-gray-300 z-10 mt-24'>
+			<div className='flex flex-col items-center bg-gray-300 z-10 mt-24'>
 				<div className='mb-10 flex flex-col sm:px-6 md:px-8 lg:px-10 py-8 rounded-md h-4/5 w-full lg:max-w-6xl md:max-w-full z-10'>
 					<GetUsers />
 					<ResultControle />

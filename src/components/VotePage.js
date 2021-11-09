@@ -60,11 +60,6 @@ const VotePage = () => {
 
 	return (
 		<>
-			<Header />
-			<video className='absolute w-screen h-screen object-cover z-0' autoPlay loop muted>
-				<source src='https://firebasestorage.googleapis.com/v0/b/voteapp-d3b5e.appspot.com/o/background_1.mp4?alt=media&token=18027da3-7a79-4a58-ae9f-703635c7b0c7' type='video/mp4' />
-				Your browser does not support the video tag.
-			</video>
 			<div className='flex flex-col py-8 h-1/2'>
 				{procurationUsers && (
 					<div className='bg-white flex flex-col justify-between pl-3 pr-3 w-11/12 m-auto shadow-lg rounded uppercase py-8 mb-8'>
