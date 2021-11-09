@@ -20,7 +20,7 @@ const SendEmail = () => {
 	return (
 		<>
 			<div className='flex flex-col items-center justify-center'>
-				<div className='flex flex-col bg-white shadow-md px-10 sm:px-10 md:px-10 lg:px-16 py-10 rounded-md w-full max-w-xl mt-vh zt-10'>
+				<div className='flex flex-col bg-white shadow-md px-10 sm:px-10 md:px-10 lg:px-16 py-10 rounded-md w-full max-w-xl mt-vh z-10'>
 					<h2 className='font-medium self-center text-xl sm:text-xl uppercase text-gray-500'>Envoi email de participation</h2>
 
 					<div className='mt-5 mb-3'>{error && <p className='text-sm text-red-600'>{error}</p>}</div>
