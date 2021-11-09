@@ -114,15 +114,15 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 							<div className='border-t-2 w-11/12 m-auto'></div>
 							<div className='p-6 space-y-4'>
 								<h3 className='text-center text-xs sm:text-sm lg:text-lg mb-1 font-bold text-gray-700'>Une seule liste s'est présentée</h3>
-								{team.map((member) => (
-									<div key={member.name} className='flex flex-wrap gap-4 rounded-md shadow-md p-6'>
+								<div className='flex flex-wrap gap-4 rounded-md shadow-md p-6'>
+									{team.map((member) => (
 										<div key={member.name} className='flex flex-col'>
 											<img classname='rounded-circle w-24' src={member.img} alt='' />
 											<p className='text-center text-sm text-bold'>{member.name}</p>
 											<p className='text-center text-sm'>{member.role}</p>
 										</div>
-									</div>
-								))}
+									))}
+								</div>
 								<div className='flex items-start'>
 									<div className='flex items-center h-5'>
 										<input name='blanc' {...register('a')} type='checkbox' onClick={HandleA} value={blanc} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' /> <span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Je vote Blanc</span>
