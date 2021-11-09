@@ -96,7 +96,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 		<div className='mt-3 sm:mt-0'>
 			{/* {!voted3?.data.thirdVote && ( */}
 			<div className='w-11/12 m-auto bg-white rounded-md mb-3 p-5'>
-				<Stepper activeStep={step}>
+				<Stepper activeStep={step} alternativeLabel>
 					<Step>
 						<StepLabel>Commission de contrôle</StepLabel>
 					</Step>
@@ -123,30 +123,14 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 								<legend className='text-xs sm:text-sm lg:text-lg font-bold text-gray-900'>Commission de contrôle</legend>
 								<p className='text-xs sm:text-sm lg:text-lg'>{`Syndicat ${syndicat}`}</p>
 							</div>
-							<div className="border-t-2 w-11/12 m-auto"></div>
-							<div className="mt-5 ml-7 space-y-4">
-								<h3 className="text-xs sm:text-sm lg:text-lg mb-1 font-bold text-gray-700">
-									Parmi ces candidats, pour qui souhaiteriez
-									vous voter ? {`${checkedCount}/3`}
-								</h3>
-								<div className="flex items-start">
-									<div className="flex items-center h-5 cursor-pointer">
-										<input
-											id="a"
-											name="a"
-											{...register('a')}
-											type="checkbox"
-											value={a}
-											onClick={HandleA}
-											className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-										/>{' '}
-										<label
-											className="cursor-pointer"
-											htmlFor="a"
-										>
-											<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
-												OPTION 1
-											</span>
+							<div className='border-t-2 w-11/12 m-auto'></div>
+							<div className='p-6 space-y-4'>
+								<h3 className='text-center text-xs sm:text-sm lg:text-lg mb-1 font-bold text-gray-700'>Parmi ces candidats, pour qui souhaiteriez vous voter ? {`${checkedCount}/3`}</h3>
+								<div className='flex items-start'>
+									<div className='flex items-center h-5 cursor-pointer'>
+										<input id='a' name='a' {...register('a')} type='checkbox' value={a} onClick={HandleA} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
+										<label className='cursor-pointer' htmlFor='a'>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 1</span>
 										</label>
 									</div>
 								</div>

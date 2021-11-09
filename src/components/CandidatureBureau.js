@@ -4,6 +4,12 @@ import { useAuth } from '../contexts/AuthContext';
 import { collection, addDoc } from 'firebase/firestore';
 import { useForm } from 'react-hook-form';
 import { db } from '../firebase';
+import fatiha from '../img/fatiha.jpg';
+import madembo from '../img/madembo.png';
+import michel from '../img/michel.png';
+import kempf from '../img/kempf.png';
+import nadia from '../img/nadia.png';
+import sandrine from '../img/sandrine.png';
 
 const CandidatureBureau = ({ mandat, syndicat, email }) => {
 	const { register, watch, handleSubmit, formState } = useForm();
@@ -20,6 +26,39 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 
 	const watchCheckBox = watch(['blanc', 'pour', 'contre']);
 	const checkedCount = watchCheckBox.filter(Boolean).length;
+
+	const team = [
+		{
+			img: fatiha,
+			name: 'FATIHA HIRAKI',
+			role: 'SECRÉTAIRE GÉNÉRALE',
+		},
+		{
+			img: madembo,
+			name: 'TOURE MA DEMBO',
+			role: 'SECRÉTAIRE GÉNÉRAL ADJOINT',
+		},
+		{
+			img: michel,
+			name: 'MICHEL BRAQUET',
+			role: 'SECRÉTAIRE GÉNÉRAL ADJOINT',
+		},
+		{
+			img: kempf,
+			name: 'JEAN PIERRE KEMPF',
+			role: 'SECRÉTAIRE FÉDÉRAL TRÉSORERIE',
+		},
+		{
+			img: sandrine,
+			name: 'SANDRINE VERDIER',
+			role: 'TRÉSORIER ADJOINT',
+		},
+		{
+			img: nadia,
+			name: 'NADIA ZENAF',
+			role: 'SECRÉTAIRE GÉNÉRALE ADJOINTE',
+		},
+	];
 
 	const onSubmit = async () => {
 		if (watchCheckBox && checkedCount === 1) {
@@ -73,21 +112,30 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 								<p className='text-xs sm:text-sm lg:text-lg'>{`Syndicat ${syndicat}`}</p>
 							</div>
 							<div className='border-t-2 w-11/12 m-auto'></div>
-							<div className='mt-4 ml-7 space-y-4'>
-								<h3 className='text-xs sm:text-sm lg:text-lg mb-1 font-bold text-gray-700'>Une seule liste s'est présentée</h3>
+							<div className='p-6 space-y-4'>
+								<h3 className='text-center text-xs sm:text-sm lg:text-lg mb-1 font-bold text-gray-700'>Une seule liste s'est présentée</h3>
+								{team.map((member) => (
+									<div key={member.name} className='flex flex-wrap gap-4'>
+										<div key={member.name} className='flex flex-col'>
+											<img classname='rounded-full w-40' src={member.img} alt='' />
+											<p className='text-sm text-bold'>{member.name}</p>
+											<p className='text-sm'>{member.role}</p>
+										</div>
+									</div>
+								))}
 								<div className='flex items-start'>
 									<div className='flex items-center h-5'>
-										<input name='a' {...register('a')} type='checkbox' onClick={HandleA} value={blanc} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' /> <span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Je vote Blanc</span>
+										<input name='blanc' {...register('a')} type='checkbox' onClick={HandleA} value={blanc} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' /> <span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Je vote Blanc</span>
 									</div>
 								</div>
 								<div className='flex items-start'>
 									<div className='flex items-center h-5'>
-										<input name='b' {...register('b')} type='checkbox' onClick={HandleB} value={pour} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' /> <span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Je vote Pour</span>
+										<input name='pour' {...register('b')} type='checkbox' onClick={HandleB} value={pour} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' /> <span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Je vote Pour</span>
 									</div>
 								</div>
 								<div className='flex items-start'>
 									<div className='flex items-center h-5'>
-										<input name='c' {...register('c')} type='checkbox' onClick={HandleC} value={contre} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' /> <span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Je vote Contre</span>
+										<input name='contre' {...register('c')} type='checkbox' onClick={HandleC} value={contre} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' /> <span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Je vote Contre</span>
 									</div>
 								</div>
 							</div>
