@@ -39,7 +39,7 @@ const ShowResultBureau = () => {
 	};
 
 	return (
-		<div className='bg-white rounded-md shadow-md mt-vh px-4 mx-4'>
+		<div className='bg-white rounded-md shadow-md mt-vh mb-vh px-4 mx-4'>
 			<div className='flex flex-col py-8'>
 				<h2 className='text-center pb-5 font-medium self-center text-lg sm:text-xl uppercase text-gray-500'>Candidature au Bureau - Liste F. Hiraki</h2>
 				<div className='border-t-2 w-11/12 m-auto'></div>
