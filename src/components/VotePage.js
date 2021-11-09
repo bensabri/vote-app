@@ -80,7 +80,7 @@ const VotePage = () => {
 			setAdminResult(true);
 		}
 	}, []);
-
+	console.log(procurationUsers);
 	return (
 		<div className="flex flex-col py-8 h-1/2">
 			{procurationUsers && (

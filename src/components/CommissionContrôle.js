@@ -97,12 +97,12 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	useEffect(() => {
 		if (
 			voted?.data.firstVote === true &&
-			voted2?.data.secondVote === false
+			voted2?.data.secondVote === undefined
 		) {
 			setStep(1);
 		} else if (
 			voted2?.data.secondVote === true &&
-			voted3?.data.thirdVote === false
+			voted3?.data.thirdVote === undefined
 		) {
 			setStep(2);
 		} else if (voted3?.data.thirdVote === true) {
@@ -111,7 +111,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 			setStep(0);
 		}
 	}, [voted, voted2, voted3]);
-	console.log(resultAdministrative);
+
 	return (
 		<div className="mt-3 sm:mt-0">
 			{/* {!voted3?.data.thirdVote && ( */}

@@ -73,7 +73,7 @@ const ShowResultBureau = () => {
 					<BarChart data={dataBureau}>
 						<CartesianGrid strokeDasharray="3 3" />
 						<XAxis dataKey="name" />
-						<YAxis domain={[0, 100]} />
+						<YAxis domain={[0, 120]} />
 						<Bar
 							dataKey="value"
 							fill="#ee17bf"

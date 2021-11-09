@@ -37,6 +37,8 @@ const Dashboard = () => {
 				break;
 			case 'alexandre.bonilla@yahoo.fr':
 				setProcurationUsers(true);
+			default:
+				setProcurationUsers(false);
 		}
 
 		// if (currentUser.email === 'benasabri@gmail.com') {
