@@ -7,7 +7,7 @@ import { db } from '../firebase';
 import itemCheckBox from '../hooks/ItemsCheckBox';
 import CandidatureBureau from './CandidatureBureau';
 
-const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
+const CommissionAdministrative = ({ mandat, syndicat, email }) => {
 	const { register, watch, handleSubmit, formState } = useForm();
 	const { isSubmitting } = formState;
 	const { resultAdministrative, query, procurationUsers, step, setStep } = useGlobalContext();
@@ -148,7 +148,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 							<div className='border-t-2 w-11/12 m-auto'></div>
 							<h3 className='text-center text-sm lg:text-lg mb-1 mt-2 sm:ml-6 ml-2 font-bold text-gray-700'>Parmi ces candidats, pour qui souhaiteriez vous voter ? {`${checkedCount}/15`}</h3>
 							<div className='mt-4 sm:ml-7 grid gap-4 sm:gap-x-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='a' id='a' {...register('a')} type='checkbox' onClick={HandleA} value={a} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='a'>
@@ -156,7 +156,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='b' id='b' {...register('b')} type='checkbox' onClick={HandleB} value={b} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='b'>
@@ -164,7 +164,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='c' id='c' {...register('c')} type='checkbox' onClick={HandleC} value={c} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='c'>
@@ -172,7 +172,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='d' id='d' {...register('d')} type='checkbox' onClick={HandleD} value={d} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='d'>
@@ -180,7 +180,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='e' id='e' {...register('e')} type='checkbox' onClick={HandleE} value={e} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='e'>
@@ -188,7 +188,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='f' id='f' {...register('f')} type='checkbox' onClick={HandleF} value={f} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='f'>
@@ -196,7 +196,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='g' id='g' {...register('g')} type='checkbox' onClick={HandleG} value={g} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='g'>
@@ -206,7 +206,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='h' id='h' {...register('h')} type='checkbox' onClick={HandleH} value={h} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='h'>
@@ -214,7 +214,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='i' id='i' {...register('i')} type='checkbox' onClick={HandleI} value={i} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='i'>
@@ -222,7 +222,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='j' id='j' {...register('j')} type='checkbox' onClick={HandleJ} value={j} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='j'>
@@ -230,7 +230,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='k' id='k' {...register('k')} type='checkbox' onClick={HandleK} value={k} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='k'>
@@ -238,7 +238,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='l' id='l' {...register('l')} type='checkbox' onClick={HandleL} value={l} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='l'>
@@ -246,7 +246,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='m' id='m' {...register('m')} type='checkbox' onClick={HandleM} value={m} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='m'>
@@ -254,7 +254,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='n' id='n' {...register('n')} type='checkbox' onClick={HandleN} value={n} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='n'>
@@ -262,7 +262,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='o' id='o' {...register('o')} type='checkbox' onClick={HandleO} value={o} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='o'>
@@ -270,7 +270,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='p' id='p' {...register('p')} type='checkbox' onClick={HandleP} value={p} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='p'>
@@ -280,7 +280,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										</label>
 									</div>
 								</div>
-								<div className='flex items-start m-auto sm:m-0'>
+								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
 										<input name='q' id='q' {...register('q')} type='checkbox' onClick={HandleQ} value={q} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='q'>
@@ -303,4 +303,4 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 	);
 };
 
-export default CommissionAdministrative2;
+export default CommissionAdministrative;

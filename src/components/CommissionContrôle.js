@@ -7,7 +7,7 @@ import { db } from '../firebase';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-import CommissionAdministrative2 from './CommissionAdministrative2';
+import CommissionAdministrative from './CommissionAdministrative';
 
 const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	const [hasVoted, setHasVoted] = useState(false);
@@ -101,7 +101,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 
 			{voted?.data.firstVote ? (
 				<div>
-					<CommissionAdministrative2 mandat={mandat} syndicat={syndicat} email={email} />
+					<CommissionAdministrative mandat={mandat} syndicat={syndicat} email={email} />
 				</div>
 			) : (
 				<form onSubmit={handleSubmit(onSubmit)}>
