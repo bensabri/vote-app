@@ -2,47 +2,24 @@ import React, { useEffect, useState } from 'react';
 import { useGlobalContext } from '../contexts/context';
 import { useAuth } from '../contexts/AuthContext';
 import CommissionControle from './CommissionContrôle';
+import Header from './Header';
 
 const VotePage = () => {
 	const [voting, setVoting] = useState(false);
 	const [adminResult, setAdminResult] = useState(false);
 	const { currentUser } = useAuth();
-	const {
-		users,
-		procurationUsers,
-		syndicatList,
-		setSyndicatList,
-		query,
-		setQuery,
-		resultBureau,
-		step,
-		setStep,
-	} = useGlobalContext();
+	const { users, procurationUsers, syndicatList, setSyndicatList, query, setQuery, resultBureau, step, setStep } = useGlobalContext();
 
 	useEffect(() => {
 		switch (currentUser?.email) {
 			case 'benasabri@gmail.com':
-				setSyndicatList([
-					'AD GRAND OUEST',
-					'AUCHAN NICE',
-					'CARREFOUR LIVRE CHEZ VOUS',
-					'ADECCO',
-					'AQUABOULEVARD',
-					'GROUPE AUTODISTRIBUTION',
-					'AUCHAN LA DEFENSE',
-				]);
+				setSyndicatList(['AD GRAND OUEST', 'AUCHAN NICE', 'CARREFOUR LIVRE CHEZ VOUS', 'ADECCO', 'AQUABOULEVARD', 'GROUPE AUTODISTRIBUTION', 'AUCHAN LA DEFENSE']);
 				break;
 			case 'lakram@hotmail.fr':
 				setSyndicatList(['JEANJEAN/JD SPORTS']);
 				break;
 			case 'alexandre.bonilla@yahoo.fr':
-				setSyndicatList([
-					'CARREFOUR RAMBOUILLET',
-					'CARREFOUR MERIGNAC',
-					'CARREFOUR SUPPLY ERTECO',
-					'CARREFOUR DUPARC',
-					'CARREFOUR VAUX EN VELIN',
-				]);
+				setSyndicatList(['CARREFOUR RAMBOUILLET', 'CARREFOUR MERIGNAC', 'CARREFOUR SUPPLY ERTECO', 'CARREFOUR DUPARC', 'CARREFOUR VAUX EN VELIN']);
 				break;
 			case 'unsa.nettoyage@unsa.org':
 				setSyndicatList([
@@ -121,33 +98,28 @@ const VotePage = () => {
 							email={email}
 						/>
 					</div>
-				))}
-			<div
-				className={`${
-					adminResult
-						? 'hidden'
-						: 'w-11/12 m-auto shadow-lg bg-white rounded-md'
-				}`}
-			>
-				<div>
-					<div
-						className={`${
-							voting ? 'hidden' : 'flex flex-col py-8 px-5'
-						}`}
-					>
-						<h2 className="pb-10 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
-							Bienvenue sur la page de vote de L'unsa
-						</h2>
-						<button
-							onClick={() => setVoting(!voting)}
-							className="w-1/5 m-auto  py-2 px-4 border border-transparent shadow-sm text-xs sm:text-sm  uppercase rounded-md text-white transition duration-150 ease-in bg-blue-600 hover:bg-blue-700 focus:outline-none"
-						>
-							Commencé
-						</button>
+				)}
+				{users
+					.filter(
+						({ data: { email } }) => email === currentUser?.email // filtrer les personnes par email pour les personnes qui n'ont pas de procuration
+					)
+					.map(({ id, data: { syndicat, mandat, email } }) => (
+						<div className={`${!voting && 'hidden'}`} key={id}>
+							<CommissionControle mandat={mandat} syndicat={syndicat} email={email} />
+						</div>
+					))}
+				<div className={`${adminResult ? 'hidden' : 'w-11/12 m-auto shadow-lg bg-white rounded-md'}`}>
+					<div>
+						<div className={`${voting ? 'hidden' : 'flex flex-col py-8 px-5'}`}>
+							<h2 className='pb-10 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500'>Bienvenue sur la plateforme de vote de L'UNSA FCS</h2>
+							<button onClick={() => setVoting(!voting)} className='w-1/5 m-auto  py-2 px-4 border border-transparent shadow-sm text-xs sm:text-sm  uppercase rounded-md text-white transition duration-150 ease-in bg-blue-600 hover:bg-blue-700 focus:outline-none'>
+								Commencer
+							</button>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 
