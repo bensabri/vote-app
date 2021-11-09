@@ -5,7 +5,7 @@ import CommissionControle from './CommissionContrôle';
 import Header from './Header';
 
 const VotePage = () => {
-	const [voting, setVoting] = useState(false);
+	const [voting, setVoting] = useState(true);
 	const [adminResult, setAdminResult] = useState(false);
 	const { currentUser } = useAuth();
 	const { users, procurationUsers, syndicatList, setSyndicatList, query, setQuery, resultBureau, step, setStep } = useGlobalContext();
@@ -86,7 +86,7 @@ const VotePage = () => {
 						</div>
 					))}
 
-				<div className={`${adminResult ? 'hidden' : 'w-11/12 m-auto shadow-lg bg-white rounded-md'}`}>
+				{/* 				<div className={`${adminResult ? 'hidden' : 'w-11/12 m-auto shadow-lg bg-white rounded-md'}`}>
 					<div>
 						<div className={`${voting ? 'hidden' : 'flex flex-col py-8 px-5'}`}>
 							<h2 className='pb-10 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500'>Bienvenue sur la plateforme de vote de L'UNSA FCS</h2>
@@ -95,7 +95,7 @@ const VotePage = () => {
 							</button>
 						</div>
 					</div>
-				</div>
+				</div> */}
 			</div>
 		</>
 	);
