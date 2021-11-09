@@ -63,7 +63,6 @@ const Dashboard = () => {
 					<ResultControle />
 					<ResultAdministrative />
 					<ResultBureau />
-					<AllResults />
 					{admin ? (
 						<div>
 							<SendEmail />
