@@ -30,16 +30,25 @@ const Dashboard = () => {
 	}, []);
 
 	useEffect(() => {
-		if (currentUser.email === 'benasabri@gmail.com') {
-			setProcurationUsers(true);
-			setResultsAccess(false);
-		} else if (currentUser.email === 'ssabril.ben@gmail.com') {
-			// email qui a accees au resultat
-			setResultsAccess(true);
-		} else {
-			setProcurationUsers(false);
-			setResultsAccess(false);
+		switch (currentUser.email) {
+			case 'benasabri@gmail.com':
+				setProcurationUsers(true);
+				setResultsAccess(false);
+				break;
+			case 'alexandre.bonilla@yahoo.fr':
+				setProcurationUsers(true);
 		}
+
+		// if (currentUser.email === 'benasabri@gmail.com') {
+		// 	setProcurationUsers(true);
+		// 	setResultsAccess(false);
+		// } else if (currentUser.email === 'ssabril.ben@gmail.com') {
+		// 	// email qui a accees au resultat
+		// 	setResultsAccess(true);
+		// } else {
+		// 	setProcurationUsers(false);
+		// 	setResultsAccess(false);
+		// }
 	}, []);
 
 	return (

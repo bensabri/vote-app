@@ -170,9 +170,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 	};
 
 	const voted = resultAdministrative.find(
-		({ data: { email, syndicat } }) =>
-			email === `${!procurationUsers && currentUser.email}` ||
-			syndicat === `${procurationUsers && query}`
+		({ data: { email } }) => email === currentUser.email
 	);
 
 	return (

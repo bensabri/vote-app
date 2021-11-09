@@ -20,28 +20,60 @@ const VotePage = () => {
 	} = useGlobalContext();
 
 	useEffect(() => {
-		if (currentUser?.email === 'benasabri@gmail.com') {
-			// utlilisateur avec une procuration
-			setSyndicatList([
-				// 'AD GRAND OUEST',
-				// 'AUCHAN NICE',
-				// 'CARREFOUR LIVRE CHEZ VOUS',
-				// 'ADECCO',
-				// 'AQUABOULEVARD',
-				// 'GROUPE AUTODISTRIBUTION',
-				// 'AUCHAN LA DEFENSE',
-				// 'KIABI',
-				'TEST4',
-				'TEST5',
-				'TEST6',
-				'TEST7',
-				'TEST8',
-				'TEST9',
-				'TEST10',
-				'DEVSAB',
-			]);
+		switch (currentUser?.email) {
+			case 'benasabri@gmail.com':
+				setSyndicatList([
+					'AD GRAND OUEST',
+					'AUCHAN NICE',
+					'CARREFOUR LIVRE CHEZ VOUS',
+					'ADECCO',
+					'AQUABOULEVARD',
+					'GROUPE AUTODISTRIBUTION',
+					'AUCHAN LA DEFENSE',
+				]);
+				break;
+			case 'lakram@hotmail.fr':
+				setSyndicatList(['JEANJEAN/JD SPORTS']);
+				break;
+			case 'alexandre.bonilla@yahoo.fr':
+				setSyndicatList([
+					'CARREFOUR RAMBOUILLET',
+					'CARREFOUR MERIGNAC',
+					'CARREFOUR SUPPLY ERTECO',
+					'CARREFOUR DUPARC',
+					'CARREFOUR VAUX EN VELIN',
+				]);
+				break;
 		}
-	}, [query]);
+		// switch(currentUser?.email) {
+		// 	case 'lakram@hotmail.fr':
+		// 	setSyndicatList([
+		// 		'JEANJEAN/JD SPORTS'
+		// 	])
+		// 	break
+		// }
+		// if (currentUser?.email === 'benasabri@gmail.com') {
+		// 	// utlilisateur avec une procuration
+		// 	setSyndicatList([
+		// 		'AD GRAND OUEST',
+		// 		'AUCHAN NICE',
+		// 		'CARREFOUR LIVRE CHEZ VOUS',
+		// 		'ADECCO',
+		// 		'AQUABOULEVARD',
+		// 		'GROUPE AUTODISTRIBUTION',
+		// 		'AUCHAN LA DEFENSE',
+		// 		'KIABI',
+		// 		'TEST4',
+		// 		'TEST5',
+		// 		'TEST6',
+		// 		'TEST7',
+		// 		'TEST8',
+		// 		'TEST9',
+		// 		'TEST10',
+		// 		'DEVSAB',
+		// 	]);
+		// }
+	}, []);
 
 	useEffect(() => {
 		if (currentUser.email === 'ssabril.ben@gmail.com') {
@@ -60,7 +92,10 @@ const VotePage = () => {
 					<span className="text-sm font-medium self-center mb-3 mt-5">
 						Vous avez une procuration pour
 					</span>
-					<select
+					{syndicatList.map((syndicat, index) => (
+						<h2 key={index}>{syndicat}</h2>
+					))}
+					{/* <select
 						className="text-sm placeholder-gray-500 py-2 px-1 rounded-lg focus:outline-none border-2 w-10/12 md:w-1/3 m-auto"
 						name="emaillist"
 						onChange={(e) => {
@@ -75,15 +110,12 @@ const VotePage = () => {
 								{syndicat}
 							</option>
 						))}
-					</select>
+					</select> */}
 				</div>
 			)}
 			{users
 				.filter(
-					({ data: { email, syndicat } }) =>
-						email ===
-							`${!procurationUsers && currentUser?.email}` || // filtrer les personnes par email pour les personnes qui n'ont pas de procuration
-						syndicat === `${procurationUsers && query}` // filtrer les procurations par syndicat pour les personnes qui one une procuration
+					({ data: { email } }) => email === currentUser?.email // filtrer les personnes par email pour les personnes qui n'ont pas de procuration
 				)
 				.map(({ id, data: { syndicat, mandat, email } }) => (
 					<div className={`${!voting && 'hidden'}`} key={id}>
@@ -101,7 +133,7 @@ const VotePage = () => {
 						: 'w-11/12 m-auto shadow-lg bg-white rounded-md'
 				}`}
 			>
-				<div className={`${procurationUsers && 'hidden'}`}>
+				<div>
 					<div
 						className={`${
 							voting ? 'hidden' : 'flex flex-col py-8 px-5'

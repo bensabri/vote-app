@@ -22,7 +22,7 @@ const CreateUser = () => {
 
 	const onSubmit = async () => {
 		// create database
-		await addDoc(collection(db, 'userstest'), {
+		await addDoc(collection(db, 'users'), {
 			number: number,
 			syndicat: syndicat,
 			mandat: mandat,

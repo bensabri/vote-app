@@ -59,9 +59,7 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 		setC(watchCheckBox[2] ? 0 : Number(mandat));
 	};
 	const voted = resultBureau.find(
-		({ data: { email, syndicat } }) =>
-			email === `${!procurationUsers && currentUser.email}` ||
-			syndicat === `${procurationUsers && query}`
+		({ data: { email } }) => email === currentUser.email
 	);
 
 	return (

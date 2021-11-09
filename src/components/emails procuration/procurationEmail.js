@@ -1,14 +1,14 @@
 /*
 AKRAM GUELLOU = [
-     // FOOT LOCKER lakram@hotmail.fr // 
-    JEANJEAN/JD SPORTS,
+     // FOOT LOCKER lakram@hotmail.fr mandat 3// 
+    JEANJEAN/JD SPORTS, mandat 1
 ]
 ALEXANDRE BONNILLA = [
-    // CARREFOUR RAMBOUILLET alexandre.bonilla@yahoo.fr //
-    CARREFOUR MERIGNAC,
-    CARREFOUR SUPPLY ERTECO,
-    CARREFOUR DUPARC,
-    CARREFOUR VAUX EN VELIN,
+    // CARREFOUR RAMBOUILLET alexandre.bonilla@yahoo.fr mandat 10//
+    CARREFOUR MERIGNAC, mandat 12
+    CARREFOUR SUPPLY ERTECO, mandat 14
+    CARREFOUR DUPARC, mandat 8
+    CARREFOUR VAUX EN VELIN, mandat 1
 ]
 BRIGITTE ASSAL = [
     // CLUB MED assalbrigitte92@gmail.com //

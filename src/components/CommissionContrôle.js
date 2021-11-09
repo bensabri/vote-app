@@ -69,6 +69,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	const HandleA = () => {
 		setA(watchCheckBox[0] ? 0 : Number(mandat));
 	};
+	console.log(a, b, c, d, e);
 	const HandleB = () => {
 		setB(watchCheckBox[1] ? 0 : Number(mandat));
 	};
@@ -83,21 +84,16 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	};
 
 	const voted = resultControle.find(
-		({ data: { email, syndicat } }) =>
-			email === `${!procurationUsers && currentUser.email}` ||
-			syndicat === `${procurationUsers && query}`
+		({ data: { email } }) => email === currentUser.email
 	);
 	const voted2 = resultAdministrative.find(
-		({ data: { email, syndicat } }) =>
-			email === `${!procurationUsers && currentUser.email}` ||
-			syndicat === `${procurationUsers && query}`
+		({ data: { email } }) => email === currentUser.email
 	);
 
 	const voted3 = resultBureau.find(
-		({ data: { email, syndicat } }) =>
-			email === `${!procurationUsers && currentUser.email}` ||
-			syndicat === `${procurationUsers && query}`
+		({ data: { email } }) => email === currentUser.email
 	);
+
 	useEffect(() => {
 		if (
 			voted?.data.firstVote === true &&
@@ -115,7 +111,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 			setStep(0);
 		}
 	}, [voted, voted2, voted3]);
-
+	console.log(resultAdministrative);
 	return (
 		<div className="mt-3 sm:mt-0">
 			{/* {!voted3?.data.thirdVote && ( */}
