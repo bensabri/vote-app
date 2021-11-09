@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useGlobalContext } from '../contexts/context';
 import { useAuth } from '../contexts/AuthContext';
 import { collection, addDoc } from 'firebase/firestore';
@@ -18,6 +19,8 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 	const { resultBureau, query, procurationUsers, step, setStep } = useGlobalContext();
 	const { currentUser } = useAuth();
 	const [hasVoted, setHasVoted] = useState(false);
+
+	const history = useHistory();
 
 	const [a, setA] = useState(0);
 	const [b, setB] = useState(0);
@@ -96,6 +99,14 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 		setC(watchCheckBox[2] ? 0 : Number(mandat));
 	};
 	const voted = resultBureau.find(({ data: { email } }) => email === currentUser.email);
+
+	useEffect(() => {
+		if (voted?.data.thirdVote) {
+			setInterval(() => {
+				history.push('/resultats');
+			}, 5000);
+		}
+	}, [voted?.data.thirdVote]);
 
 	return (
 		<div>
