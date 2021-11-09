@@ -24,16 +24,8 @@ const ShowResultAdministrative = () => {
 	const AdministrativeO = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.o, 0);
 	const AdministrativeP = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.p, 0);
 	const AdministrativeQ = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.q, 0);
-	const AdministrativeR = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.r, 0);
-	const AdministrativeS = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.s, 0);
-	const AdministrativeT = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.t, 0);
-	const AdministrativeU = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.u, 0);
-	const AdministrativeV = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.v, 0);
-	const AdministrativeW = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.w, 0);
-	const AdministrativeX = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.x, 0);
-	const AdministrativeY = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.y, 0);
 
-	const totalValue = AdministrativeA + AdministrativeB + AdministrativeC + AdministrativeD + AdministrativeE + AdministrativeF + AdministrativeG + AdministrativeH + AdministrativeI + AdministrativeJ + AdministrativeK + AdministrativeL + AdministrativeM + AdministrativeN + AdministrativeO + AdministrativeP + AdministrativeQ + AdministrativeR + AdministrativeS + AdministrativeT + AdministrativeU + AdministrativeV + AdministrativeW + AdministrativeX + AdministrativeY;
+	const totalValue = AdministrativeA + AdministrativeB + AdministrativeC + AdministrativeD + AdministrativeE + AdministrativeF + AdministrativeG + AdministrativeH + AdministrativeI + AdministrativeJ + AdministrativeK + AdministrativeL + AdministrativeM + AdministrativeN + AdministrativeO + AdministrativeP + AdministrativeQ;
 
 	const valueA = (AdministrativeA / totalValue) * 100;
 	const valueB = (AdministrativeB / totalValue) * 100;
@@ -52,140 +44,92 @@ const ShowResultAdministrative = () => {
 	const valueO = (AdministrativeO / totalValue) * 100;
 	const valueP = (AdministrativeP / totalValue) * 100;
 	const valueQ = (AdministrativeQ / totalValue) * 100;
-	const valueR = (AdministrativeR / totalValue) * 100;
-	const valueS = (AdministrativeS / totalValue) * 100;
-	const valueT = (AdministrativeT / totalValue) * 100;
-	const valueU = (AdministrativeU / totalValue) * 100;
-	const valueV = (AdministrativeV / totalValue) * 100;
-	const valueW = (AdministrativeW / totalValue) * 100;
-	const valueX = (AdministrativeX / totalValue) * 100;
-	const valueY = (AdministrativeY / totalValue) * 100;
 
 	const dataAdministrative = [
 		{
-			name: 'a',
+			name: 'Kempf JP.',
 			value: valueA.toFixed(2),
 			score: AdministrativeA,
 		},
 		{
-			name: 'b',
+			name: 'Braquet M.',
 			value: valueB.toFixed(2),
 			score: AdministrativeB,
 		},
 		{
-			name: 'c',
+			name: 'Hiraki F.',
 			value: valueC.toFixed(2),
 			score: AdministrativeC,
 		},
 		{
-			name: 'd',
+			name: 'Toure M.',
 			value: valueD.toFixed(2),
 			score: AdministrativeD,
 		},
 		{
-			name: 'e',
+			name: 'Tabbou A.',
 			value: valueE.toFixed(2),
 			score: AdministrativeE,
 		},
 		{
-			name: 'f',
+			name: 'Fournier S.',
 			value: valueF.toFixed(2),
 			score: AdministrativeF,
 		},
 		{
-			name: 'g',
+			name: 'Fuchs M.',
 			value: valueG.toFixed(2),
 			score: AdministrativeG,
 		},
 		{
-			name: 'h',
+			name: 'Djeffel A.',
 			value: valueH.toFixed(2),
 			score: AdministrativeH,
 		},
 		{
-			name: 'i',
+			name: 'Bulot S.',
 			value: valueI.toFixed(2),
 			score: AdministrativeI,
 		},
 		{
-			name: 'j',
+			name: 'Chlait K.',
 			value: valueJ.toFixed(2),
 			score: AdministrativeJ,
 		},
 		{
-			name: 'k',
+			name: 'Assal B.',
 			value: valueK.toFixed(2),
 			score: AdministrativeK,
 		},
 		{
-			name: 'l',
+			name: 'Mekhloufi B.',
 			value: valueL.toFixed(2),
 			score: AdministrativeL,
 		},
 		{
-			name: 'm',
+			name: 'Pelmar T.',
 			value: valueM.toFixed(2),
 			score: AdministrativeM,
 		},
 		{
-			name: 'n',
+			name: 'Bonila A.',
 			value: valueN.toFixed(2),
 			score: AdministrativeN,
 		},
 		{
-			name: 'o',
+			name: 'Bambara',
 			value: valueO.toFixed(2),
 			score: AdministrativeO,
 		},
 		{
-			name: 'p',
+			name: 'Kalilou S.',
 			value: valueP.toFixed(2),
 			score: AdministrativeP,
 		},
 		{
-			name: 'q',
+			name: 'Zenaf N.',
 			value: valueQ.toFixed(2),
 			score: AdministrativeQ,
-		},
-		{
-			name: 'r',
-			value: valueR.toFixed(2),
-			score: AdministrativeR,
-		},
-		{
-			name: 's',
-			value: valueS.toFixed(2),
-			score: AdministrativeS,
-		},
-		{
-			name: 't',
-			value: valueT.toFixed(2),
-			score: AdministrativeT,
-		},
-		{
-			name: 'u',
-			value: valueU.toFixed(2),
-			score: AdministrativeU,
-		},
-		{
-			name: 'v',
-			value: valueV.toFixed(2),
-			score: AdministrativeV,
-		},
-		{
-			name: 'w',
-			value: valueW.toFixed(2),
-			score: AdministrativeW,
-		},
-		{
-			name: 'x',
-			value: valueX.toFixed(2),
-			score: AdministrativeX,
-		},
-		{
-			name: 'y',
-			value: valueY.toFixed(2),
-			score: AdministrativeY,
 		},
 	];
 	const labelFormatter = (value) => {
@@ -212,17 +156,17 @@ const ShowResultAdministrative = () => {
 								layout='vertical'
 								barSize={70}
 								dataKey='value'
-								fill='#ee17bf'
+								fill='#8ce5f9'
 								label={{
 									position: 'top',
 									formatter: labelFormatter,
-									fill: '#ee17bf',
+									fill: '#8ce5f9',
 								}}>
 								<LabelList
 									label={{
 										position: 'top',
 										formatter: labelFormatter,
-										fill: '#ee17bf',
+										fill: '#8ce5f9',
 									}}
 									dataKey='score'
 									style={{ position: 'top', fill: '#ffffff' }}

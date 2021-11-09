@@ -9,41 +9,27 @@ const ShowResultControle = () => {
 	const ControleA = resultControle.reduce((a, b) => a + b.data.results_controle.a, 0);
 	const ControleB = resultControle.reduce((a, b) => a + b.data.results_controle.b, 0);
 	const ControleC = resultControle.reduce((a, b) => a + b.data.results_controle.c, 0);
-	const ControleD = resultControle.reduce((a, b) => a + b.data.results_controle.d, 0);
-	const ControleE = resultControle.reduce((a, b) => a + b.data.results_controle.e, 0);
-	const totalValue = ControleA + ControleB + ControleC + ControleD + ControleE;
+	const totalValue = ControleA + ControleB + ControleC;
 
 	const valueA = (ControleA / totalValue).toFixed(4) * 100;
 	const valueB = (ControleB / totalValue).toFixed(4) * 100;
 	const valueC = (ControleC / totalValue).toFixed(4) * 100;
-	const valueD = (ControleD / totalValue).toFixed(4) * 100;
-	const valueE = (ControleE / totalValue).toFixed(4) * 100;
 
 	const dataControle = [
 		{
-			name: 'a',
+			name: 'Abdelali H.',
 			value: valueA.toFixed(2),
 			score: ControleA,
 		},
 		{
-			name: 'b',
+			name: 'Nadia Z.',
 			value: valueB.toFixed(2),
 			score: ControleB,
 		},
 		{
-			name: 'c',
+			name: 'Abdelrazak D.',
 			value: valueC.toFixed(2),
 			score: ControleC,
-		},
-		{
-			name: 'd',
-			value: valueD.toFixed(2),
-			score: ControleD,
-		},
-		{
-			name: 'e',
-			value: valueE.toFixed(2),
-			score: ControleE,
 		},
 	];
 	const labelFormatter = (value) => {
@@ -69,11 +55,11 @@ const ShowResultControle = () => {
 							<YAxis domain={[0, 100]} />
 							<Bar
 								dataKey='value'
-								fill='#ee17bf'
+								fill='#8ce5f9'
 								label={{
 									position: 'top',
 									formatter: labelFormatter,
-									fill: '#ee17bf',
+									fill: '#8ce5f9',
 								}}>
 								<LabelList dataKey='score' style={{ position: 'top', fill: '#ffffff' }} />
 							</Bar>

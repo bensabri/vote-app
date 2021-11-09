@@ -9,6 +9,9 @@ module.exports = {
 			borderRadius: {
 				circle: '50%',
 			},
+			backgroundColor: {
+				primary: '#8ce5f9',
+			},
 		},
 	},
 	variants: {
