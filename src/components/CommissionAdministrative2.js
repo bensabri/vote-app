@@ -31,14 +31,6 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 	const [o, setO] = useState(0);
 	const [p, setP] = useState(0);
 	const [q, setQ] = useState(0);
-	const [r, setR] = useState(0);
-	const [s, setS] = useState(0);
-	const [t, setT] = useState(0);
-	const [u, setU] = useState(0);
-	const [v, setV] = useState(0);
-	const [w, setW] = useState(0);
-	const [x, setX] = useState(0);
-	const [y, setY] = useState(0);
 	const [error, setError] = useState('');
 	const date = new Date().toLocaleDateString();
 
@@ -67,14 +59,6 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 					o: Number(o),
 					p: Number(p),
 					q: Number(q),
-					r: Number(r),
-					s: Number(s),
-					t: Number(t),
-					u: Number(u),
-					v: Number(v),
-					w: Number(w),
-					x: Number(x),
-					y: Number(y),
 				},
 				email: email,
 				secondVote: hasVoted,
@@ -143,30 +127,6 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 	const HandleQ = () => {
 		setQ(watchCheckBox[16] ? 0 : Number(mandat));
 	};
-	const HandleR = () => {
-		setR(watchCheckBox[17] ? 0 : Number(mandat));
-	};
-	const HandleS = () => {
-		setS(watchCheckBox[18] ? 0 : Number(mandat));
-	};
-	const HandleT = () => {
-		setT(watchCheckBox[19] ? 0 : Number(mandat));
-	};
-	const HandleU = () => {
-		setU(watchCheckBox[20] ? 0 : Number(mandat));
-	};
-	const HandleV = () => {
-		setV(watchCheckBox[21] ? 0 : Number(mandat));
-	};
-	const HandleW = () => {
-		setW(watchCheckBox[22] ? 0 : Number(mandat));
-	};
-	const HandleX = () => {
-		setX(watchCheckBox[23] ? 0 : Number(mandat));
-	};
-	const HandleY = () => {
-		setY(watchCheckBox[24] ? 0 : Number(mandat));
-	};
 
 	const voted = resultAdministrative.find(({ data: { email } }) => email === currentUser.email);
 
@@ -192,7 +152,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5'>
 										<input name='a' id='a' {...register('a')} type='checkbox' onClick={HandleA} value={a} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='a'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 1</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Kempf JP.</span>
 										</label>
 									</div>
 								</div>
@@ -200,7 +160,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5'>
 										<input name='b' id='b' {...register('b')} type='checkbox' onClick={HandleB} value={b} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='b'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 2</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Braquet M.</span>
 										</label>
 									</div>
 								</div>
@@ -208,7 +168,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5'>
 										<input name='c' id='c' {...register('c')} type='checkbox' onClick={HandleC} value={c} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='c'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 3</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Hiraki F.</span>
 										</label>
 									</div>
 								</div>
@@ -216,7 +176,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5'>
 										<input name='d' id='d' {...register('d')} type='checkbox' onClick={HandleD} value={d} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='d'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 4</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Toure M.</span>
 										</label>
 									</div>
 								</div>
@@ -224,7 +184,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5'>
 										<input name='e' id='e' {...register('e')} type='checkbox' onClick={HandleE} value={e} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='e'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 5</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Tabbou A.</span>
 										</label>
 									</div>
 								</div>
@@ -232,7 +192,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5'>
 										<input name='f' id='f' {...register('f')} type='checkbox' onClick={HandleF} value={f} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='f'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 6</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Fournier S.</span>
 										</label>
 									</div>
 								</div>
@@ -241,7 +201,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										<input name='g' id='g' {...register('g')} type='checkbox' onClick={HandleG} value={g} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='g'>
 											<label className='cursor-pointer' htmlFor='g'>
-												<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 7</span>
+												<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Fuchs M.</span>
 											</label>
 										</label>
 									</div>
@@ -250,7 +210,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5'>
 										<input name='h' id='h' {...register('h')} type='checkbox' onClick={HandleH} value={h} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='h'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 8</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Djeffel A.</span>
 										</label>
 									</div>
 								</div>
@@ -258,7 +218,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5'>
 										<input name='i' id='i' {...register('i')} type='checkbox' onClick={HandleI} value={i} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='i'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 9</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Bulot S.</span>
 										</label>
 									</div>
 								</div>
@@ -266,7 +226,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5'>
 										<input name='j' id='j' {...register('j')} type='checkbox' onClick={HandleJ} value={j} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='j'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 10</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Chlait K.</span>
 										</label>
 									</div>
 								</div>
@@ -274,7 +234,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5'>
 										<input name='k' id='k' {...register('k')} type='checkbox' onClick={HandleK} value={k} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='k'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 11</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Assal B.</span>
 										</label>
 									</div>
 								</div>
@@ -282,7 +242,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5'>
 										<input name='l' id='l' {...register('l')} type='checkbox' onClick={HandleL} value={l} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='l'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 12</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Mekhloufi B.</span>
 										</label>
 									</div>
 								</div>
@@ -290,7 +250,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5'>
 										<input name='m' id='m' {...register('m')} type='checkbox' onClick={HandleM} value={m} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='m'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 13</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Pelmar T.</span>
 										</label>
 									</div>
 								</div>
@@ -298,7 +258,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5'>
 										<input name='n' id='n' {...register('n')} type='checkbox' onClick={HandleN} value={n} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='n'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 14</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Bonilla A.</span>
 										</label>
 									</div>
 								</div>
@@ -306,7 +266,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5'>
 										<input name='o' id='o' {...register('o')} type='checkbox' onClick={HandleO} value={o} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='o'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 15</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Bambara</span>
 										</label>
 									</div>
 								</div>
@@ -315,7 +275,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 										<input name='p' id='p' {...register('p')} type='checkbox' onClick={HandleP} value={p} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='p'>
 											<label className='cursor-pointer' htmlFor='p'>
-												<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 16</span>
+												<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Kalilou S.</span>
 											</label>
 										</label>
 									</div>
@@ -324,71 +284,7 @@ const CommissionAdministrative2 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5'>
 										<input name='q' id='q' {...register('q')} type='checkbox' onClick={HandleQ} value={q} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='q'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 17</span>
-										</label>
-									</div>
-								</div>
-								<div className='flex items-start m-auto sm:m-0'>
-									<div className='flex items-center h-5'>
-										<input name='r' id='r' {...register('r')} type='checkbox' onClick={HandleR} value={r} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
-										<label className='cursor-pointer' htmlFor='r'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 18</span>
-										</label>
-									</div>
-								</div>
-								<div className='flex items-start m-auto sm:m-0'>
-									<div className='flex items-center h-5'>
-										<input name='s' id='s' {...register('s')} type='checkbox' onClick={HandleS} value={s} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
-										<label className='cursor-pointer' htmlFor='s'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 19</span>
-										</label>
-									</div>
-								</div>
-								<div className='flex items-start m-auto sm:m-0'>
-									<div className='flex items-center h-5'>
-										<input name='t' id='t' {...register('t')} type='checkbox' onClick={HandleT} value={t} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
-										<label className='cursor-pointer' htmlFor='t'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 20</span>
-										</label>
-									</div>
-								</div>
-								<div className='flex items-start m-auto sm:m-0'>
-									<div className='flex items-center h-5'>
-										<input name='u' id='u' {...register('u')} type='checkbox' onClick={HandleU} value={u} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
-										<label className='cursor-pointer' htmlFor='u'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 21</span>
-										</label>
-									</div>
-								</div>
-								<div className='flex items-start m-auto sm:m-0'>
-									<div className='flex items-center h-5'>
-										<input name='v' id='v' {...register('v')} type='checkbox' onClick={HandleV} value={v} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
-										<label className='cursor-pointer' htmlFor='v'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 22</span>
-										</label>
-									</div>
-								</div>
-								<div className='flex items-start m-auto sm:m-0'>
-									<div className='flex items-center h-5'>
-										<input name='w' id='w' {...register('w')} type='checkbox' onClick={HandleW} value={w} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
-										<label className='cursor-pointer' htmlFor='w'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 23</span>
-										</label>
-									</div>
-								</div>
-								<div className='flex items-start m-auto sm:m-0'>
-									<div className='flex items-center h-5'>
-										<input name='x' id='x' {...register('x')} type='checkbox' onClick={HandleX} value={x} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
-										<label className='cursor-pointer' htmlFor='x'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 24</span>
-										</label>
-									</div>
-								</div>
-								<div className='flex items-start m-auto sm:m-0'>
-									<div className='flex items-center h-5'>
-										<input name='y' id='y' {...register('y')} type='checkbox' onClick={HandleY} value={y} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
-										<label className='cursor-pointer' htmlFor='y'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 25</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Zenaf N.</span>
 										</label>
 									</div>
 								</div>

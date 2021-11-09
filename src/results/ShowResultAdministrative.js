@@ -112,7 +112,7 @@ const ShowResultAdministrative = () => {
 			score: AdministrativeM,
 		},
 		{
-			name: 'Bonila A.',
+			name: 'Bonilla A.',
 			value: valueN.toFixed(2),
 			score: AdministrativeN,
 		},

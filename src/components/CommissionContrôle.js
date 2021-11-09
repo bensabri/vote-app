@@ -19,13 +19,11 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	const [a, setA] = useState(0);
 	const [b, setB] = useState(0);
 	const [c, setC] = useState(0);
-	const [d, setD] = useState(0);
-	const [e, setE] = useState(0);
 	const [error, setError] = useState('');
 
 	const date = new Date().toLocaleDateString();
 
-	const watchCheckBox = watch(['a', 'b', 'c', 'd', 'e']);
+	const watchCheckBox = watch(['a', 'b', 'c']);
 	const checkedCount = watchCheckBox.filter(Boolean).length;
 
 	const onSubmit = async () => {
@@ -36,8 +34,6 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 					a: Number(a),
 					b: Number(b),
 					c: Number(c),
-					d: Number(d),
-					e: Number(e),
 				},
 
 				email: email,
@@ -67,12 +63,6 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	};
 	const HandleC = () => {
 		setC(watchCheckBox[2] ? 0 : Number(mandat));
-	};
-	const HandleD = () => {
-		setD(watchCheckBox[3] ? 0 : Number(mandat));
-	};
-	const HandleE = () => {
-		setE(watchCheckBox[4] ? 0 : Number(mandat));
 	};
 
 	const voted = resultControle.find(({ data: { email } }) => email === currentUser.email);
@@ -108,7 +98,6 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 					</Step>
 				</Stepper>
 			</div>
-			{/* )} */}
 
 			{voted?.data.firstVote ? (
 				<div>
@@ -130,7 +119,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5 cursor-pointer'>
 										<input id='a' name='a' {...register('a')} type='checkbox' value={a} onClick={HandleA} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='a'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 1</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Abdelali H.</span>
 										</label>
 									</div>
 								</div>
@@ -138,7 +127,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 									<div className='flex items-center h-5 '>
 										<input id='b' name='b' {...register('b')} type='checkbox' onClick={HandleB} value={b} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='b'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 2</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Nadia Z.</span>
 										</label>
 									</div>
 								</div>
@@ -146,23 +135,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 									<div onClick={HandleC} className='flex items-center h-5 cursor-pointer'>
 										<input id='c' name='c' {...register('c')} type='checkbox' onClick={HandleC} value={c} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
 										<label className='cursor-pointer' htmlFor='c'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 3</span>
-										</label>
-									</div>
-								</div>
-								<div className='flex items-start'>
-									<div className='flex items-center h-5 cursor-pointer'>
-										<input id='d' name='d' {...register('d')} type='checkbox' onClick={HandleD} value={d} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
-										<label className='cursor-pointer' htmlFor='d'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 4</span>
-										</label>
-									</div>
-								</div>
-								<div className='flex items-start'>
-									<div className='flex items-center h-5 cursor-pointer'>
-										<input id='e' name='e' {...register('e')} type='checkbox' onClick={HandleE} value={e} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
-										<label className='cursor-pointer' htmlFor='e'>
-											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>OPTION 5</span>
+											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700'>Abdelrazak D.</span>
 										</label>
 									</div>
 								</div>

@@ -19,13 +19,13 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 	const { currentUser } = useAuth();
 	const [hasVoted, setHasVoted] = useState(false);
 
-	const [blanc, setBlanc] = useState(0);
-	const [pour, setPour] = useState(0);
-	const [contre, setContre] = useState(0);
+	const [a, setA] = useState(0);
+	const [b, setB] = useState(0);
+	const [c, setC] = useState(0);
 	const [error, setError] = useState('');
 	const date = new Date().toLocaleDateString();
 
-	const watchCheckBox = watch(['blanc', 'pour', 'contre']);
+	const watchCheckBox = watch(['a', 'b', 'c']);
 	const checkedCount = watchCheckBox.filter(Boolean).length;
 
 	const team = [
@@ -66,9 +66,9 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 			await addDoc(collection(db, 'results3'), {
 				syndicat: syndicat,
 				results_bureau: {
-					blanc: Number(blanc),
-					pour: Number(pour),
-					contre: Number(contre),
+					a: Number(a),
+					b: Number(b),
+					c: Number(c),
 				},
 
 				email: email,
@@ -87,13 +87,13 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 		}
 	};
 	const HandleA = () => {
-		setBlanc(watchCheckBox[0] ? 0 : Number(mandat));
+		setA(watchCheckBox[0] ? 0 : Number(mandat));
 	};
 	const HandleB = () => {
-		setPour(watchCheckBox[1] ? 0 : Number(mandat));
+		setB(watchCheckBox[1] ? 0 : Number(mandat));
 	};
 	const HandleC = () => {
-		setContre(watchCheckBox[2] ? 0 : Number(mandat));
+		setC(watchCheckBox[2] ? 0 : Number(mandat));
 	};
 	const voted = resultBureau.find(({ data: { email } }) => email === currentUser.email);
 
@@ -126,24 +126,24 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 								</div>
 								<div className='flex items-start'>
 									<div className='flex items-center h-5'>
-										<input name='blanc' id='blanc' {...register('blanc')} type='checkbox' onClick={HandleA} value={blanc} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
-										<label htmlFor='blanc'>
+										<input name='a' id='a' {...register('a')} type='checkbox' onClick={HandleA} value={a} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
+										<label htmlFor='a'>
 											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700 cursor-pointer'>Je vote Blanc</span>
 										</label>
 									</div>
 								</div>
 								<div className='flex items-start'>
 									<div className='flex items-center h-5'>
-										<input name='pour' id='pour' {...register('pour')} type='checkbox' onClick={HandleB} value={pour} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
-										<label htmlFor='pour'>
+										<input name='b' id='b' {...register('b')} type='checkbox' onClick={HandleB} value={b} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />{' '}
+										<label htmlFor='b'>
 											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700 cursor-pointer'>Je vote Pour</span>
 										</label>
 									</div>
 								</div>
 								<div className='flex items-start'>
 									<div className='flex items-center h-5'>
-										<input name='contre' id='contre' {...register('contre')} type='checkbox' onClick={HandleC} value={contre} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />
-										<label htmlFor='contre'>
+										<input name='c' id='c' {...register('c')} type='checkbox' onClick={HandleC} value={c} className='focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded' />
+										<label htmlFor='c'>
 											<span className='ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700 cursor-pointer'>Je vote Contre</span>
 										</label>
 									</div>
