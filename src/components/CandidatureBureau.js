@@ -116,10 +116,10 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 								<h3 className='text-center text-xs sm:text-sm lg:text-lg mb-1 font-bold text-gray-700'>Une seule liste s'est présentée</h3>
 								<div className='flex flex-wrap gap-4 justify-center items-center rounded-md shadow-md p-6'>
 									{team.map((member) => (
-										<div key={member.name} className='flex flex-col'>
+										<div key={member.name} className='flex flex-col justify-center items-center'>
 											<img className='rounded-circle w-24' src={member.img} alt='' />
-											<p className='text-center text-sm text-bold'>{member.name}</p>
-											<p className='text-center text-sm'>{member.role}</p>
+											<p className='text-center text-xs font-medium'>{member.name}</p>
+											<p className='text-center text-xs font-light'>{member.role}</p>
 										</div>
 									))}
 								</div>
