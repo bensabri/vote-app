@@ -13,11 +13,11 @@ import AllResults from '../results/AllResults';
 import ShowResultControle from '../results/ShowResultControle';
 import ShowResultAdministrative from '../results/ShowResultAdministrative';
 import ShowResultBureau from '../results/ShowResultBureau';
+import Header from './Header';
 
 const Dashboard = () => {
 	const [admin, setAdmin] = useState(false);
-	const { setProcurationUsers, setResultsAccess, resultsAccess } =
-		useGlobalContext();
+	const { setProcurationUsers, setResultsAccess, resultsAccess } = useGlobalContext();
 	const { currentUser } = useAuth();
 
 	useEffect(() => {
@@ -54,27 +54,34 @@ const Dashboard = () => {
 	}, []);
 
 	return (
-		<div className="min-h-screen flex flex-col items-center justify-center bg-gray-300">
-			<div className="mb-10 flex flex-col sm:px-6 md:px-8 lg:px-10 py-8 rounded-md h-4/5 w-full lg:max-w-6xl md:max-w-full">
-				<GetUsers />
-				<ResultControle />
-				<ResultAdministrative />
-				<ResultBureau />
-				{resultsAccess && <AllResults />}
-				{admin ? (
-					<div>
-						<SendEmail />
-						<CreateUser />
-						<ShowResultControle />
-						<ShowResultAdministrative />
-						<ShowResultBureau />
-					</div>
-				) : (
-					<VotePage />
-				)}
-				<LogOutBtn />
+		<>
+			<Header />
+			<video className='absolute w-screen h-screen object-cover z-0' autoPlay loop muted>
+				<source src='https://firebasestorage.googleapis.com/v0/b/voteapp-d3b5e.appspot.com/o/background_1.mp4?alt=media&token=18027da3-7a79-4a58-ae9f-703635c7b0c7' type='video/mp4' />
+				Your browser does not support the video tag.
+			</video>
+			<div className='min-h-screen flex flex-col items-center justify-center bg-gray-300 z-10 mt-24'>
+				<div className='mb-10 flex flex-col sm:px-6 md:px-8 lg:px-10 py-8 rounded-md h-4/5 w-full lg:max-w-6xl md:max-w-full z-10'>
+					<GetUsers />
+					<ResultControle />
+					<ResultAdministrative />
+					<ResultBureau />
+					{resultsAccess && <AllResults />}
+					{admin ? (
+						<div>
+							<SendEmail />
+							<CreateUser />
+							<ShowResultControle />
+							<ShowResultAdministrative />
+							<ShowResultBureau />
+						</div>
+					) : (
+						<VotePage />
+					)}
+					{/* <LogOutBtn /> */}
+				</div>
 			</div>
-		</div>
+		</>
 	);
 };
 

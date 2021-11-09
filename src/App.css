@@ -1,3 +1,7 @@
 html {
 	font-size: calc(60% + 1vmin);
 }
+
+.Mui-completed {
+	color: rgb(36 210 25) !important;
+}
