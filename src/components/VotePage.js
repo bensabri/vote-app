@@ -71,35 +71,97 @@ const VotePage = () => {
 			case 'hfati@hotmail.fr':
 				setSyndicatList(['SNSCS', 'CARREFOUR MARKET']);
 				break;
+			case 'franck.martinez3@wanadoo.fr':
+				setSyndicatList(['DECATHLON', 'J.A. DELMAS', 'KUONI GTS']);
+				break;
+			case 'freddy.hardet@orange.fr':
+				setSyndicatList([
+					'CARREFOUR SUPPLY CREPY',
+					'RLS CE SNECMA',
+					'SERM',
+				]);
+				break;
+			case 'imed.benahmed@yahoo.fr':
+				setSyndicatList(['ZARAT', 'BERSHKA']);
+				break;
+			case 'sidibekalilou@yahoo.fr':
+				setSyndicatList([
+					'SECURITE 2',
+					'ABERCROMBIE',
+					'SECURITE 7',
+					'ASTEN SANTE',
+					'CASINO GD',
+				]);
+				break;
+			case 'unsa.hcr@unsa.org':
+				setSyndicatList(['HCR', 'CMS VACANCES', 'V R P']);
+				break;
+			case 'khadijachlait@hotmail.com':
+				setSyndicatList([
+					'NETTOYAGE 1',
+					'GFI INFORMATIQUE',
+					'ITM LAI',
+					'LMNEXT FR',
+				]);
+				break;
+			case 'lagomuche@orange.fr':
+				setSyndicatList([
+					'KIABI',
+					'SONEPAR',
+					'PRIMAVISTA',
+					'D3T DISTRIBUTION',
+					'POLTRONESOFA',
+				]);
+				break;
+			case 'mouloud.nadia@neuf.fr':
+				setSyndicatList([
+					'ETAM',
+					'ALDI CAVAILLON',
+					"BOURSE DE L'IMMOBILIER",
+					'CELINE',
+					'THIRIET DISTRIBUTION',
+				]);
+				break;
+			case 'unsa.adecco@gmail.com':
+				setSyndicatList([
+					'ADECCO',
+					'EFR France/EG Retail France',
+					'GEZE France',
+					'QUALICONSULT',
+					'SUPERMARCHES MATCH',
+				]);
+				break;
+			case 'unsa.manpower@gmail.com':
+				setSyndicatList([
+					'MANPOWER',
+					'IKEA ENTREPOTS CHATRES',
+					'IKEA ENTREPOTS METZ',
+					'MC DONALD S France SERVICE',
+					'MINELLI',
+				]);
+				break;
+			case 'fourseb13@gmail.com':
+				setSyndicatList([
+					'OFFICE DEPOT',
+					'AUCHAN NICE',
+					'BIOCOOP',
+					'CASINO ANTIBES SIESTA',
+					'LECLERC SAINTES',
+				]);
+				break;
+			case 'pelmarthierry1@gmail.com':
+				setSyndicatList([
+					'SECURITE 1',
+					'DENTSPLY SIRONA',
+					'RESMED',
+					'REXEL REGION SUD',
+					'VILMORIN JARDIN',
+				]);
+				break;
+			case 'compass@unsa.org':
+				setSyndicatList(['COMPASS', 'MSC CROISIERES']);
+				break;
 		}
-		// switch(currentUser?.email) {
-		// 	case 'lakram@hotmail.fr':
-		// 	setSyndicatList([
-		// 		'JEANJEAN/JD SPORTS'
-		// 	])
-		// 	break
-		// }
-		// if (currentUser?.email === 'benasabri@gmail.com') {
-		// 	// utlilisateur avec une procuration
-		// 	setSyndicatList([
-		// 		'AD GRAND OUEST',
-		// 		'AUCHAN NICE',
-		// 		'CARREFOUR LIVRE CHEZ VOUS',
-		// 		'ADECCO',
-		// 		'AQUABOULEVARD',
-		// 		'GROUPE AUTODISTRIBUTION',
-		// 		'AUCHAN LA DEFENSE',
-		// 		'KIABI',
-		// 		'TEST4',
-		// 		'TEST5',
-		// 		'TEST6',
-		// 		'TEST7',
-		// 		'TEST8',
-		// 		'TEST9',
-		// 		'TEST10',
-		// 		'DEVSAB',
-		// 	]);
-		// }
 	}, []);
 
 	useEffect(() => {
