@@ -44,6 +44,18 @@ const VotePage = () => {
 					'CARREFOUR VAUX EN VELIN',
 				]);
 				break;
+			case 'unsa.nettoyage@unsa.org':
+				setSyndicatList([
+					'NETTOYAGE 3',
+					'KUONI-TRAVEL LAB',
+					'AMPLITEL',
+					'JEAN MOULIN/JETLY',
+					'HAPPY CHIC',
+				]);
+				break;
+			case 'hfati@hotmail.fr':
+				setSyndicatList(['SNSCS', 'CARREFOUR MARKET']);
+				break;
 		}
 		// switch(currentUser?.email) {
 		// 	case 'lakram@hotmail.fr':
