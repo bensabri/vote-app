@@ -46,8 +46,8 @@ const CreateUser = () => {
 
 	return (
 		<div className='flex flex-col items-center justify-center'>
-			<div className='flex flex-col bg-white shadow-md px-10 sm:px-10 md:px-10 lg:px-16 py-10 rounded-md w-full max-w-xl mt-vh'>
-				<h2 className='font-medium self-center text-lg sm:text-xl uppercase text-gray-500'>Créé un nouvel utilisateur</h2>
+			<div className='flex flex-col bg-white shadow-md px-10 sm:px-10 md:px-10 lg:px-16 py-10 rounded-md w-full max-w-xl mt-vh z-10'>
+				<h2 className='font-medium self-center text-lg sm:text-xl uppercase text-gray-500'>Créer un nouvel utilisateur</h2>
 				<div className='mt-10'>{error && <p className='text-sm text-red mb-5'>{error}</p>}</div>
 				<form onSubmit={handleSubmit(onSubmit)}>
 					<div className='flex flex-col mb-6'>

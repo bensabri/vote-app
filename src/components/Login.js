@@ -32,7 +32,7 @@ const Login = () => {
 			</video>
 			<div className='flex flex-col items-center bg-white z-10 p-6'>
 				<div className='flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-md w-full max-w-md z-10 mt-vh'>
-					<div className='font-medium self-center text-xl sm:text-2xl uppercase text-gray-800'>Espace Vote</div>
+					<div className='font-medium self-center text-xl sm:text-2xl uppercase text-gray-800'>UNSA FCS 6ÈME CONGRÈS 2021</div>
 
 					<div className='mt-10'>
 						{error && <p className='text-sm text-red mb-5'>{error}</p>}
