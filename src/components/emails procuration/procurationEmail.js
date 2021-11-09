@@ -105,39 +105,45 @@ NADIA ZENAF = [
     BOURSE DE L'IMMOBILIER, mandat 6
     CELINE, mandat 9
     THIRIET DISTRIBUTION, mandat 4
-]
+] NADIA ZENAF 148
+
 SANDRINE POULIN = [
-    // ADECCO unsa.adecco@gmail.com //
-    EFR France/EG Retail France,
-    GEZE France,
-    QUALICONSULT,
-    SUPERMARCHES MATCH
-]
+    // ADECCO unsa.adecco@gmail.com // mandat 90
+    EFR France/EG Retail France, mandat 3
+    GEZE France, mandat 5
+    QUALICONSULT, mandat 8 
+    SUPERMARCHES MATCH mandat 1
+] SANDRINE POULIN 107
+
 SANDRINE VERDIER = [
-    // MANPOWER unsa.manpower@gmail.com //
-    IKEA ENTREPOTS CHATRES,
-    IKEA ENTREPOTS METZ,
-    MC DONALD S France SERVICE,
-    MINELLI,
-]
+    // MANPOWER unsa.manpower@gmail.com // mandat 93
+    IKEA ENTREPOTS CHATRES, mandat 7
+    IKEA ENTREPOTS METZ, mandat 9
+    MC DONALD S France SERVICE, mandat 4
+    MINELLI, mandat 4
+] SANDRINE VERDIER 117
+
 SEBASTIEN FOURNIER = [
-    // OFFICE DEPOT  fourseb13@gmail.com //
-    AUCHAN NICE,
-    BIOCOOP,
-    CASINO ANTIBES SIESTA,
-    LECLERC SAINTES, 
-]
+    // OFFICE DEPOT  fourseb13@gmail.com // mandat
+    AUCHAN NICE, mandat
+    BIOCOOP, mandat 
+    CASINO ANTIBES SIESTA, mandat
+    LECLERC SAINTES,  mandat
+] SEBASTIEN FOURNIER 
+
 THIERRY PELMAR = [
-    // SECURITE 1 pelmarthierry1@gmail.com //
-    DENTSPLY SIRONA,
-    RESMED,
-    REXEL REGION SUD,
-    VILMORIN JARDIN,
-]
+    // SECURITE 1 pelmarthierry1@gmail.com // mandat 51
+    DENTSPLY SIRONA, mandat 4
+    RESMED, mandat  1
+    REXEL REGION SUD, mandat 5
+    VILMORIN JARDIN, mandat 5
+] THIERRY PELMAR 66
+
 TOURE Ma Dembo = [
-    // COMPASS compass@unsa.org // 
-    MSC CROISIERES,
-]
+    // COMPASS compass@unsa.org //  mandat 326
+    MSC CROISIERES, mandat 1
+] TOURE Ma Dembo 327
+
 ///////////////////// manque information ///////////////////////// 
 ERIC LEPRINCE = [
     // ECOLAB PEST France unsa.epf@gmail.com //
