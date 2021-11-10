@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useGlobalContext } from '../contexts/context';
 import {
 	BarChart,
@@ -12,7 +12,14 @@ import {
 } from 'recharts';
 
 const ShowResultAdministrative = () => {
+	const [resultsWidth, setResultsWidth] = useState(99);
 	const { resultAdministrative } = useGlobalContext();
+
+	useEffect(() => {
+		setTimeout(() => {
+			setResultsWidth(100);
+		}, 4000);
+	}, []);
 
 	// resultat Commission Administrative
 
@@ -227,7 +234,10 @@ const ShowResultAdministrative = () => {
 					</h3>
 				</div>
 				<div className="overflow-hidden overflow-x-scroll mr-5">
-					<ResponsiveContainer width={2000} height={300}>
+					<ResponsiveContainer
+						width={`${resultsWidth}%`}
+						height={300}
+					>
 						<BarChart data={dataAdministrative}>
 							<CartesianGrid strokeDasharray="3 3" />
 							<XAxis dataKey="name" />

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useGlobalContext } from '../contexts/context';
 import {
 	BarChart,
@@ -13,6 +13,13 @@ import {
 
 const ShowResultControle = () => {
 	const { resultControle } = useGlobalContext();
+	const [resultsWidth, setResultsWidth] = useState(99);
+
+	useEffect(() => {
+		setTimeout(() => {
+			setResultsWidth(100);
+		}, 4000);
+	}, []);
 
 	// resultat Commission de Contrôle
 	const ControleA = resultControle.reduce(
@@ -70,7 +77,10 @@ const ShowResultControle = () => {
 				</div>
 
 				<div>
-					<ResponsiveContainer width="100%" height={300}>
+					<ResponsiveContainer
+						width={`${resultsWidth}%`}
+						height={300}
+					>
 						<BarChart data={dataControle}>
 							<CartesianGrid strokeDasharray="3 3" />
 							{/* <Tooltip /> */}
