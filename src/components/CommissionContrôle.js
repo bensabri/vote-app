@@ -35,7 +35,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	const checkedCount = watchCheckBox.filter(Boolean).length;
 
 	const onSubmit = async () => {
-		if (watchCheckBox && checkedCount === 2) {
+		if (watchCheckBox && checkedCount === 3) {
 			await addDoc(collection(db, 'results1'), {
 				syndicat: syndicat,
 				results_controle: {
@@ -146,7 +146,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 							<div className="p-6 space-y-4">
 								<h3 className="text-center text-xs sm:text-sm lg:text-lg mb-1 font-bold text-gray-700">
 									Parmi ces candidats, pour qui souhaiteriez
-									vous voter ? {`${checkedCount}/2`}
+									vous voter ? {`${checkedCount}/3`}
 								</h3>
 								<div className="flex items-start">
 									<div className="flex items-center h-5 cursor-pointer">
@@ -219,9 +219,9 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 						<div className="flex justify-around py-5 bg-gray-100 text-right sm:px-6 rounded-md">
 							{error && (
 								<div className="text-red-600 text-xs sm:text-sm  px-5 pt-2">{`${
-									checkedCount < 2
+									checkedCount < 3
 										? 'Vous ne pouvez pas choisir moins de 3 candidats'
-										: checkedCount > 2
+										: checkedCount > 3
 										? 'Vous ne pouvez pas choisir plus de 3 candidats'
 										: ''
 								} `}</div>

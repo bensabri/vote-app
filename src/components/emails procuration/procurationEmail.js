@@ -124,12 +124,12 @@ SANDRINE VERDIER = [
 ] SANDRINE VERDIER 117
 
 SEBASTIEN FOURNIER = [
-    // OFFICE DEPOT  fourseb13@gmail.com // mandat
-    AUCHAN NICE, mandat
-    BIOCOOP, mandat 
-    CASINO ANTIBES SIESTA, mandat
-    LECLERC SAINTES,  mandat
-] SEBASTIEN FOURNIER 
+    // OFFICE DEPOT  fourseb13@gmail.com // mandat 70
+    AUCHAN NICE, mandat 2
+    BIOCOOP, mandat 12
+    CASINO ANTIBES SIESTA, mandat 5
+    LECLERC SAINTES,  mandat 12
+] SEBASTIEN FOURNIER 101
 
 THIERRY PELMAR = [
     // SECURITE 1 pelmarthierry1@gmail.com // mandat 51
