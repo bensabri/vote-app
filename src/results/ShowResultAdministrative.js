@@ -1,31 +1,108 @@
 import React from 'react';
 import { useGlobalContext } from '../contexts/context';
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, LabelList, CartesianGrid } from 'recharts';
+import {
+	BarChart,
+	Bar,
+	XAxis,
+	YAxis,
+	Tooltip,
+	ResponsiveContainer,
+	LabelList,
+	CartesianGrid,
+} from 'recharts';
 
 const ShowResultAdministrative = () => {
 	const { resultAdministrative } = useGlobalContext();
 
 	// resultat Commission Administrative
 
-	const AdministrativeA = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.a, 0);
-	const AdministrativeB = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.b, 0);
-	const AdministrativeC = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.c, 0);
-	const AdministrativeD = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.d, 0);
-	const AdministrativeE = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.e, 0);
-	const AdministrativeF = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.f, 0);
-	const AdministrativeG = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.g, 0);
-	const AdministrativeH = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.h, 0);
-	const AdministrativeI = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.i, 0);
-	const AdministrativeJ = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.j, 0);
-	const AdministrativeK = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.k, 0);
-	const AdministrativeL = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.l, 0);
-	const AdministrativeM = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.m, 0);
-	const AdministrativeN = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.n, 0);
-	const AdministrativeO = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.o, 0);
-	const AdministrativeP = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.p, 0);
-	const AdministrativeQ = resultAdministrative.reduce((a, b) => a + b.data.results_administrative.q, 0);
+	const AdministrativeA = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.KempfJp,
+		0
+	);
+	const AdministrativeB = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.BraquetM,
+		0
+	);
+	const AdministrativeC = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.HirakiF,
+		0
+	);
+	const AdministrativeD = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.ToureM,
+		0
+	);
+	const AdministrativeE = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.TabbouA,
+		0
+	);
+	const AdministrativeF = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.FournierS,
+		0
+	);
+	const AdministrativeG = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.FuchsM,
+		0
+	);
+	const AdministrativeH = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.DjeffelA,
+		0
+	);
+	const AdministrativeI = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.BulotS,
+		0
+	);
+	const AdministrativeJ = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.ChlaitK,
+		0
+	);
+	const AdministrativeK = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.AssalB,
+		0
+	);
+	const AdministrativeL = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.MekhloufiB,
+		0
+	);
+	const AdministrativeM = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.PelmarT,
+		0
+	);
+	const AdministrativeN = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.BonillaA,
+		0
+	);
+	const AdministrativeO = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.Bambara,
+		0
+	);
+	const AdministrativeP = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.KalilouS,
+		0
+	);
+	const AdministrativeQ = resultAdministrative.reduce(
+		(a, b) => a + b.data.results_administrative.ZenafN,
+		0
+	);
 
-	const totalValue = AdministrativeA + AdministrativeB + AdministrativeC + AdministrativeD + AdministrativeE + AdministrativeF + AdministrativeG + AdministrativeH + AdministrativeI + AdministrativeJ + AdministrativeK + AdministrativeL + AdministrativeM + AdministrativeN + AdministrativeO + AdministrativeP + AdministrativeQ;
+	const totalValue =
+		AdministrativeA +
+		AdministrativeB +
+		AdministrativeC +
+		AdministrativeD +
+		AdministrativeE +
+		AdministrativeF +
+		AdministrativeG +
+		AdministrativeH +
+		AdministrativeI +
+		AdministrativeJ +
+		AdministrativeK +
+		AdministrativeL +
+		AdministrativeM +
+		AdministrativeN +
+		AdministrativeO +
+		AdministrativeP +
+		AdministrativeQ;
 
 	const valueA = (AdministrativeA / totalValue) * 100;
 	const valueB = (AdministrativeB / totalValue) * 100;
@@ -137,38 +214,43 @@ const ShowResultAdministrative = () => {
 	};
 
 	return (
-		<div className='bg-white rounded-md shadow-md mt-vh px-4 mx-4'>
-			<div className='flex flex-col py-8'>
-				<h2 className='text-center pb-5 font-medium self-center text-lg sm:text-xl uppercase text-gray-500'>Commission Administrative</h2>
-				<div className='border-t-2 w-11/12 m-auto'></div>
-				<div className='mb-6 mt-6 flex justify-between text-gray-500 font-semibold'>
-					<h3 className='ml-6 uppercase'>pourcent</h3>
-					<h3 className='mr-5 uppercase'>Nombre de vote {resultAdministrative.length}</h3>
+		<div className="bg-white rounded-md shadow-md mt-vh px-4 mx-4">
+			<div className="flex flex-col py-8">
+				<h2 className="text-center pb-5 font-medium self-center text-lg sm:text-xl uppercase text-gray-500">
+					Commission Administrative
+				</h2>
+				<div className="border-t-2 w-11/12 m-auto"></div>
+				<div className="mb-6 mt-6 flex justify-between text-gray-500 font-semibold">
+					<h3 className="ml-6 uppercase">pourcent</h3>
+					<h3 className="mr-5 uppercase">
+						Nombre de vote {resultAdministrative.length}
+					</h3>
 				</div>
-				<div className='overflow-hidden overflow-x-scroll mr-5'>
+				<div className="overflow-hidden overflow-x-scroll mr-5">
 					<ResponsiveContainer width={2000} height={300}>
 						<BarChart data={dataAdministrative}>
-							<CartesianGrid strokeDasharray='3 3' />
-							<XAxis dataKey='name' />
+							<CartesianGrid strokeDasharray="3 3" />
+							<XAxis dataKey="name" />
 							<YAxis domain={[0, 25]} />
 							<Tooltip />
 							<Bar
-								layout='vertical'
+								layout="vertical"
 								barSize={70}
-								dataKey='value'
-								fill='#81CFDF'
+								dataKey="value"
+								fill="#81CFDF"
 								label={{
 									position: 'top',
 									formatter: labelFormatter,
 									fill: '#81CFDF',
-								}}>
+								}}
+							>
 								<LabelList
 									label={{
 										position: 'top',
 										formatter: labelFormatter,
 										fill: '#81CFDF',
 									}}
-									dataKey='score'
+									dataKey="score"
 									style={{ position: 'top', fill: '#ffffff' }}
 								/>
 							</Bar>
