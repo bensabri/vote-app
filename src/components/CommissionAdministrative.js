@@ -80,7 +80,7 @@ const CommissionAdministrative = ({ mandat, syndicat, email }) => {
 					alert(`Votre vote n'a pas pu être prit en compte ${error}`);
 				});
 		} else {
-			setError('Veuillez cocher trois cases');
+			setError('Vous devez sélectionner 21 candidats');
 		}
 	};
 
@@ -166,7 +166,7 @@ const CommissionAdministrative = ({ mandat, syndicat, email }) => {
 								<p className='text-xs sm:text-sm lg:text-lg'>{`Syndicat ${syndicat}`}</p>
 							</div>
 							<div className='border-t-2 w-11/12 m-auto'></div>
-							<h3 className='text-center text-sm lg:text-lg mb-1 mt-2 sm:ml-6 ml-2 font-bold text-gray-700'>Parmi ces candidats, pour qui souhaiteriez vous voter ? {`${checkedCount}/15`}</h3>
+							<h3 className='text-center text-sm lg:text-lg mb-1 mt-2 sm:ml-6 ml-2 font-bold text-gray-700'>Parmi ces candidats, pour qui souhaiteriez vous voter ? {`${checkedCount}/21`}</h3>
 							<div className='mt-4 sm:ml-7 grid gap-4 sm:gap-x-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5'>
 								<div className='w-full flex items-start m-auto sm:m-0'>
 									<div className='flex items-start h-5'>
