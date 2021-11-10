@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useGlobalContext } from '../contexts/context';
 import {
 	BarChart,
@@ -12,8 +12,14 @@ import {
 } from 'recharts';
 
 const ShowResultBureau = () => {
-	// const [totalValue, setTotalValue] = useState(0);
+	const [resultsWidth, setResultsWidth] = useState(99);
 	const { resultBureau } = useGlobalContext();
+
+	useEffect(() => {
+		setTimeout(() => {
+			setResultsWidth(100);
+		}, 4000);
+	}, []);
 
 	// resultat Commission de Contrôle
 	const BureauA = resultBureau.reduce(
@@ -69,7 +75,7 @@ const ShowResultBureau = () => {
 						Nombre de vote {resultBureau.length}
 					</h3>
 				</div>
-				<ResponsiveContainer width="100%" height={300}>
+				<ResponsiveContainer width={`${resultsWidth}%`} height={300}>
 					<BarChart data={dataBureau}>
 						<CartesianGrid strokeDasharray="3 3" />
 						<XAxis dataKey="name" />
