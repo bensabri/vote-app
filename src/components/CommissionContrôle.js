@@ -104,7 +104,6 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 
 	return (
 		<div className="mt-3 sm:mt-0">
-			{/* {!voted3?.data.thirdVote && ( */}
 			<div className="w-11/12 m-auto bg-white rounded-md mb-3 p-5">
 				<Stepper activeStep={step} alternativeLabel>
 					<Step>

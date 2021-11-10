@@ -6,20 +6,11 @@ import CommissionControle from './CommissionContrôle';
 const VotePage = () => {
 	const [voting, setVoting] = useState(false);
 	const { currentUser } = useAuth();
-	const {
-		users,
-		procurationUsers,
-		syndicatList,
-		setSyndicatList,
-		query,
-		setQuery,
-		resultBureau,
-		step,
-		setStep,
-	} = useGlobalContext();
+	const { users, procurationUsers, syndicatList, setSyndicatList } =
+		useGlobalContext();
 
 	useEffect(() => {
-		switch (currentUser?.email) {
+		switch (currentUser.email) {
 			case 'benasabri@gmail.com':
 				setSyndicatList([
 					'AD GRAND OUEST',
@@ -36,7 +27,6 @@ const VotePage = () => {
 				break;
 			case 'alexandre.bonilla@yahoo.fr':
 				setSyndicatList([
-					'CARREFOUR RAMBOUILLET',
 					'CARREFOUR MERIGNAC',
 					'CARREFOUR SUPPLY ERTECO',
 					'CARREFOUR DUPARC',
@@ -45,7 +35,6 @@ const VotePage = () => {
 				break;
 			case 'assalbrigitte92@gmail.com':
 				setSyndicatList([
-					'CLUB MED',
 					'DESMAZIERES-CHAUSSEXPO',
 					'CYRILLUS',
 					'AVIGNON TOURISME',
@@ -53,14 +42,13 @@ const VotePage = () => {
 				]);
 				break;
 			case 'migan.unsa@yahoo.fr':
-				setSyndicatList(['SECURITE 3', 'SMCP', 'BON MARCHE', 'AKTO']);
+				setSyndicatList(['SMCP', 'BON MARCHE', 'AKTO']);
 				break;
 			case 'unsa.proprete.nettoyage@gmail.com':
-				setSyndicatList(['NETTOYAGE 2', 'GALERIES LAFAYETTES']);
+				setSyndicatList(['GALERIES LAFAYETTES']);
 				break;
 			case 'unsa.nettoyage@unsa.org':
 				setSyndicatList([
-					'NETTOYAGE 3',
 					'KUONI-TRAVEL LAB',
 					'AMPLITEL',
 					'JEAN MOULIN/JETLY',
@@ -68,24 +56,19 @@ const VotePage = () => {
 				]);
 				break;
 			case 'hfati@hotmail.fr':
-				setSyndicatList(['SNSCS', 'CARREFOUR MARKET']);
+				setSyndicatList(['CARREFOUR MARKET']);
 				break;
 			case 'franck.martinez3@wanadoo.fr':
-				setSyndicatList(['DECATHLON', 'J.A. DELMAS', 'KUONI GTS']);
+				setSyndicatList(['J.A. DELMAS', 'KUONI GTS']);
 				break;
 			case 'freddy.hardet@orange.fr':
-				setSyndicatList([
-					'CARREFOUR SUPPLY CREPY',
-					'RLS CE SNECMA',
-					'SERM',
-				]);
+				setSyndicatList(['RLS CE SNECMA', 'SERM']);
 				break;
 			case 'imed.benahmed@yahoo.fr':
-				setSyndicatList(['ZARAT', 'BERSHKA']);
+				setSyndicatList(['BERSHKA']);
 				break;
 			case 'sidibekalilou@yahoo.fr':
 				setSyndicatList([
-					'SECURITE 2',
 					'ABERCROMBIE',
 					'SECURITE 7',
 					'ASTEN SANTE',
@@ -93,19 +76,13 @@ const VotePage = () => {
 				]);
 				break;
 			case 'unsa.hcr@unsa.org':
-				setSyndicatList(['HCR', 'CMS VACANCES', 'V R P']);
+				setSyndicatList(['CMS VACANCES', 'V R P']);
 				break;
 			case 'khadijachlait@hotmail.com':
-				setSyndicatList([
-					'NETTOYAGE 1',
-					'GFI INFORMATIQUE',
-					'ITM LAI',
-					'LMNEXT FR',
-				]);
+				setSyndicatList(['GFI INFORMATIQUE', 'ITM LAI', 'LMNEXT FR']);
 				break;
 			case 'lagomuche@orange.fr':
 				setSyndicatList([
-					'KIABI',
 					'SONEPAR',
 					'PRIMAVISTA',
 					'D3T DISTRIBUTION',
@@ -114,7 +91,6 @@ const VotePage = () => {
 				break;
 			case 'mouloud.nadia@neuf.fr':
 				setSyndicatList([
-					'ETAM',
 					'ALDI CAVAILLON',
 					"BOURSE DE L'IMMOBILIER",
 					'CELINE',
@@ -123,7 +99,6 @@ const VotePage = () => {
 				break;
 			case 'unsa.adecco@gmail.com':
 				setSyndicatList([
-					'ADECCO',
 					'EFR France/EG Retail France',
 					'GEZE France',
 					'QUALICONSULT',
@@ -132,7 +107,6 @@ const VotePage = () => {
 				break;
 			case 'unsa.manpower@gmail.com':
 				setSyndicatList([
-					'MANPOWER',
 					'IKEA ENTREPOTS CHATRES',
 					'IKEA ENTREPOTS METZ',
 					'MC DONALD S France SERVICE',
@@ -141,7 +115,6 @@ const VotePage = () => {
 				break;
 			case 'fourseb13@gmail.com':
 				setSyndicatList([
-					'OFFICE DEPOT',
 					'AUCHAN NICE',
 					'BIOCOOP',
 					'CASINO ANTIBES SIESTA',
@@ -150,7 +123,6 @@ const VotePage = () => {
 				break;
 			case 'pelmarthierry1@gmail.com':
 				setSyndicatList([
-					'SECURITE 1',
 					'DENTSPLY SIRONA',
 					'RESMED',
 					'REXEL REGION SUD',
@@ -158,31 +130,34 @@ const VotePage = () => {
 				]);
 				break;
 			case 'compass@unsa.org':
-				setSyndicatList(['COMPASS', 'MSC CROISIERES']);
+				setSyndicatList(['MSC CROISIERES']);
 				break;
 		}
 	}, []);
-
 	return (
 		<>
 			<div className="flex flex-col py-8 h-1/2">
-				{procurationUsers && (
-					<div className="bg-white flex flex-col justify-between pl-3 pr-3 w-11/12 m-auto shadow-lg rounded uppercase py-8 mb-8">
-						<h2 className="pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
-							UNSA FCS 6ÈME CONGRÈS 2021
-						</h2>
-						<div className="border-t-2 w-11/12 m-auto"></div>
-						<span className="text-sm font-medium self-center mb-3 mt-5">
-							Vous avez une procuration pour
-						</span>
-						{syndicatList.map((syndicat, index) => (
-							<h2 key={index}>{syndicat}</h2>
-						))}
-					</div>
-				)}
+				<div className="bg-white flex flex-col justify-between pl-3 pr-3 w-11/12 m-auto shadow-lg rounded uppercase py-8 mb-8">
+					<h2 className="pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
+						UNSA FCS 6ÈME CONGRÈS 2021
+					</h2>
+					<div className="border-t-2 w-11/12 m-auto"></div>
+
+					{procurationUsers && (
+						<div>
+							<span className="text-sm font-medium m-auto mb-3 mt-5">
+								Vous avez une procuration pour
+							</span>
+							{syndicatList.map((syndicat, index) => (
+								<h2 key={index}>{syndicat}</h2>
+							))}
+						</div>
+					)}
+				</div>
+
 				{users
 					.filter(
-						({ data: { email } }) => email === currentUser?.email // filtrer les personnes par email pour les personnes qui n'ont pas de procuration
+						({ data: { email } }) => email === currentUser.email // filtrer les personnes par email pour les personnes qui n'ont pas de procuration
 					)
 					.map(({ id, data: { syndicat, mandat, email } }) => (
 						<div className={`${!voting && 'hidden'}`} key={id}>
