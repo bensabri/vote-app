@@ -6,6 +6,9 @@ module.exports = {
 			margin: {
 				vh: '5vh',
 			},
+			padding: {
+				vh: '5vh',
+			},
 			borderRadius: {
 				circle: '50%',
 			},

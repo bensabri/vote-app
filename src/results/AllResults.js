@@ -10,7 +10,7 @@ import Header from '../components/Header';
 
 const AllResults = () => {
 	return (
-		<div className='bg-primary'>
+		<div className='bg-primary pb-vh'>
 			<Header />
 			<ResultControle />
 			<ResultAdministrative />
