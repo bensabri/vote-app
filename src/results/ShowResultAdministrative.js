@@ -12,12 +12,12 @@ import {
 } from 'recharts';
 
 const ShowResultAdministrative = () => {
-	const [resultsWidth, setResultsWidth] = useState(99);
+	const [resultsWidth, setResultsWidth] = useState(1999);
 	const { resultAdministrative } = useGlobalContext();
 
 	useEffect(() => {
 		setTimeout(() => {
-			setResultsWidth(100);
+			setResultsWidth(2000);
 		}, 4000);
 	}, []);
 
@@ -216,8 +216,8 @@ const ShowResultAdministrative = () => {
 			score: AdministrativeQ,
 		},
 	];
-	const labelFormatter = (value) => {
-		return value + '%';
+	const labelFormatter = (pourcentage) => {
+		return pourcentage + '%';
 	};
 
 	return (
@@ -234,10 +234,7 @@ const ShowResultAdministrative = () => {
 					</h3>
 				</div>
 				<div className="overflow-hidden overflow-x-scroll mr-5">
-					<ResponsiveContainer
-						width={`${resultsWidth}%`}
-						height={300}
-					>
+					<ResponsiveContainer width={resultsWidth} height={300}>
 						<BarChart data={dataAdministrative}>
 							<CartesianGrid strokeDasharray="3 3" />
 							<XAxis dataKey="name" />
