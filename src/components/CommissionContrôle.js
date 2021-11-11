@@ -16,7 +16,6 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	const {
 		resultControle,
 		resultBureau,
-		query,
 		procurationUsers,
 		step,
 		setStep,

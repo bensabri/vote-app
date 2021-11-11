@@ -19,7 +19,8 @@ const ShowResultControle = () => {
 		setTimeout(() => {
 			setResultsWidth(100);
 		}, 4000);
-	}, []);
+		setResultsWidth(99);
+	}, [resultControle]);
 
 	// resultat Commission de Contrôle
 	const ControleA = resultControle.reduce(

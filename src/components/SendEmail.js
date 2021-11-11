@@ -9,12 +9,22 @@ const SendEmail = () => {
 
 	const handleSendEmail = async (e) => {
 		e.preventDefault();
+		try {
+			await sendSignInLink(emailRef.current.value);
+			alert('Email envoyer');
+		} catch (err) {
+			setError(`Failed to send email ${err.message}`);
+		}
+		emailRef.current.value = '';
+	};
 
+	const handleSendAllEmail = async (e) => {
+		e.preventDefault();
 		emailArray.forEach((email, i) => {
 			setTimeout(() => {
 				try {
 					console.log(email);
-					// await sendSignInLink(email)
+					// sendSignInLink(email);
 				} catch (err) {
 					setError(`Failed to send email ${err.message}`);
 				}
@@ -61,6 +71,17 @@ const SendEmail = () => {
 							<span className="mr-2 uppercase">Envoyer</span>
 						</button>
 					</form>
+					<div>
+						<h2 className="mt-7 font-medium self-center text-xl sm:text-xl uppercase text-gray-500">
+							Envoyer tous les emails de participation
+						</h2>
+						<button
+							onClick={handleSendAllEmail}
+							className="mt-3 flex items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-600 hover:bg-blue-700 rounded py-2 w-full transition duration-150 ease-in"
+						>
+							<span className="uppercase">Envoyer</span>
+						</button>
+					</div>
 				</div>
 			</div>
 		</>

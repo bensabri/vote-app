@@ -177,6 +177,7 @@ ERIC LEPRINCE = [
 ]
 
 // EMAIL A ENVOYER POUR LE VOTE / PERSONNE QUI VOTE POUR EUX MEME
+
 [
     lecomtejeanmichel1970@gmail.com,
     bertrand.audoual@gmail.com,
