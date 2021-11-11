@@ -14,8 +14,13 @@ const ItemsCheckBox = [
 	'Pelmar T',
 	'Bonilla A',
 	'Bambara',
+	'JossoB',
 	'Kalilou S',
 	'Zenaf N',
+	'SandrineV',
+	'HammoutiA',
+	'HuetF',
+	'PoulainS',
 ];
 
 export default ItemsCheckBox;
