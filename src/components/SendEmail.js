@@ -72,8 +72,8 @@ const SendEmail = () => {
 						</button>
 					</form>
 					<div>
-						<h2 className="mt-7 font-medium self-center text-xl sm:text-xl uppercase text-gray-500">
-							Envoyer tous les emails de participation
+						<h2 className="border-t-2 mt-7 pt-5 font-medium text-center text-xl sm:text-lg uppercase text-gray-500">
+							Envoyer les emails
 						</h2>
 						<button
 							onClick={handleSendAllEmail}
