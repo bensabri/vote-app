@@ -3,7 +3,7 @@ import { useGlobalContext } from '../contexts/context';
 import { db } from '../firebase';
 
 const GetUsers = () => {
-	const { setUsers, setLoading, setIsFetching, users } = useGlobalContext();
+	const { setUsers, setLoading, setIsFetching } = useGlobalContext();
 
 	const getUsers = () => {
 		// GET USERS FROM DATABASE

@@ -12,12 +12,7 @@ import Header from './Header';
 
 const Dashboard = () => {
 	const [admin, setAdmin] = useState(false);
-	const {
-		setProcurationUsers,
-		setSuperProcuration,
-		superProcuration,
-		query,
-	} = useGlobalContext();
+	const { setProcurationUsers, setSuperProcuration } = useGlobalContext();
 	const { currentUser } = useAuth();
 
 	useEffect(() => {
@@ -100,9 +95,10 @@ const Dashboard = () => {
 				break;
 			case 'benhammouda.amir@gmail.com':
 				setSuperProcuration(true);
+				break;
 			default:
 				setProcurationUsers(false);
-			// setSuperProcuration(false);
+				setSuperProcuration(false);
 		}
 	}, [currentUser.email]);
 

@@ -17,9 +17,11 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 		resultControle,
 		resultBureau,
 		procurationUsers,
+		superProcuration,
 		step,
 		setStep,
 		resultAdministrative,
+		query,
 	} = useGlobalContext();
 	const { currentUser } = useAuth();
 
@@ -73,14 +75,29 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	};
 
 	const voted = resultControle.find(
-		({ data: { email } }) => email === currentUser.email
+		({ data: { email } }) =>
+			email ===
+			`${
+				(superProcuration && query) ||
+				(!superProcuration && currentUser.email)
+			}`
 	);
 	const voted2 = resultAdministrative.find(
-		({ data: { email } }) => email === currentUser.email
+		({ data: { email } }) =>
+			email ===
+			`${
+				(superProcuration && query) ||
+				(!superProcuration && currentUser.email)
+			}`
 	);
 
 	const voted3 = resultBureau.find(
-		({ data: { email } }) => email === currentUser.email
+		({ data: { email } }) =>
+			email ===
+			`${
+				(superProcuration && query) ||
+				(!superProcuration && currentUser.email)
+			}`
 	);
 
 	useEffect(() => {

@@ -211,7 +211,7 @@ const ShowResultAdministrative = () => {
 			score: AdministrativeK,
 		},
 		{
-			name: 'Mekhloufi B.',
+			name: 'Mekhlo.',
 			value: valueL.toFixed(2),
 			score: AdministrativeL,
 		},
@@ -236,12 +236,12 @@ const ShowResultAdministrative = () => {
 			score: AdministrativeP,
 		},
 		{
-			name: 'Zenaf N.',
+			name: 'ZenafN.',
 			value: valueQ.toFixed(2),
 			score: AdministrativeQ,
 		},
 		{
-			name: 'SandrineV.',
+			name: 'SandriV.',
 			value: valueR.toFixed(2),
 			score: AdministrativeR,
 		},

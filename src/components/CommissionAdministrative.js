@@ -10,7 +10,7 @@ import CandidatureBureau from './CandidatureBureau';
 const CommissionAdministrative = ({ mandat, syndicat, email }) => {
 	const { register, watch, handleSubmit, formState } = useForm();
 	const { isSubmitting } = formState;
-	const { resultAdministrative, query, procurationUsers, step, setStep } =
+	const { resultAdministrative, query, procurationUsers, superProcuration } =
 		useGlobalContext();
 
 	const { currentUser } = useAuth();
@@ -150,7 +150,12 @@ const CommissionAdministrative = ({ mandat, syndicat, email }) => {
 	};
 
 	const voted = resultAdministrative.find(
-		({ data: { email } }) => email === currentUser.email
+		({ data: { email } }) =>
+			email ===
+			`${
+				(superProcuration && query) ||
+				(!superProcuration && currentUser.email)
+			}`
 	);
 
 	return (
