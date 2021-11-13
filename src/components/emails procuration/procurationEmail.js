@@ -1,4 +1,22 @@
 /*
+// Vote manuel sans email ////////////////////////////
+ABDELALI ELHAMOUTI = [
+    // MISSING EMAIL MANDAT //
+    ECOLAB PEST France unsa.epf@gmail.com mandat 24
+    COLRUYT, mandat 2
+    SUPPLAY, mandat 3
+    SECURITE 5, mandat 11
+]
+MICHEL BRAQUET = [
+    // BRAQUETMICHEL ?? missing ?? // 
+    CARREFOUR SUPPLY COMBS, mandat 17
+    CONFORAMA, mandat 22
+    DESAUTEL, mandat 24
+    LYON PARC AUTO, mandat 20
+    OREFI OUEST, mandat 31
+] MICHEL BRAQUET 114
+// Vote manuel sans email //////////////////////
+
 AKRAM GUELLOU = [
      // FOOT LOCKER lakram@hotmail.fr mandat 3// 
     JEANJEAN/JD SPORTS, mandat 1
@@ -73,7 +91,8 @@ KEMPF Jean Pierre = [
     // HCR unsa.hcr@unsa.org // mandat 237
     CMS VACANCES, mandat 9
     V R P mandat 23
-] KEMPF Jean Pierre 269
+    TATI MAG mandat 17
+] KEMPF Jean Pierre 286
 
 KHADIJA CHLAIT = [
     // NETTOYAGE 1 khadijachlait@hotmail.com // mandat 78
@@ -90,14 +109,6 @@ MARYSE FUCHS = [
     POLTRONESOFA, mandat 8
 ] MARYSE FUCHS 85
 
-MICHEL BRAQUET = [
-    // BRAQUETMICHEL ?? missing ?? // 
-    CARREFOUR SUPPLY COMBS, mandat 17
-    CONFORAMA, mandat 22
-    DESAUTEL, mandat 24
-    LYON PARC AUTO, mandat 20
-    OREFI OUEST, mandat 31
-] MICHEL BRAQUET 114
 
 NADIA ZENAF = [
     // ETAM mouloud.nadia@neuf.fr // mandat 120
@@ -136,8 +147,7 @@ THIERRY PELMAR = [
     DENTSPLY SIRONA, mandat 4
     RESMED, mandat  1
     REXEL REGION SUD, mandat 5
-    VILMORIN JARDIN, mandat 5
-] THIERRY PELMAR 66
+] THIERRY PELMAR 61
 
 TOURE Ma Dembo = [
     // COMPASS compass@unsa.org //  mandat 326
@@ -209,6 +219,7 @@ ERIC LEPRINCE = [
     pider33@hotmail.fr,
     thierry72b@sfr.fr,
     unsa.synergie@gmail.com,
+    laurent.royal@vilmorinjardin.com,
 ]
 
 */

@@ -172,11 +172,22 @@ const VotePage = () => {
 								name="emails"
 								id="emails"
 							>
-								{users.map(({ id, data: { email } }) => (
-									<option key={id} value={email}>
-										{email}
-									</option>
-								))}
+								{users
+									.sort((a, b) => {
+										let ua = a.data.email.toLowerCase(),
+											ub = b.data.email.toLowerCase();
+
+										if (ua < ub) {
+											return -1;
+										}
+										if (ua > ub) {
+											return 1;
+										}
+										return 0;
+									})
+									.map(({ id, data: { email } }) => (
+										<option value={email}>{email}</option>
+									))}
 							</select>
 						</div>
 					)}

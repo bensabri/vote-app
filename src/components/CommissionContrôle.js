@@ -34,7 +34,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 
 	const watchCheckBox = watch(['Abdelali H', 'Nadia Z', 'Abdelrazak D']);
 	const checkedCount = watchCheckBox.filter(Boolean).length;
-
+	console.log(watchCheckBox);
 	const onSubmit = async () => {
 		if (watchCheckBox && checkedCount === 3) {
 			await addDoc(collection(db, 'results1'), {

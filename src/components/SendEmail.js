@@ -20,11 +20,12 @@ const SendEmail = () => {
 
 	const handleSendAllEmail = async (e) => {
 		e.preventDefault();
+		alert('these are fake email');
 		emailArray.forEach((email, i) => {
 			setTimeout(() => {
 				try {
 					console.log(email);
-					// sendSignInLink(email);
+					sendSignInLink(email);
 				} catch (err) {
 					setError(`Failed to send email ${err.message}`);
 				}
