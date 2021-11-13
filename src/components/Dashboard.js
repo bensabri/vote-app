@@ -96,6 +96,9 @@ const Dashboard = () => {
 			case 'benhammouda.amir@gmail.com':
 				setSuperProcuration(true);
 				break;
+			case 'ssabril@ymail.com':
+				setSuperProcuration(true);
+				break;
 			default:
 				setProcurationUsers(false);
 				setSuperProcuration(false);
