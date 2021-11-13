@@ -13,7 +13,6 @@ const ItemsCheckBox = [
 	'Mekhloufi B',
 	'Pelmar T',
 	'Bonilla A',
-	'Bambara',
 	'JossoB',
 	'Kalilou S',
 	'Zenaf N',
