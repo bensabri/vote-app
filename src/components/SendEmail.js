@@ -21,7 +21,7 @@ const SendEmail = () => {
 	const handleSendAllEmail = async (e) => {
 		e.preventDefault();
 		alert('these are fake email');
-		emailArray.forEach((email, i) => {
+		emailArray.map((email) => {
 			let timer = setTimeout(() => {
 				try {
 					console.log(email);
@@ -29,7 +29,7 @@ const SendEmail = () => {
 				} catch (err) {
 					setError(`Failed to send email ${err.message}`);
 				}
-			}, i * 5000);
+			}, 2500);
 			return () => clearTimeout(timer);
 		});
 	};
