@@ -186,7 +186,9 @@ const VotePage = () => {
 										return 0;
 									})
 									.map(({ id, data: { email } }) => (
-										<option value={email}>{email}</option>
+										<option key={id} value={email}>
+											{email}
+										</option>
 									))}
 							</select>
 						</div>
