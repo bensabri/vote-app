@@ -6,7 +6,8 @@ ABDELALI ELHAMOUTI = [
     COLRUYT, mandat 2
     SUPPLAY, mandat 3
     SECURITE 5, mandat 11
-]
+    STEF LOGISTIQUE NEMOURS, mandat 9
+] ABDELALI ELHAMOUTI 49
 MICHEL BRAQUET = [
     // BRAQUETMICHEL ?? missing ?? // 
     CARREFOUR SUPPLY COMBS, mandat 17
@@ -75,7 +76,7 @@ FREDDY HARDET = [
 ] FREDDY HARDET 39
 
 IMED BENAHMED = [
-    // ZARA imed.benahmed@yahoo.fr // mandat 4
+    // ZARA horiasafi@gmail.com // mandat 4
     BERSHKA mandat 2
 ] IMED BENAHMED 6
 
@@ -99,7 +100,8 @@ KHADIJA CHLAIT = [
     GFI INFORMATIQUE / INETUM, mandat 1
     ITM LAI, mandat 5
     LMNEXT FR, mandat 2
-] KHADIJA CHLAIT 86
+    CHANEL, mandat 3
+] KHADIJA CHLAIT 89
 
 MARYSE FUCHS = [
     // KIABI lagomuche@orange.fr // mandat 42

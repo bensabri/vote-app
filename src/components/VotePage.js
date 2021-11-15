@@ -71,7 +71,7 @@ const VotePage = () => {
 			case 'freddy.hardet@orange.fr':
 				setSyndicatList(['RLS CE SNECMA', 'SERM']);
 				break;
-			case 'imed.benahmed@yahoo.fr':
+			case 'horiasafi@gmail.com':
 				setSyndicatList(['BERSHKA']);
 				break;
 			case 'sidibekalilou@yahoo.fr':
@@ -86,7 +86,12 @@ const VotePage = () => {
 				setSyndicatList(['CMS VACANCES', 'V R P']);
 				break;
 			case 'khadijachlait@hotmail.com':
-				setSyndicatList(['GFI INFORMATIQUE', 'ITM LAI', 'LMNEXT FR']);
+				setSyndicatList([
+					'GFI INFORMATIQUE',
+					'ITM LAI',
+					'LMNEXT FR',
+					'CHANEL',
+				]);
 				break;
 			case 'lagomuche@orange.fr':
 				setSyndicatList([
@@ -138,6 +143,24 @@ const VotePage = () => {
 				break;
 			case 'compass@unsa.org':
 				setSyndicatList(['MSC CROISIERES']);
+				break;
+			case 'hammoutiabdelali@yahoo.fr':
+				setSyndicatList([
+					'COLRUYT',
+					'ECOLAB PEST France',
+					'SECURITE 5',
+					'SUPPLAY',
+					'STEF LOGISTIQUE NEMOURS',
+				]);
+				break;
+			case 'michel.braquet@unsa.org':
+				setSyndicatList([
+					'CARREFOUR SUPPLY COMBS',
+					'CONFORAMA',
+					'DESAUTEL',
+					'LYON PARC AUTO',
+					'OREFI  OUEST',
+				]);
 				break;
 			case 'benhammouda.amir@gmail.com':
 				setSyndicatList(['']);

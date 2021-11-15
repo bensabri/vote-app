@@ -174,5 +174,9 @@ export default emailArray;
 	'laurent.royal@vilmorinjardin.com',
 	'michel.braquet@unsa.org',
 	'hammoutiabdelali@yahoo.fr',
-
+    'philippe.wibaut@unsaapi.com,
+	'cse-lagoa@maisons.dumonde.com'
+	'hassan.rammane@sfr.fr',
+	'ade.nacknouck@gmail.com',
+	'vanessaarveyres@gmail.com'
     */
