@@ -129,7 +129,7 @@ const VotePage = () => {
 					'VILMORIN JARDIN',
 				]);
 				break;
-			case 'compass@unsa.org':
+			case 'unsacompass@gmail.com':
 				setSyndicatList(['MSC CROISIERES']);
 				break;
 			case 'hammoutiabdelali@yahoo.fr':
