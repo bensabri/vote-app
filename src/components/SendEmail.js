@@ -20,7 +20,7 @@ const SendEmail = () => {
 
 	const handleSendAllEmail = async (e) => {
 		e.preventDefault();
-		alert('these are fake email');
+		alert('ENVOIE DES EMAILS EN COURS...');
 		emailArray.map((email, index) => {
 			let timer = setTimeout(() => {
 				try {

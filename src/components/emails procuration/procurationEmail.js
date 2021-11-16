@@ -103,6 +103,10 @@ KHADIJA CHLAIT = [
     CHANEL, mandat 3
 ] KHADIJA CHLAIT 89
 
+CHANEL = [
+    // CELINE bouchemal.claudine@gmail.com // mandat 9
+] CHANEL 9
+
 MARYSE FUCHS = [
     // KIABI lagomuche@orange.fr // mandat 42
     SONEPAR, mandat 16

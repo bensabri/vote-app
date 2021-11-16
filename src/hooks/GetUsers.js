@@ -8,7 +8,7 @@ const GetUsers = () => {
 	const getUsers = () => {
 		// GET USERS FROM DATABASE
 		setLoading(true);
-		db.collection('userstest').onSnapshot((Snapshot) => {
+		db.collection('users').onSnapshot((Snapshot) => {
 			setUsers(
 				Snapshot.docs.map((doc) => ({
 					id: doc.id,

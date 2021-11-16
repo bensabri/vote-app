@@ -18,17 +18,6 @@ const VotePage = () => {
 
 	useEffect(() => {
 		switch (currentUser.email) {
-			case 'benasabri@gmail.com':
-				setSyndicatList([
-					'AD GRAND OUEST',
-					'AUCHAN NICE',
-					'CARREFOUR LIVRE CHEZ VOUS',
-					'ADECCO',
-					'AQUABOULEVARD',
-					'GROUPE AUTODISTRIBUTION',
-					'AUCHAN LA DEFENSE',
-				]);
-				break;
 			case 'lakram@hotmail.fr':
 				setSyndicatList(['JEANJEAN/JD SPORTS']);
 				break;
@@ -105,7 +94,6 @@ const VotePage = () => {
 				setSyndicatList([
 					'ALDI CAVAILLON',
 					"BOURSE DE L'IMMOBILIER",
-					'CELINE',
 					'THIRIET DISTRIBUTION',
 				]);
 				break;
