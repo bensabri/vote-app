@@ -156,44 +156,19 @@ const ShowResultAdministrative = () => {
 
 	const dataAdministrative = [
 		{
-			name: 'Kempf JP.',
-			value: valueA.toFixed(2),
-			score: AdministrativeA,
+			name: 'Assal B.',
+			value: valueK.toFixed(2),
+			score: AdministrativeK,
 		},
 		{
-			name: 'Braquet M.',
+			name: 'Bonilla A.',
+			value: valueN.toFixed(2),
+			score: AdministrativeN,
+		},
+		{
+			name: 'Braq M.',
 			value: valueB.toFixed(2),
 			score: AdministrativeB,
-		},
-		{
-			name: 'Hiraki F.',
-			value: valueC.toFixed(2),
-			score: AdministrativeC,
-		},
-		{
-			name: 'Toure M.',
-			value: valueD.toFixed(2),
-			score: AdministrativeD,
-		},
-		{
-			name: 'Tabbou A.',
-			value: valueE.toFixed(2),
-			score: AdministrativeE,
-		},
-		{
-			name: 'Fournier S.',
-			value: valueF.toFixed(2),
-			score: AdministrativeF,
-		},
-		{
-			name: 'Fuchs M.',
-			value: valueG.toFixed(2),
-			score: AdministrativeG,
-		},
-		{
-			name: 'Djeffel A.',
-			value: valueH.toFixed(2),
-			score: AdministrativeH,
 		},
 		{
 			name: 'Bulot S.',
@@ -206,24 +181,34 @@ const ShowResultAdministrative = () => {
 			score: AdministrativeJ,
 		},
 		{
-			name: 'Assal B.',
-			value: valueK.toFixed(2),
-			score: AdministrativeK,
+			name: 'Djeffel A.',
+			value: valueH.toFixed(2),
+			score: AdministrativeH,
 		},
 		{
-			name: 'Mekhlo.',
-			value: valueL.toFixed(2),
-			score: AdministrativeL,
+			name: 'Fourn S.',
+			value: valueF.toFixed(2),
+			score: AdministrativeF,
 		},
 		{
-			name: 'Pelmar T.',
-			value: valueM.toFixed(2),
-			score: AdministrativeM,
+			name: 'Fuchs M.',
+			value: valueG.toFixed(2),
+			score: AdministrativeG,
 		},
 		{
-			name: 'Bonilla A.',
-			value: valueN.toFixed(2),
-			score: AdministrativeN,
+			name: 'HammouA',
+			value: valueS.toFixed(2),
+			score: AdministrativeS,
+		},
+		{
+			name: 'Hiraki F.',
+			value: valueC.toFixed(2),
+			score: AdministrativeC,
+		},
+		{
+			name: 'HuetF',
+			value: valueT.toFixed(2),
+			score: AdministrativeT,
 		},
 		{
 			name: 'JossoB',
@@ -236,9 +221,24 @@ const ShowResultAdministrative = () => {
 			score: AdministrativeP,
 		},
 		{
-			name: 'ZenafN.',
-			value: valueQ.toFixed(2),
-			score: AdministrativeQ,
+			name: 'Kempf JP.',
+			value: valueA.toFixed(2),
+			score: AdministrativeA,
+		},
+		{
+			name: 'Mekhlo.',
+			value: valueL.toFixed(2),
+			score: AdministrativeL,
+		},
+		{
+			name: 'Pelmar T.',
+			value: valueM.toFixed(2),
+			score: AdministrativeM,
+		},
+		{
+			name: 'PoulainS',
+			value: valueU.toFixed(2),
+			score: AdministrativeU,
 		},
 		{
 			name: 'SandriV.',
@@ -246,21 +246,22 @@ const ShowResultAdministrative = () => {
 			score: AdministrativeR,
 		},
 		{
-			name: 'HammoutiA',
-			value: valueS.toFixed(2),
-			score: AdministrativeS,
+			name: 'Tabbou A.',
+			value: valueE.toFixed(2),
+			score: AdministrativeE,
 		},
 		{
-			name: 'HuetF',
-			value: valueT.toFixed(2),
-			score: AdministrativeT,
+			name: 'Toure M.',
+			value: valueD.toFixed(2),
+			score: AdministrativeD,
 		},
 		{
-			name: 'PoulainS',
-			value: valueU.toFixed(2),
-			score: AdministrativeU,
+			name: 'ZenafN.',
+			value: valueQ.toFixed(2),
+			score: AdministrativeQ,
 		},
 	];
+
 	const labelFormatter = (pourcentage) => {
 		return pourcentage + '%';
 	};
