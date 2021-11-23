@@ -1,4 +1,4 @@
-const ItemsCheckBox = [
+const CandidatureAdministrative = [
 	'Kempf JP',
 	'Braquet M',
 	'Hiraki F',
@@ -22,4 +22,4 @@ const ItemsCheckBox = [
 	'PoulainS',
 ];
 
-export default ItemsCheckBox;
+export default CandidatureAdministrative;

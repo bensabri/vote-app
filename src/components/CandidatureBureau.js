@@ -11,9 +11,6 @@ import michel from '../img/michel.png';
 import kempf from '../img/kempf.png';
 import nadia from '../img/nadia.png';
 import sandrine from '../img/sandrine.png';
-import { Label } from 'recharts';
-import Box from '@mui/material/Box';
-import LinearProgress from '@mui/material/LinearProgress';
 
 const CandidatureBureau = ({ mandat, syndicat, email }) => {
 	const { register, watch, handleSubmit, formState } = useForm();

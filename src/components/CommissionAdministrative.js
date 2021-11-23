@@ -4,7 +4,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { collection, addDoc } from 'firebase/firestore';
 import { useForm } from 'react-hook-form';
 import { db } from '../firebase';
-import itemCheckBox from '../hooks/ItemsCheckBox';
+import CandidatureAdministrative from './candidats/CandidatsAdministrative';
 import CandidatureBureau from './CandidatureBureau';
 
 const CommissionAdministrative = ({ mandat, syndicat, email }) => {
@@ -39,7 +39,7 @@ const CommissionAdministrative = ({ mandat, syndicat, email }) => {
 	const [error, setError] = useState('');
 	const date = new Date().toLocaleDateString();
 
-	const watchCheckBox = watch(itemCheckBox);
+	const watchCheckBox = watch(CandidatureAdministrative);
 	const checkedCount = watchCheckBox.filter(Boolean).length;
 
 	const onSubmit = async () => {

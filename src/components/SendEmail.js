@@ -25,7 +25,7 @@ const SendEmail = () => {
 			let timer = setTimeout(() => {
 				try {
 					console.log(email);
-					sendSignInLink(email);
+					// sendSignInLink(email);
 				} catch (err) {
 					setError(`Failed to send email ${err.message}`);
 				}

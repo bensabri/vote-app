@@ -8,6 +8,7 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import CommissionAdministrative from './CommissionAdministrative';
+import Candidats from './candidats/CandidatsControle';
 
 const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	const [hasVoted, setHasVoted] = useState(false);
@@ -24,55 +25,36 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 		query,
 	} = useGlobalContext();
 	const { currentUser } = useAuth();
-
-	const [abdelaliH, setAbdelaliH] = useState(0);
-	const [nadiaZ, setNadiaZ] = useState(0);
-	const [abdelrazakD, setAbdelrazakD] = useState(0);
 	const [error, setError] = useState('');
-
 	const date = new Date().toLocaleDateString();
 
-	const watchCheckBox = watch(['Abdelali H', 'Nadia Z', 'Abdelrazak D']);
-	const checkedCount = watchCheckBox.filter(Boolean).length;
+	const watchCheckBox = watch(Candidats);
+	const checkedCount = watchCheckBox.filter(Number).length;
 
 	const onSubmit = async () => {
-		if (watchCheckBox && checkedCount === 3) {
+		if (watchCheckBox && checkedCount === 1) {
 			await addDoc(collection(db, 'results1'), {
 				syndicat: syndicat,
 				results_controle: {
-					abdelalih: Number(abdelaliH),
-					nadiaz: Number(nadiaZ),
-					abdelrazakd: Number(abdelrazakD),
+					abdelalih: Number(watchCheckBox[0]),
+					abdelrazakd: Number(watchCheckBox[1]),
+					nadiaz: Number(watchCheckBox[2]),
 				},
-
 				email: email,
 				firstVote: hasVoted,
 				created: date,
-			})
-				.then(() => {
-					// alert(
-					// 	'Votre vote pour la commission de contrôle a été prise en compte'
-					// );
-					// setStep(step + 1);
-				})
-				.catch((error) => {
-					alert(`Votre vote n'a pas pu être pris en compte ${error}`);
-				});
+			});
 		} else {
 			setError('Veuillez cocher trois cases');
 		}
 	};
 
-	const HandleA = () => {
-		setAbdelaliH(watchCheckBox[0] ? 0 : Number(mandat));
-	};
-
-	const HandleB = () => {
-		setNadiaZ(watchCheckBox[1] ? 0 : Number(mandat));
-	};
-	const HandleC = () => {
-		setAbdelrazakD(watchCheckBox[2] ? 0 : Number(mandat));
-	};
+	useEffect(() => {
+		const subscription = watch((value, { name, type }) =>
+			console.log(value, name, type)
+		);
+		return () => subscription.unsubscribe();
+	}, [watch]);
 
 	const voted = resultControle.find(
 		({ data: { email } }) =>
@@ -163,81 +145,40 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 									Parmi ces candidats, pour qui souhaiteriez
 									vous voter ? {`${checkedCount}/3`}
 								</h3>
-								<div className="flex items-start">
-									<div className="flex items-center h-5 cursor-pointer">
-										<input
-											id="Abdelali H"
-											name="Abdelali H"
-											{...register('Abdelali H')}
-											type="checkbox"
-											value={abdelaliH}
-											onClick={HandleA}
-											className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-										/>{' '}
-										<label
-											className="cursor-pointer"
-											htmlFor="Abdelali H"
-										>
-											<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
-												Abdelali H.
-											</span>
-										</label>
+								{Candidats.sort().map((candidat, i) => (
+									<div className="flex items-start">
+										<div className="flex items-center h-5 cursor-pointer">
+											<input
+												id={candidat}
+												name={candidat}
+												{...register(candidat)}
+												type="checkbox"
+												value={`${
+													watchCheckBox[i] &&
+													Number(mandat)
+												}`}
+												className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
+											/>{' '}
+											<label
+												className="cursor-pointer"
+												htmlFor={candidat}
+											>
+												<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
+													{candidat}
+												</span>
+											</label>
+										</div>
 									</div>
-								</div>
-								<div className="flex items-start">
-									<div className="flex items-center h-5 ">
-										<input
-											id="Nadia Z"
-											name="Nadia Z"
-											{...register('Nadia Z')}
-											type="checkbox"
-											onClick={HandleB}
-											value={nadiaZ}
-											className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-										/>{' '}
-										<label
-											className="cursor-pointer"
-											htmlFor="Nadia Z"
-										>
-											<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
-												Nadia Z.
-											</span>
-										</label>
-									</div>
-								</div>
-								<div className="flex items-start">
-									<div
-										onClick={HandleC}
-										className="flex items-center h-5 cursor-pointer"
-									>
-										<input
-											id="Abdelrazak D"
-											name="Abdelrazak D"
-											{...register('Abdelrazak D')}
-											type="checkbox"
-											onClick={HandleC}
-											value={abdelrazakD}
-											className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
-										/>{' '}
-										<label
-											className="cursor-pointer"
-											htmlFor="Abdelrazak D"
-										>
-											<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
-												Abdelrazak D.
-											</span>
-										</label>
-									</div>
-								</div>
+								))}
 							</div>
 						</div>
 						<div className="flex justify-around py-5 bg-gray-100 text-right sm:px-6 rounded-md">
 							{error && (
 								<div className="text-red-600 text-xs sm:text-sm  px-5 pt-2">{`${
-									checkedCount < 3
-										? 'Vous ne pouvez pas choisir moins de 3 candidats'
-										: checkedCount > 3
-										? 'Vous ne pouvez pas choisir plus de 3 candidats'
+									checkedCount < 1
+										? 'Vous ne pouvez pas choisir moins de 1 candidats'
+										: checkedCount > 1
+										? 'Vous ne pouvez pas choisir plus de 1 candidats'
 										: ''
 								} `}</div>
 							)}

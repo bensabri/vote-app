@@ -5,7 +5,6 @@ import {
 	Bar,
 	XAxis,
 	YAxis,
-	Tooltip,
 	ResponsiveContainer,
 	LabelList,
 	CartesianGrid,
@@ -16,10 +15,11 @@ const ShowResultControle = () => {
 	const [resultsWidth, setResultsWidth] = useState(99);
 
 	useEffect(() => {
-		setTimeout(() => {
+		const timer = setTimeout(() => {
 			setResultsWidth(100);
 		}, 4000);
 		setResultsWidth(99);
+		return () => clearTimeout(timer);
 	}, [resultControle]);
 
 	// resultat Commission de Contrôle
@@ -44,17 +44,17 @@ const ShowResultControle = () => {
 
 	const dataControle = [
 		{
-			name: 'Abdelali H.',
+			name: 'Abdelali H',
 			value: valueA.toFixed(2),
 			score: ControleA,
 		},
 		{
-			name: 'Nadia Z.',
+			name: 'Nadia Z',
 			value: valueB.toFixed(2),
 			score: ControleB,
 		},
 		{
-			name: 'Abdelrazak D.',
+			name: 'Abdelrazak D',
 			value: valueC.toFixed(2),
 			score: ControleC,
 		},
@@ -76,7 +76,6 @@ const ShowResultControle = () => {
 						Nombre de vote {resultControle.length}
 					</h3>
 				</div>
-
 				<div>
 					<ResponsiveContainer
 						width={`${resultsWidth}%`}
