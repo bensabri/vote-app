@@ -8,7 +8,7 @@ const GetResult = () => {
 	const getResult = () => {
 		// GET RESULTS FROM DATABASE
 
-		db.collection('results1').onSnapshot((Snapshot) => {
+		db.collection('results1test').onSnapshot((Snapshot) => {
 			setResultControle(
 				Snapshot.docs.map((doc) => ({
 					id: doc.id,

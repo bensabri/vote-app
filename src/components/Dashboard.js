@@ -26,7 +26,7 @@ const Dashboard = () => {
 
 	useEffect(() => {
 		switch (currentUser.email) {
-			case 'benasabri@gmail.com':
+			case 'benasabri2@gmail.com':
 				setProcurationUsers(true);
 				/* setResultsAccess(false); */
 				break;

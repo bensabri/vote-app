@@ -5,12 +5,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { collection, addDoc } from 'firebase/firestore';
 import { useForm } from 'react-hook-form';
 import { db } from '../firebase';
-import fatiha from '../img/fatiha.jpg';
-import madembo from '../img/madembo.png';
-import michel from '../img/michel.png';
-import kempf from '../img/kempf.png';
-import nadia from '../img/nadia.png';
-import sandrine from '../img/sandrine.png';
+import { teamBureau } from './data/candidat-data';
 
 const CandidatureBureau = ({ mandat, syndicat, email }) => {
 	const { register, watch, handleSubmit, formState } = useForm();
@@ -30,39 +25,6 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 
 	const watchCheckBox = watch(['a', 'b', 'c']);
 	const checkedCount = watchCheckBox.filter(Boolean).length;
-
-	const team = [
-		{
-			img: fatiha,
-			name: 'FATIHA HIRAKI',
-			role: 'SECRÉTAIRE GÉNÉRALE',
-		},
-		{
-			img: madembo,
-			name: 'TOURE MA DEMBO',
-			role: 'SECRÉTAIRE GÉNÉRAL ADJOINT',
-		},
-		{
-			img: michel,
-			name: 'MICHEL BRAQUET',
-			role: 'SECRÉTAIRE GÉNÉRAL ADJOINT',
-		},
-		{
-			img: kempf,
-			name: 'JEAN PIERRE KEMPF',
-			role: 'SECRÉTAIRE FÉDÉRAL TRÉSORERIE',
-		},
-		{
-			img: sandrine,
-			name: 'SANDRINE VERDIER',
-			role: 'TRÉSORIER ADJOINT',
-		},
-		{
-			img: nadia,
-			name: 'NADIA ZENAF',
-			role: 'SECRÉTAIRE GÉNÉRALE ADJOINTE',
-		},
-	];
 
 	const onSubmit = async () => {
 		if (watchCheckBox && checkedCount === 1) {
@@ -138,7 +100,7 @@ const CandidatureBureau = ({ mandat, syndicat, email }) => {
 									Une seule liste candidate
 								</h3>
 								<div className="flex flex-wrap gap-4 justify-center items-center rounded-md shadow-md p-6">
-									{team.map((member) => (
+									{teamBureau.map((member) => (
 										<div
 											key={member.name}
 											className="flex flex-col justify-center items-center"

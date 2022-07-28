@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useGlobalContext } from '../contexts/context';
+import toPercent from '../components/candidats/PercentAdministrative';
 import {
 	BarChart,
 	Bar,

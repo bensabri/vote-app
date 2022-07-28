@@ -4,8 +4,8 @@ import { useAuth } from '../contexts/AuthContext';
 import { collection, addDoc } from 'firebase/firestore';
 import { useForm } from 'react-hook-form';
 import { db } from '../firebase';
-import CandidatureAdministrative from './candidats/CandidatsAdministrative';
 import CandidatureBureau from './CandidatureBureau';
+import { teamAdministrative } from './data/candidat-data';
 
 const CommissionAdministrative = ({ mandat, syndicat, email }) => {
 	const { register, watch, handleSubmit, formState } = useForm();
@@ -18,7 +18,7 @@ const CommissionAdministrative = ({ mandat, syndicat, email }) => {
 	const [error, setError] = useState('');
 	const date = new Date().toLocaleDateString();
 
-	const watchCheckBox = watch(CandidatureAdministrative);
+	const watchCheckBox = watch(teamAdministrative);
 	const checkedCount = watchCheckBox.filter(Boolean).length;
 
 	const onSubmit = async () => {
@@ -103,9 +103,13 @@ const CommissionAdministrative = ({ mandat, syndicat, email }) => {
 								voter ? {`${checkedCount}/10`}
 							</h3>
 							<div className="mt-4 sm:ml-7 grid gap-4 sm:gap-x-2 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-								{CandidatureAdministrative.sort().map(
-									(candidat, i) => (
-										<div className="w-full flex items-start m-auto sm:m-0">
+								{teamAdministrative
+									.sort()
+									.map((candidat, i) => (
+										<div
+											className="w-full flex items-start m-auto sm:m-0"
+											key={i}
+										>
 											<div className="flex items-start h-5">
 												<input
 													name={candidat}
@@ -128,8 +132,7 @@ const CommissionAdministrative = ({ mandat, syndicat, email }) => {
 												</label>
 											</div>
 										</div>
-									)
-								)}
+									))}
 							</div>
 						</div>
 						<div className="flex justify-around py-5 bg-gray-100 text-right sm:px-6 rounded-md">

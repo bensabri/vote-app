@@ -8,7 +8,7 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import CommissionAdministrative from './CommissionAdministrative';
-import Candidats from './candidats/CandidatsControle';
+import { teamControle } from './data/candidat-data';
 
 const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	const [hasVoted, setHasVoted] = useState(false);
@@ -28,12 +28,12 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	const [error, setError] = useState('');
 	const date = new Date().toLocaleDateString();
 
-	const watchCheckBox = watch(Candidats);
+	const watchCheckBox = watch(teamControle);
 	const checkedCount = watchCheckBox.filter(Number).length;
 
 	const onSubmit = async () => {
 		if (watchCheckBox && checkedCount === 1) {
-			await addDoc(collection(db, 'results1'), {
+			await addDoc(collection(db, 'results1test'), {
 				syndicat: syndicat,
 				results_controle: {
 					abdelalih: Number(watchCheckBox[0]),
@@ -145,18 +145,15 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 									Parmi ces candidats, pour qui souhaiteriez
 									vous voter ? {`${checkedCount}/3`}
 								</h3>
-								{Candidats.sort().map((candidat, i) => (
-									<div className="flex items-start">
+								{teamControle.sort().map((candidat, i) => (
+									<div className="flex items-start" key={i}>
 										<div className="flex items-center h-5 cursor-pointer">
 											<input
 												id={candidat}
 												name={candidat}
 												{...register(candidat)}
 												type="checkbox"
-												value={`${
-													watchCheckBox[i] &&
-													Number(mandat)
-												}`}
+												value={`${Number(mandat)}`}
 												className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
 											/>{' '}
 											<label
