@@ -7,7 +7,7 @@ const ResultBureau = () => {
 
 	const getResult = () => {
 		// GET RESULTS FROM DATABASE
-		db.collection('results3').onSnapshot((Snapshot) => {
+		db.collection('results3test').onSnapshot((Snapshot) => {
 			setResultBureau(
 				Snapshot.docs.map((doc) => ({
 					id: doc.id,

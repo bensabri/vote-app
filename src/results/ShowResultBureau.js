@@ -24,15 +24,15 @@ const ShowResultBureau = () => {
 
 	// resultat Commission de Contrôle
 	const BureauA = resultBureau.reduce(
-		(a, b) => a + b.data.results_bureau.a,
+		(a, b) => a + b.data.results_bureau.je_vote_Blanc,
 		0
 	);
 	const BureauB = resultBureau.reduce(
-		(a, b) => a + b.data.results_bureau.b,
+		(a, b) => a + b.data.results_bureau.je_vote_Pour,
 		0
 	);
 	const BureauC = resultBureau.reduce(
-		(a, b) => a + b.data.results_bureau.c,
+		(a, b) => a + b.data.results_bureau.je_vote_Contre,
 		0
 	);
 	const totalValue = BureauA + BureauB + BureauC;

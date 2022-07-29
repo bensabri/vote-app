@@ -5,30 +5,30 @@ import kempf from '../../img/kempf.png';
 import nadia from '../../img/nadia.png';
 import sandrine from '../../img/sandrine.png';
 
-export const teamControle = ['Abdelali H', 'Nadia Z', 'Abdelrazak D'];
+export const teamControle = ['abdelali_H', 'nadia_Z', 'abdelrazak_D'];
 
 export const teamAdministrative = [
-	'Kempf JP',
-	'Braquet M',
-	'Hiraki F',
-	'Toure M',
-	'Tabbou A',
-	'Fournier S',
-	'Fuchs M',
-	'Djeffel A',
-	'Bulot S',
-	'Chlait K',
-	'Assal B',
-	'Mekhloufi B',
-	'Pelmar T',
-	'Bonilla A',
-	'JossoB',
-	'Kalilou S',
-	'Zenaf N',
-	'SandrineV',
-	'HammoutiA',
-	'HuetF',
-	'PoulainS',
+	'kempf_JP',
+	'braquet_M',
+	'hiraki_F',
+	'toure_M',
+	'tabbou_A',
+	'fournier_S',
+	'fuchs_M',
+	'djeffel_A',
+	'bulot_S',
+	'chlait_K',
+	'assal_B',
+	'mekhloufi_B',
+	'pelmar_T',
+	'bonilla_A',
+	'jossoB',
+	'kalilou_S',
+	'zenaf_N',
+	'sandrineV',
+	'hammoutiA',
+	'huetF',
+	'poulainS',
 ];
 
 export const teamBureau = [
@@ -63,3 +63,5 @@ export const teamBureau = [
 		role: 'SECRÉTAIRE GÉNÉRALE ADJOINTE',
 	},
 ];
+
+export const voteBureau = ['je_vote_Blanc', 'je_vote_Pour', 'je_vote_Contre'];

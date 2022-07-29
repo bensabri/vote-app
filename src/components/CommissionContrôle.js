@@ -31,16 +31,19 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 	const watchCheckBox = watch(teamControle);
 	const checkedCount = watchCheckBox.filter(Number).length;
 
+	const results_controle = {};
+
+	teamControle.forEach((item, i) => {
+		results_controle[item] =
+			watchCheckBox[i] === false ? 0 : Number(watchCheckBox[i]);
+	});
+
 	const onSubmit = async () => {
 		if (watchCheckBox && checkedCount === 1) {
 			await addDoc(collection(db, 'results1test'), {
 				syndicat: syndicat,
-				results_controle: {
-					abdelalih: Number(watchCheckBox[0]),
-					abdelrazakd: Number(watchCheckBox[1]),
-					nadiaz: Number(watchCheckBox[2]),
-				},
-				email: email,
+				results_controle,
+				email,
 				firstVote: hasVoted,
 				created: date,
 			});
@@ -153,15 +156,18 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 												name={candidat}
 												{...register(candidat)}
 												type="checkbox"
-												value={`${Number(mandat)}`}
+												value={Number(mandat)}
 												className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
 											/>{' '}
 											<label
 												className="cursor-pointer"
 												htmlFor={candidat}
 											>
-												<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
-													{candidat}
+												<span className="capitalize ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
+													{candidat.replaceAll(
+														'_',
+														' '
+													)}
 												</span>
 											</label>
 										</div>

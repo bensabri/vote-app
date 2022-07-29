@@ -21,33 +21,18 @@ const CommissionAdministrative = ({ mandat, syndicat, email }) => {
 	const watchCheckBox = watch(teamAdministrative);
 	const checkedCount = watchCheckBox.filter(Boolean).length;
 
+	const results_administrative = {};
+
+	teamAdministrative.forEach((item, i) => {
+		results_administrative[item] =
+			watchCheckBox[i] === false ? 0 : Number(watchCheckBox[i]);
+	});
+
 	const onSubmit = async () => {
 		if (watchCheckBox && checkedCount === 10) {
-			await addDoc(collection(db, 'results2'), {
+			await addDoc(collection(db, 'results2test'), {
 				syndicat: syndicat,
-				results_administrative: {
-					AssalB: Number(watchCheckBox[0]),
-					BonillaA: Number(watchCheckBox[1]),
-					BraquetM: Number(watchCheckBox[2]),
-					BulotS: Number(watchCheckBox[3]),
-					ChlaitK: Number(watchCheckBox[4]),
-					DjeffelA: Number(watchCheckBox[5]),
-					FournierS: Number(watchCheckBox[6]),
-					FuchsM: Number(watchCheckBox[7]),
-					HammoutiA: Number(watchCheckBox[8]),
-					HirakiF: Number(watchCheckBox[9]),
-					HuetF: Number(watchCheckBox[10]),
-					JossoB: Number(watchCheckBox[11]),
-					KalilouS: Number(watchCheckBox[12]),
-					KempfJp: Number(watchCheckBox[13]),
-					MekhloufiB: Number(watchCheckBox[14]),
-					PelmarT: Number(watchCheckBox[15]),
-					PoulainS: Number(watchCheckBox[16]),
-					SandrineV: Number(watchCheckBox[17]),
-					TabbouA: Number(watchCheckBox[18]),
-					ToureM: Number(watchCheckBox[19]),
-					ZenafN: Number(watchCheckBox[20]),
-				},
+				results_administrative,
 				email: email,
 				secondVote: hasVoted,
 				created: date,
@@ -116,18 +101,18 @@ const CommissionAdministrative = ({ mandat, syndicat, email }) => {
 													id={candidat}
 													{...register(candidat)}
 													type="checkbox"
-													value={`${
-														watchCheckBox[i] &&
-														Number(mandat)
-													}`}
+													value={Number(mandat)}
 													className="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300 rounded"
 												/>{' '}
 												<label
 													className="cursor-pointer"
 													htmlFor={candidat}
 												>
-													<span className="ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
-														{candidat}
+													<span className="capitalize ml-3 text-xs sm:text-sm lg:text-base font-medium text-gray-700">
+														{candidat.replaceAll(
+															'_',
+															' '
+														)}
 													</span>
 												</label>
 											</div>

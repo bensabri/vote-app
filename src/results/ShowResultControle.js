@@ -14,8 +14,6 @@ const ShowResultControle = () => {
 	const { resultControle } = useGlobalContext();
 	const [resultsWidth, setResultsWidth] = useState(99);
 
-	console.log(resultControle[0]?.data.results_controle);
-
 	useEffect(() => {
 		const timer = setTimeout(() => {
 			setResultsWidth(100);
@@ -26,22 +24,16 @@ const ShowResultControle = () => {
 
 	// resultat Commission de Contrôle
 	const ControleA = resultControle.reduce(
-		(a, b) => a + b.data.results_controle.abdelalih,
+		(a, b) => a + b.data.results_controle.abdelali_H,
 		0
 	);
 	const ControleB = resultControle.reduce(
-		(a, b) => a + b.data.results_controle.nadiaz,
+		(a, b) => a + b.data.results_controle.nadia_Z,
 		0
 	);
 	const ControleC = resultControle.reduce(
-		(a, b) => a + b.data.results_controle.abdelrazakd,
+		(a, b) => a + b.data.results_controle.abdelrazak_D,
 		0
-	);
-
-	console.log(
-		resultControle
-			.map(({ data }) => data.results_controle)
-			.reduce((a, b) => a + b.nadiaz, 0)
 	);
 
 	const totalValue = ControleA + ControleB + ControleC;

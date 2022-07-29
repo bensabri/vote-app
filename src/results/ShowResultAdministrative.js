@@ -26,87 +26,87 @@ const ShowResultAdministrative = () => {
 	// resultat Commission Administrative
 
 	const AdministrativeA = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.KempfJp,
+		(a, b) => a + b.data.results_administrative.kempf_JP,
 		0
 	);
 	const AdministrativeB = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.BraquetM,
+		(a, b) => a + b.data.results_administrative.braquet_M,
 		0
 	);
 	const AdministrativeC = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.HirakiF,
+		(a, b) => a + b.data.results_administrative.hiraki_F,
 		0
 	);
 	const AdministrativeD = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.ToureM,
+		(a, b) => a + b.data.results_administrative.toure_M,
 		0
 	);
 	const AdministrativeE = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.TabbouA,
+		(a, b) => a + b.data.results_administrative.tabbou_A,
 		0
 	);
 	const AdministrativeF = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.FournierS,
+		(a, b) => a + b.data.results_administrative.fournier_S,
 		0
 	);
 	const AdministrativeG = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.FuchsM,
+		(a, b) => a + b.data.results_administrative.fuchs_M,
 		0
 	);
 	const AdministrativeH = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.DjeffelA,
+		(a, b) => a + b.data.results_administrative.djeffel_A,
 		0
 	);
 	const AdministrativeI = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.BulotS,
+		(a, b) => a + b.data.results_administrative.bulot_S,
 		0
 	);
 	const AdministrativeJ = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.ChlaitK,
+		(a, b) => a + b.data.results_administrative.chlait_K,
 		0
 	);
 	const AdministrativeK = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.AssalB,
+		(a, b) => a + b.data.results_administrative.assal_B,
 		0
 	);
 	const AdministrativeL = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.MekhloufiB,
+		(a, b) => a + b.data.results_administrative.mekhloufi_B,
 		0
 	);
 	const AdministrativeM = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.PelmarT,
+		(a, b) => a + b.data.results_administrative.pelmar_T,
 		0
 	);
 	const AdministrativeN = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.BonillaA,
+		(a, b) => a + b.data.results_administrative.bonilla_A,
 		0
 	);
 	const AdministrativeO = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.JossoB,
+		(a, b) => a + b.data.results_administrative.jossoB,
 		0
 	);
 	const AdministrativeP = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.KalilouS,
+		(a, b) => a + b.data.results_administrative.kalilou_S,
 		0
 	);
 	const AdministrativeQ = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.ZenafN,
+		(a, b) => a + b.data.results_administrative.zenaf_N,
 		0
 	);
 	const AdministrativeR = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.SandrineV,
+		(a, b) => a + b.data.results_administrative.sandrineV,
 		0
 	);
 	const AdministrativeS = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.HammoutiA,
+		(a, b) => a + b.data.results_administrative.hammoutiA,
 		0
 	);
 	const AdministrativeT = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.HuetF,
+		(a, b) => a + b.data.results_administrative.huetF,
 		0
 	);
 	const AdministrativeU = resultAdministrative.reduce(
-		(a, b) => a + b.data.results_administrative.PoulainS,
+		(a, b) => a + b.data.results_administrative.poulainS,
 		0
 	);
 
