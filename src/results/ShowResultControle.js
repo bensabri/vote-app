@@ -22,6 +22,16 @@ const ShowResultControle = () => {
 		return () => clearTimeout(timer);
 	}, [resultControle]);
 
+	console.log(
+		resultControle.map((item, i) => {
+			return {
+				abdelrazak_D: item.data.results_controle.abdelrazak_D,
+				abdelali_H: item.data.results_controle.abdelali_H,
+				nadia_Z: item.data.results_controle.nadia_Z,
+			};
+		})
+	);
+
 	// resultat Commission de Contrôle
 	const ControleA = resultControle.reduce(
 		(a, b) => a + b.data.results_controle.abdelali_H,
