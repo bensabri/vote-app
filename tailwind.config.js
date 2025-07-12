@@ -1,6 +1,9 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-	purge: [],
-	darkMode: false, // or 'media' or 'class'
+	content: [
+		"./src/**/*.{js,jsx,ts,tsx}",
+		"./public/index.html"
+	],
 	theme: {
 		extend: {
 			margin: {
@@ -16,9 +19,6 @@ module.exports = {
 				primary: '#8AE5F8',
 			},
 		},
-	},
-	variants: {
-		extend: {},
 	},
 	plugins: [],
 };

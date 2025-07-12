@@ -25,6 +25,12 @@ const Login = () => {
 
 	return (
 		<>
+			<div style={{backgroundColor: 'red', color: 'white', padding: '20px', textAlign: 'center'}}>
+				TEST CSS INLINE - Si vous voyez ceci, CSS fonctionne
+			</div>
+			<div className="bg-blue-500 text-white p-4 text-center">
+				TEST TAILWIND - Si vous voyez ceci en bleu, Tailwind fonctionne
+			</div>
 			<Header />
 			<img className='absolute w-screen h-screen object-cover filter blur-md brightness-50' src='https://res.cloudinary.com/amircloud/image/upload/v1636490192/Service/background_rerc6d.jpg' alt='' />
 			<div className='flex flex-col items-center bg-white z-10 p-6'>
