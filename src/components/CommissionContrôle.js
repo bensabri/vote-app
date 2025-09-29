@@ -133,7 +133,7 @@ const CommissionControle1 = ({ mandat, syndicat, email }) => {
 						<div className="flex flex-col py-8 px-5">
 							{!procurationUsers && (
 								<h2 className="pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
-									UNSA FCS 6ÈME CONGRÈS 2021
+									UNSA FCS 7ÈME CONGRÈS 2025
 								</h2>
 							)}
 							<div className="flex justify-between text-base font-medium text-gray-900 uppercase sm:p-6 py-5 px-2">

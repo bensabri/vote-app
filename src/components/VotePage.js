@@ -18,10 +18,7 @@ const VotePage = () => {
 
 	useEffect(() => {
 		switch (currentUser.email) {
-			case 'lakram@hotmail.fr':
-				setSyndicatList(['JEANJEAN/JD SPORTS']);
-				break;
-			case 'alexandre.bonilla@yahoo.fr':
+			case 'amyre28@gmail.com':
 				setSyndicatList([
 					'CARREFOUR MERIGNAC',
 					'CARREFOUR SUPPLY ERTECO',
@@ -29,129 +26,13 @@ const VotePage = () => {
 					'CARREFOUR VAUX EN VELIN',
 				]);
 				break;
-			case 'assalbrigitte92@gmail.com':
+			case 'benhamouda.amir@gmail.com':
 				setSyndicatList([
 					'DESMAZIERES-CHAUSSEXPO',
 					'CYRILLUS',
 					'AVIGNON TOURISME',
 					'MOVITEX',
 				]);
-				break;
-			case 'migan.unsa@yahoo.fr':
-				setSyndicatList(['SMCP', 'BON MARCHE', 'AKTO']);
-				break;
-			case 'unsa.proprete.nettoyage@gmail.com':
-				setSyndicatList(['GALERIES LAFAYETTES']);
-				break;
-			case 'unsa.nettoyage@unsa.org':
-				setSyndicatList([
-					'KUONI-TRAVEL LAB',
-					'AMPLITEL',
-					'JEAN MOULIN/JETLY',
-					'HAPPY CHIC',
-				]);
-				break;
-			case 'hfati@hotmail.fr':
-				setSyndicatList(['CARREFOUR MARKET']);
-				break;
-			case 'franck.martinez3@wanadoo.fr':
-				setSyndicatList(['J.A. DELMAS', 'KUONI GTS']);
-				break;
-			case 'freddy.hardet@orange.fr':
-				setSyndicatList(['RLS CE SNECMA', 'SERM']);
-				break;
-			case 'horiasafi@gmail.com':
-				setSyndicatList(['BERSHKA']);
-				break;
-			case 'sidibekalilou@yahoo.fr':
-				setSyndicatList([
-					'ABERCROMBIE',
-					'SECURITE 7',
-					'ASTEN SANTE',
-					'CASINO GD',
-				]);
-				break;
-			case 'unsa.hcr@unsa.org':
-				setSyndicatList(['CMS VACANCES', 'V R P']);
-				break;
-			case 'khadijachlait@hotmail.com':
-				setSyndicatList([
-					'GFI INFORMATIQUE',
-					'ITM LAI',
-					'LMNEXT FR',
-					'CHANEL',
-				]);
-				break;
-			case 'lagomuche@orange.fr':
-				setSyndicatList([
-					'SONEPAR',
-					'PRIMAVISTA',
-					'D3T DISTRIBUTION',
-					'POLTRONESOFA',
-				]);
-				break;
-			case 'mouloud.nadia@neuf.fr':
-				setSyndicatList([
-					'ALDI CAVAILLON',
-					"BOURSE DE L'IMMOBILIER",
-					'THIRIET DISTRIBUTION',
-				]);
-				break;
-			case 'unsa.adecco@gmail.com':
-				setSyndicatList([
-					'EFR France/EG Retail France',
-					'GEZE France',
-					'QUALICONSULT',
-					'SUPERMARCHES MATCH',
-				]);
-				break;
-			case 'unsa.manpower@gmail.com':
-				setSyndicatList([
-					'IKEA ENTREPOTS CHATRES',
-					'IKEA ENTREPOTS METZ',
-					'MC DONALD S France SERVICE',
-					'MINELLI',
-				]);
-				break;
-			case 'fourseb13@gmail.com':
-				setSyndicatList([
-					'AUCHAN NICE',
-					'BIOCOOP',
-					'CASINO ANTIBES SIESTA',
-					'LECLERC SAINTES',
-				]);
-				break;
-			case 'pelmarthierry1@gmail.com':
-				setSyndicatList([
-					'DENTSPLY SIRONA',
-					'RESMED',
-					'REXEL REGION SUD',
-					'VILMORIN JARDIN',
-				]);
-				break;
-			case 'unsacompass@gmail.com':
-				setSyndicatList(['MSC CROISIERES']);
-				break;
-			case 'hammoutiabdelali@yahoo.fr':
-				setSyndicatList([
-					'COLRUYT',
-					'ECOLAB PEST France',
-					'SECURITE 5',
-					'SUPPLAY',
-					'STEF LOGISTIQUE NEMOURS',
-				]);
-				break;
-			case 'michel.braquet@unsa.org':
-				setSyndicatList([
-					'CARREFOUR SUPPLY COMBS',
-					'CONFORAMA',
-					'DESAUTEL',
-					'LYON PARC AUTO',
-					'OREFI  OUEST',
-				]);
-				break;
-			case 'benhammouda.amir@gmail.com':
-				setSyndicatList(['']);
 				break;
 		}
 	}, []);
@@ -161,7 +42,7 @@ const VotePage = () => {
 			<div className="flex flex-col py-8 h-1/2">
 				<div className="bg-white flex flex-col justify-between px-5 w-11/12 m-auto shadow-lg rounded uppercase py-8 mb-8">
 					<h2 className="pb-5 font-medium self-center text-xl sm:text-2xl uppercase text-gray-500">
-						UNSA FCS 6ÈME CONGRÈS 2021
+						UNSA FCS 7ÈME CONGRÈS 2025
 					</h2>
 					<div className="border-t-2 w-11/12 m-auto"></div>
 

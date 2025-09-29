@@ -26,78 +26,12 @@ const Dashboard = () => {
 
 	useEffect(() => {
 		switch (currentUser.email) {
-			case 'benasabri2@gmail.com':
+			case 'amyre28@gmail.com':
 				setProcurationUsers(true);
 				/* setResultsAccess(false); */
 				break;
-			case 'lakram@hotmail.fr':
+			case 'benhamouda.amir@gmail.com':
 				setProcurationUsers(true);
-				break;
-			case 'alexandre.bonilla@yahoo.fr':
-				setProcurationUsers(true);
-				break;
-			case 'assalbrigitte92@gmail.com':
-				setProcurationUsers(true);
-				break;
-			case 'migan.unsa@yahoo.fr':
-				setProcurationUsers(true);
-				break;
-			case 'unsa.proprete.nettoyage@gmail.com':
-				setProcurationUsers(true);
-				break;
-			case 'unsa.nettoyage@unsa.org':
-				setProcurationUsers(true);
-				break;
-			case 'hfati@hotmail.fr':
-				setProcurationUsers(true);
-				break;
-			case 'franck.martinez3@wanadoo.fr':
-				setProcurationUsers(true);
-				break;
-			case 'freddy.hardet@orange.fr':
-				setProcurationUsers(true);
-				break;
-			case 'imed.benahmed@yahoo.fr':
-				setProcurationUsers(true);
-				break;
-			case 'freddy.hardet@orange.fr':
-				setProcurationUsers(true);
-				break;
-			case 'sidibekalilou@yahoo.fr':
-				setProcurationUsers(true);
-				break;
-			case 'unsa.hcr@unsa.org':
-				setProcurationUsers(true);
-				break;
-			case 'khadijachlait@hotmail.com':
-				setProcurationUsers(true);
-				break;
-			case 'lagomuche@orange.fr':
-				setProcurationUsers(true);
-				break;
-			case 'mouloud.nadia@neuf.fr':
-				setProcurationUsers(true);
-				break;
-			case 'unsa.adecco@gmail.com':
-				setProcurationUsers(true);
-				break;
-			case 'unsa.manpower@gmail.com':
-				setProcurationUsers(true);
-				break;
-			case 'fourseb13@gmail.com':
-				setProcurationUsers(true);
-				break;
-			case 'pelmarthierry1@gmail.com':
-				setProcurationUsers(true);
-				break;
-			case 'compass@unsa.org':
-				setProcurationUsers(true);
-				break;
-			case 'benhammouda.amir@gmail.com':
-				setSuperProcuration(true);
-				break;
-			case 'ssabril@ymail.com':
-				setSuperProcuration(true);
 				break;
 			default:
 				setProcurationUsers(false);
